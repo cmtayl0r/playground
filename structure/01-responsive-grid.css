@@ -1,6 +1,7 @@
 body {
-    margin: 4.8rem;
+    margin: 50px;
     background-image: var(--gradient-yoda);
+    min-height: calc(100vh - 100px);
 }
 
 .container {

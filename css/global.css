@@ -8,9 +8,13 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
-    /* margin: 4.8rem;
-    background-image: var(--gradient-yoda); */
-    min-height: calc(100vh - 100px); /* 100vh minus the margin on body */
+    /* Use margin and gradient below on body of each css file */
+    /* 
+    margin: 4.8rem;
+    background-image: var(--gradient-yoda); 
+    */
+    /* 100vh minus the margin on body */
+    /* min-height: calc(100vh - 100px);  */
 }
 
 /* 
@@ -87,6 +91,7 @@ li {
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* Use values in this class for sub items demoed in grids */
 .item-simple {
     display: grid;
     justify-content: center;
