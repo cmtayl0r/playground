@@ -8,8 +8,8 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
-    margin: 4.8rem;
-    background-image: var(--gradient-yoda);
+    /* margin: 4.8rem;
+    background-image: var(--gradient-yoda); */
     min-height: calc(100vh - 100px); /* 100vh minus the margin on body */
 }
 
@@ -19,32 +19,46 @@ body {
 --------------------------------------------------------
 */
 
+small,
+.text-small {
+    font-size: var(--font-size-sm);
+}
+
+p {
+    font-size: var(--font-size-base);
+}
+h5 {
+    font-size: var(--font-size-md);
+}
+h4 {
+    font-size: var(--font-size-lg);
+}
+h3 {
+    font-size: var(--font-size-xl);
+}
+h2 {
+    font-size: var(--font-size-xxl);
+}
+h1 {
+    font-size: var(--font-size-xxxl);
+}
+
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 1rem 0;
+    line-height: 1.2;
+    margin: 3rem 0 1.38rem;
     font-weight: 700;
 }
-h1 {
-    font-size: var(--font-size-xxl);
-    margin-bottom: 3.6rem;
-}
-h2 {
-    font-size: var(--font-size-xl);
-}
-h3 {
-    font-size: var(--font-size-lg);
-}
-h4 {
-    font-size: var(--font-size-md);
-}
 p {
-    margin: 0 0 2rem 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
-span.context {
+.text-light {
     font-weight: 300;
 }
 

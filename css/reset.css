@@ -46,13 +46,16 @@ select {
 
 /* Avoid text overflows */
 p,
+li,
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
+    /* Help prevent overflow of long words/names/URLs */
     overflow-wrap: break-word;
+
+    /* Optional, not supported for all languages */
+    hyphens: auto;
 }
 
 p {
