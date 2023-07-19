@@ -62,6 +62,20 @@ p {
     font-weight: 300;
 }
 
+/* Lists */
+ul {
+    list-style-position: inside;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+ul li::marker,
+ol li::marker {
+    color: var(--color-gray);
+}
+li {
+    line-height: 1.5;
+}
+
 /* 
 --------------------------------------------------------
 02 - Structure
