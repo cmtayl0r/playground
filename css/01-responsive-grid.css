@@ -1,0 +1,60 @@
+.container {
+    margin-bottom: 3.6rem;
+}
+
+/* 
+--------------------------------------------------------
+Simple grid / CSS Grid
+--------------------------------------------------------
+*/
+.container-simple {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-gap: 1rem;
+}
+
+.item-detail {
+    background: rgba(255, 255, 255, 0.5);
+    font-size: var(--font-size-base);
+    padding: 1rem;
+    border-radius: var(--border-radius-md);
+}
+
+/* 
+--------------------------------------------------------
+Simple gallery / CSS Grid
+--------------------------------------------------------
+*/
+.container-gallery {
+    display: grid;
+    gap: 2rem;
+    /* Auto-fit on repeat creates a seamless wrapping of items with a minmax */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.container-gallery > div {
+    aspect-ratio: 3 / 2;
+}
+
+.container-gallery > div > img {
+    height: 100%;
+    object-fit: cover;
+    /* object-position: center; */
+}
+
+/* 
+--------------------------------------------------------
+Variable wrap / Flexbox
+--------------------------------------------------------
+*/
+
+.container-variable,
+.container-variable-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container-variable-2 > * {
+    flex: 1;
+}

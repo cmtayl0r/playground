@@ -15,7 +15,20 @@
     --color-gray: #8e8e8e;
     --color-gray-dark: #444;
 
-    /* Demo block colour */
+    /* Color block */
     --color-orange: #fdb347;
     --color-yellow: #ffc608;
+
+    /* Gradients */
+    --gradient-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    --gradient-witch: linear-gradient(to right, #c31432, #240b36);
+    --gradient-wiretap: linear-gradient(to right, #8a2387, #e94057, #f27121);
+    --gradient-expresso: linear-gradient(to right, #ad5389, #3c1053);
+    --gradient-fizz: linear-gradient(to right, #00f260, #0575e6);
+    --gradient-velvetsun: linear-gradient(to right, #e1eec3, #f05053);
+
+    /* Border radius */
+    --border-radius-sm: 0.4rem;
+    --border-radius-md: 0.8rem;
+    --border-radius-lg: 1.2rem;
 }
