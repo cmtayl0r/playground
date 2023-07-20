@@ -68,11 +68,16 @@ body {
 @media all and (max-width: 600px) {
     .header {
         flex-wrap: wrap;
+
+        /* test sticky positioning */
+        position: sticky;
+        top: 0;
     }
     .header > div {
         flex-basis: 100%;
         text-align: center;
     }
+
     .menu,
     .content {
         grid-column: 1 / -1;
