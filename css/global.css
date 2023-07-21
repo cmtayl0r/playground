@@ -72,10 +72,10 @@ ul {
     margin-bottom: 1rem;
     padding-left: 1rem;
 }
-ul li::marker,
+/* ul li::marker,
 ol li::marker {
     color: var(--color-gray);
-}
+} */
 li {
     line-height: 1.5;
 }
