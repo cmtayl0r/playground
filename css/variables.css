@@ -34,4 +34,5 @@
     --border-radius-sm: 0.4rem;
     --border-radius-md: 0.8rem;
     --border-radius-lg: 1.2rem;
+    --border-radius-circle: 50%;
 }
