@@ -1,3 +1,7 @@
+/* 
+https://css-tricks.com/4-css-grid-properties-and-one-value-for-most-of-your-layout-needs/
+*/
+
 body {
     margin: 50px;
     background-image: var(--gradient-velvetsun);
@@ -34,11 +38,11 @@ nav {
 
 header,
 footer {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--demo-bg-white);
 }
 
 nav li {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--demo-bg-black);
     color: var(--color-white);
     padding: 1rem;
 }
@@ -51,12 +55,12 @@ nav ul {
 
 .item {
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--demo-bg-white);
 }
 
 .item-type-a,
 .item-type-b {
-    background-color: rgb(233, 64, 87, 0.6);
+    background-color: var(--demo-bg-rose);
 
     & h3 {
         margin-top: 0;
@@ -65,7 +69,7 @@ nav ul {
 
 .item-inner {
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--demo-bg-black);
     color: var(--color-white);
 
     & span {

@@ -30,6 +30,13 @@
     --gradient-fizz: linear-gradient(to right, #00f260, #0575e6);
     --gradient-velvetsun: linear-gradient(to right, #e1eec3, #f05053);
 
+
+    /* Demo block backgrounds */
+    --demo-bg-white: rgba(255, 255, 255, 0.3);
+    --demo-bg-black: rgba(0, 0, 0, 0.6);
+    --demo-bg-rose:rgb(233, 64, 87, 0.3);
+
+
     /* Border radius */
     --border-radius-sm: 0.4rem;
     --border-radius-md: 0.8rem;
