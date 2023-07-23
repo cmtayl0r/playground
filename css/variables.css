@@ -1,4 +1,6 @@
 :root {
+
+    --font-accent-serif: 
     /* 
     Fluid typography scale 
     https://www.fluid-type-scale.com/
@@ -18,10 +20,6 @@
     --color-gray: #8e8e8e;
     --color-gray-dark: #444;
 
-    /* Color block */
-    --color-orange: #fdb347;
-    --color-yellow: #ffc608;
-
     /* Gradients */
     --gradient-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
     --gradient-witch: linear-gradient(to right, #c31432, #240b36);
@@ -30,12 +28,12 @@
     --gradient-fizz: linear-gradient(to right, #00f260, #0575e6);
     --gradient-velvetsun: linear-gradient(to right, #e1eec3, #f05053);
 
-
     /* Demo block backgrounds */
+    --color-orange: #fdb347;
+    --color-yellow: #ffc608;
     --demo-bg-white: rgba(255, 255, 255, 0.3);
     --demo-bg-black: rgba(0, 0, 0, 0.6);
     --demo-bg-rose:rgb(233, 64, 87, 0.3);
-
 
     /* Border radius */
     --border-radius-sm: 0.4rem;
