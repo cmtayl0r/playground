@@ -6,6 +6,8 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 html {
     /* 62.5% of 16px browser font size is 10px */
     font-size: 62.5%;
+    /* Users preference */
+    color-scheme: light dark;
 }
 
 *,
@@ -24,6 +26,11 @@ body {
     font-size: 1.6rem;
     /* Improve text rendering */
     -webkit-font-smoothing: antialiased;
+    /* 
+    Add accessible line-height for paragraph, li content etc
+    Decrease to 1.1 for h1, h2 etc
+    */
+    line-height: 1.6;
 }
 
 /* Improve media defaults */
@@ -65,5 +72,5 @@ p {
     Add accessible line-height for paragraph content
     https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html 
     */
-    line-height: 1.5;
+    /* line-height: 1.6; */
 }

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@700&family=IBM+Plex+Sans:wght@300;400;700&display=swap');
+
+:root {
+    --color-text: hsl(204, 100%, 1%);
+    --color-surface: hsl(0, 0%, 100%);
+    --color-primary: hsl(329, 85%, 53%);
+    --color-secondary: hsl(208, 83%, 93%);
+    --color-accent: hsl(89, 85%, 33%);
+
+    --ff-base: 'IBM Plex Sans', sans-serif;
+    --ff-accent: 'IBM Plex Sans Condensed', sans-serif;
+
+    /* 
+    Fluid typography scale
+    https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.414,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+
+    - 400 = base size
+    */
+    /* Step 0: 18.00px → 20.00px */
+    --fs-300: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+    /* Step 1: 21.60px → 28.28px */
+    --fs-400: clamp(1.35rem, calc(1.2rem + 0.73vw), 1.77rem);
+    /* Step 2: 25.92px → 39.99px */
+    --fs-500: clamp(1.62rem, calc(1.31rem + 1.53vw), 2.5rem);
+    /* Step 3: 31.10px → 56.54px */
+    --fs-600: clamp(1.94rem, calc(1.39rem + 2.77vw), 3.53rem);
+    /* Step 4: 37.32px → 79.95px */
+    --fs-700: clamp(2.33rem, calc(1.41rem + 4.63vw), 5rem);
+    /* Step 5: 44.79px → 113.05px */
+    --fs-800: clamp(2.8rem, calc(1.32rem + 7.42vw), 7.07rem);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: hsl(0, 0%, 100%);
+        --color-surface: hsl(204, 100%, 1%);
+        --color-primary: hsl(329, 85%, 53%);
+        --color-secondary: hsl(208, 83%, 17%);
+        --color-accent: hsl(89, 85%, 33%);
+    }
+}
+
+/* https://realtimecolors.com/ */
+
+body {
+    font-size: var(--fs-400);
+    font-family: var(--ff-base);
+    color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--ff-accent);
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: var(--fs-700);
+    color: var(--color-primary);
+}
+h2 {
+    font-size: var(--fs-600);
+}
+h2 {
+    font-size: var(--fs-500);
+}
+
+::marker {
+    color: var(--color-primary);
+}
+
+.wrapper {
+    /*
+    largest it could get on shrink = 100%
+    - 3rem split on both sides (like a margin)
+    max-width 65ch (reading length)
+    */
+    width: min(100% - 3rem, 75ch);
+    margin-inline: auto;
+}
+
+/* 
+“lobotomized owl selector” everything but the first child
+spaces out all child elements consistently
+*/
+.flow > * + * {
+    /* 
+    - setting a variable that can adjusted on elements elsewhere
+    - e.g. on a h2 I could set --flow-space:2em; 
+    - 1em is the fallback and used by everything else
+    - em used to give variable spacing based on font size
+    - preferable to same spacing for h1 and p for example
+    */
+    margin-top: var(--flow-space, 1em);
+}
+h2 {
+    --flow-space: 2em;
+}
+
+ul {
+    /* if you want the standard bullets, use 'disc' instead of 'circle' */
+    list-style: disc;
+    list-style-position: outside;
+    padding-left: 2em;
+}
