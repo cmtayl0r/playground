@@ -21,7 +21,12 @@
     /* Gradients */
     --gradient-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
     --gradient-witch: linear-gradient(to right, #c31432, #240b36);
-    --gradient-wiretap: linear-gradient(to right, #8a2387, rgb(233, 64, 87), #f27121);
+    --gradient-wiretap: linear-gradient(
+        to right,
+        #8a2387,
+        rgb(233, 64, 87),
+        #f27121
+    );
     --gradient-expresso: linear-gradient(to right, #ad5389, #3c1053);
     --gradient-fizz: linear-gradient(to right, #00f260, #0575e6);
     --gradient-velvetsun: linear-gradient(to right, #e1eec3, #f05053);
@@ -34,7 +39,7 @@
     --color-yellow: #ffc608;
     --demo-bg-white: rgba(255, 255, 255, 0.3);
     --demo-bg-black: rgba(0, 0, 0, 0.6);
-    --demo-bg-rose:rgb(233, 64, 87, 0.3);
+    --demo-bg-rose: rgb(233, 64, 87, 0.3);
 
     /* Border radius */
     --border-radius-sm: 0.4rem;
@@ -42,10 +47,19 @@
     --border-radius-lg: 1.2rem;
     --border-radius-circle: 50%;
 
+    /* Box shadow */
+    --shadow-default: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 4px 7px rgba(0, 0, 0, 0.2);
+
     /* Media queries */
-    --mq-for-phone-only:max-width: 599px;
-    --mq-for-tablet-portrait-up:min-width: 600px;
-    --mq-for-tablet-landscape-up:min-width: 900px;
-    --mq-for-desktop-up:min-width: 1200px;
-    --mq-for-big-desktop-up:min-width: 1800px;
+    /* phone only */
+    --mq-phone-only: 599px;
+    /* Tablet portrait up */
+    --mq-600: 37.5em;
+    /* tablet landscape up */
+    --mq-960: 60em;
+    /* desktop up */
+    --mq-1200: 75em;
+    /* big desktop up */
+    --mq-1440: 90em;
 }

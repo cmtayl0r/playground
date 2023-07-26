@@ -1,0 +1,105 @@
+body {
+    margin: 50px 0;
+    background-image: var(--gradient-velvetsun);
+    min-height: calc(100vh - 100px);
+
+    overflow-x: hidden;
+}
+
+/* 
+------------------------------------------------------
+STRUCTURE
+------------------------------------------------------
+*/
+
+.container {
+    width: min(100% - 6rem, 1240px);
+    margin-inline: auto;
+    /* width: 90%;
+    max-width: 1240px;
+    margin: 0 auto; */
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
+}
+
+/* 600px */
+@media (min-width: 37.5em) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .item-1 {
+        grid-column: 1 / span 2;
+    }
+}
+
+/* 960px */
+@media (min-width: 60em) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 
+------------------------------------------------------
+CARD
+------------------------------------------------------
+*/
+
+.card {
+    background: var(--demo-bg-white);
+    text-decoration: none;
+    box-shadow: var(--shadow-default);
+
+    display: flex;
+    flex-direction: column;
+
+    /* in order that all the cards fill the height of the parent (our grid item) */
+    min-height: 100%;
+
+    /* to move card on hover */
+    position: relative;
+    top: 0;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+        top: -2px;
+        box-shadow: var(--shadow-dark);
+    }
+
+    & article {
+        padding: 2rem;
+        /* take up all available space */
+        flex: 1;
+
+        /* vertical distribution, stick author to bottom of card */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    & p {
+        /* to make p grow to fil available vertical space */
+        flex: 1;
+        color: var(--color-gray);
+    }
+
+    & h3 {
+        margin: 0;
+        color: var(--color-gray-dark);
+    }
+
+    & span {
+        color: var(--color-black);
+        text-transform: uppercase;
+    }
+}
+.card > img {
+    aspect-ratio: 3 / 2;
+    object-position: center;
+    object-fit: cover;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+}
