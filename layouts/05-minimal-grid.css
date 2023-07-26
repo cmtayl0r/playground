@@ -3,20 +3,10 @@ https://css-tricks.com/4-css-grid-properties-and-one-value-for-most-of-your-layo
 */
 
 body {
-    margin: 50px;
+    margin: 50px 0;
     background-image: var(--gradient-velvetsun);
     min-height: calc(100vh - 100px);
     font-weight: 700;
-
-    /* 0 > 900px */
-    margin: 2rem;
-}
-
-@media screen and (min-width: 900px) {
-    body {
-        width: 90%;
-        margin: 0 auto;
-    }
 }
 
 /* 
@@ -88,6 +78,15 @@ ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 - Mobile first approach
 - Media queries to style table and above
 */
+
+.container {
+    /* max-width: 1200px;
+    width: calc(100vw - 4rem);
+    margin: 0 auto; */
+
+    width: min(100% - 6rem, 1200px);
+    margin-inline: auto;
+}
 
 .container-main {
     display: grid;
