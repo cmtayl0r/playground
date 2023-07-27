@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Merriweather:ital@0;1&display=swap');
+
 :root {
+    --font-plain: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-serif: 'Merriweather', serif;
+    --font-special: 'Barlow Condensed', sans-serif;
     /* 
     Fluid typography scale 
     https://www.fluid-type-scale.com/
@@ -11,12 +16,22 @@
     --font-size-xxl: clamp(3.91rem, 1.3vw + 3.39rem, 5.05rem);
     --font-size-xxxl: clamp(4.88rem, 2.1vw + 4.04rem, 6.73rem);
 
-    /* Colour neutral */
+    /* Ratios */
+    /* 
+    Add accessible line-height for paragraph content
+    https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html 
+    */
+    --ratio: 1.6;
+    --line-height: var(--ratio);
+    --line-height-small: calc(0.7 * var(--ratio));
+
+    /* Colours */
     --color-white: #f3f3f3;
     --color-black: #0a0a23;
     --color-gray-light: #c8c8c8;
     --color-gray: #8e8e8e;
     --color-gray-dark: #444;
+    --color-yellow: #ffc608;
 
     /* Gradients */
     --gradient-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
@@ -35,8 +50,6 @@
     --gradient-combi: linear-gradient(to right, #00416a, #799f0c, #ffe000);
 
     /* Demo block backgrounds */
-    --color-orange: #fdb347;
-    --color-yellow: #ffc608;
     --demo-bg-white: rgba(255, 255, 255, 0.3);
     --demo-bg-black: rgba(0, 0, 0, 0.6);
     --demo-bg-rose: rgb(233, 64, 87, 0.3);
@@ -50,16 +63,4 @@
     /* Box shadow */
     --shadow-default: 0 2px 5px rgba(0, 0, 0, 0.1);
     --shadow-dark: 0 4px 7px rgba(0, 0, 0, 0.2);
-
-    /* Media queries */
-    /* phone only */
-    --mq-phone-only: 599px;
-    /* Tablet portrait up */
-    --mq-600: 37.5em;
-    /* tablet landscape up */
-    --mq-960: 60em;
-    /* desktop up */
-    --mq-1200: 75em;
-    /* big desktop up */
-    --mq-1440: 90em;
 }

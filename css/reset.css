@@ -30,7 +30,7 @@ body {
     Add accessible line-height for paragraph, li content etc
     Decrease to 1.1 for h1, h2 etc
     */
-    line-height: 1.6;
+    line-height: var(--ratio);
 }
 
 /* Improve media defaults */
@@ -65,12 +65,4 @@ h4 {
 
     /* Optional, not supported for all languages */
     hyphens: auto;
-}
-
-p {
-    /* 
-    Add accessible line-height for paragraph content
-    https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html 
-    */
-    /* line-height: 1.6; */
 }
