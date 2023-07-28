@@ -20,6 +20,8 @@ BUTTONS
 */
 
 button {
+    min-height: 4.4rem;
+    min-width: 4.4rem;
     font-size: 1.8rem;
     padding: 1rem;
     line-height: 1.1;
@@ -71,6 +73,52 @@ button:active {
     border-radius: var(--border-radius-circle);
 }
 
+.special {
+    height: 44px;
+    width: 44px;
+    position: relative;
+    background: none;
+    border: none;
+    transform-origin: center;
+    transition: 0.3s;
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: #333;
+        display: block;
+        left: calc(50% - 4px);
+        top: calc(50% - 4px);
+        box-shadow: -12px 0 0 #333, 12px 0 0 #333, -12px -12px 0 #333,
+            0 -12px 0 #333, 12px -12px 0 #333, -12px 12px 0 #333, 0 12px 0 #333,
+            12px 12px 0 #333;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        height: 20px;
+        width: 3px;
+        left: 21px;
+        top: 12px;
+        background: #fff;
+    }
+    &.is-active {
+        background: #333;
+        border-radius: 22px;
+        transform: rotate(45deg);
+
+        &::after {
+            box-shadow: none;
+            width: 20px;
+            height: 3px;
+            left: 13px;
+            top: 21px;
+            background: #fff;
+        }
+    }
+}
 /* 
 --------------------------------------------
 SIDEBAR

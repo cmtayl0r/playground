@@ -48,6 +48,7 @@
                         <button class="circle">🔎</button>
                     </div>
                     <div class="header__auxillary flex__group">
+                        <button class="special"></button>
                         <button class="circle">🔔</button>
                         <div class="avatar"><img src="https://i.pravatar.cc/300" alt=""></div>
                         <span>Christopher Taylor</bu>
@@ -249,6 +250,14 @@
 
         // Check if the above function is working on click, with a console.log('TOGGLE!')
         navButton.addEventListener('click', toggleNav);
+
+
+        // SPecial button with animation
+        const specialBtn = document.querySelector('.special')
+
+        specialBtn.addEventListener("click", function () {
+            specialBtn.classList.toggle("is-active")
+        });
     </script>
 </body>
 
