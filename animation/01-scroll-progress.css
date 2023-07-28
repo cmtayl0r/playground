@@ -1,0 +1,133 @@
+/* 
+--------------------------------------------------------
+FOUNDATIONS
+--------------------------------------------------------
+*/
+
+body {
+    /* margin: 50px; */
+    background-image: var(--gradient-grandeur);
+    /* min-height: calc(100vh - 100px); */
+    min-height: 100vh;
+}
+
+.container {
+    padding: clamp(1rem, 2vw, 5rem);
+}
+
+/* 
+--------------------------------------------------------
+ANIMATION
+--------------------------------------------------------
+*/
+
+.progress {
+    height: 3rem;
+    background: var(--color-black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* sets starting point to left of viewport */
+    transform-origin: 0 50%;
+
+    /* To associate our progress bar element’s animation with the progress of scroll */
+    animation-timeline: scroll(root block);
+    /* link to animation */
+    animation-name: scaleProgress;
+    /* auto, because duration linked to scroll */
+    animation-duration: auto;
+    /* progress easing to be consistent, not ease-in-out etc */
+    animation-timing-function: linear;
+}
+
+.progress-multiple {
+    height: 3rem;
+    background: var(--color-black);
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    /* sets starting point to left of viewport */
+    transform-origin: 0 50%;
+
+    /* Shorthand with multiple animations */
+    animation: scaleProgress auto linear, colorChange auto linear;
+    animation-timeline: scroll(root);
+}
+
+.progress-steps {
+    height: 3rem;
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    /* sets starting point to left of viewport */
+    transform-origin: 0 50%;
+
+    background: linear-gradient(
+        to right,
+        red 20%,
+        orange 0,
+        orange 40%,
+        yellow 0,
+        yellow 60%,
+        lime 0,
+        lime 80%,
+        green 0
+    );
+    animation: clip auto steps(5) forwards;
+    animation-timeline: scroll(root);
+}
+
+.progress-ball {
+    width: 6rem;
+    height: 6rem;
+    background: var(--color-yellow);
+    border-radius: var(--border-radius-circle);
+
+    position: fixed;
+    top: calc(100vh - 7rem); /* 3rem height + 1rem from bottom */
+    left: 1rem;
+
+    /* do 6 times connected to scroll, alternate direction */
+    animation: bounce auto linear 6 alternate;
+    animation-timeline: scroll(root);
+}
+
+/* Progress scale to go left to right */
+@keyframes scaleProgress {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: lime;
+    }
+}
+
+@keyframes clip {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes bounce {
+    100% {
+        transform: translateY(-50vh);
+    }
+}
