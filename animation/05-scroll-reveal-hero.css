@@ -1,0 +1,57 @@
+body {
+    padding-top: 100vh;
+}
+
+main {
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-top: 1em;
+    padding: max(1rem, 3vw);
+
+    & h2:first-of-type {
+        margin-top: 0;
+    }
+}
+
+#sticky-header {
+    /* Hero / sticky header styling */
+    color: var(--color-white);
+    font-family: var(--font-special);
+    font-size: calc(4vw + 1em);
+
+    height: 100vh;
+    width: 100%;
+    background-image: url(https://source.unsplash.com/ALTWTTtYz5Y);
+    background-size: cover;
+    background-position: 50% 50%;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+
+    /* Center text / child items */
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    /* Animation setup */
+    position: fixed;
+    top: 0;
+    animation: sticky-parallax-header-move-and-size linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0vh 90vh;
+
+    & h1 {
+        margin: 0;
+    }
+}
+
+@keyframes sticky-parallax-header-move-and-size {
+    from {
+        background-position: 50% 0;
+    }
+
+    to {
+        background-position: 50% 100%;
+        height: 10vh;
+        font-size: 2em;
+    }
+}

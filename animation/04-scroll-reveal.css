@@ -1,0 +1,57 @@
+/* 
+--------------------------------------------------------
+FOUNDATIONS
+--------------------------------------------------------
+*/
+
+img {
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+}
+
+main {
+    max-width: 50em;
+    margin-inline: auto;
+    padding: max(1rem, 3vw);
+
+    & h1 {
+        margin-top: 0;
+    }
+}
+
+/* 
+--------------------------------------------------------
+ANIMATION ELEMENTS
+--------------------------------------------------------
+*/
+
+.revealing-image {
+    /* Attach animation, linked to a view timeline that tracks self */
+    animation: auto linear reveal both;
+    animation-timeline: view();
+    /* 
+    the effect only runs from the moment the image’s box is already partially in view (entry 25%) until it is at the center of its scroller (cover 50%).
+    */
+    animation-range: entry 25% cover 50%;
+}
+
+/* 
+--------------------------------------------------------
+ANIMATION
+--------------------------------------------------------
+*/
+
+/* 
+A fade in by adjusting the opacity
+A “open curtain” effect using clip-path
+*/
+@keyframes reveal {
+    from {
+        opacity: 0;
+        clip-path: inset(0% 60% 0% 50%);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
