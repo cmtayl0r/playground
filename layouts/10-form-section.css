@@ -88,15 +88,23 @@ label {
     font-size: 2rem;
     font-weight: 700;
     border: none;
-}
 
-.btn__submit:active {
-    transform: translateY(5px);
-}
+    transition: font-size 5s ease-in-out 0.25s;
+    transition: transform 0.2s ease-in-out;
 
-.btn__submit:focus {
-    outline: 3px solid #fd0;
-    outline-offset: 0;
+    &:hover {
+        transform: scale(1.02);
+        font-size: 2.4rem;
+    }
+
+    &:active {
+        transform: translateY(5px);
+    }
+
+    &:focus {
+        outline: 3px solid #fd0;
+        outline-offset: 0;
+    }
 }
 
 /* 

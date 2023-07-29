@@ -8,6 +8,8 @@ body {
     place-content: center;
 }
 
+
+
 .modal {
     width: min(100% - 6rem, 60rem);
     margin-inline: auto;
