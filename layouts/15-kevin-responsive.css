@@ -1,0 +1,11 @@
+body {
+  margin: 50px;
+  background-image: var(--gradient-wiretap);
+  min-height: calc(100vh - 100px);
+}
+
+.wrapper {
+  background-color: var(--demo-bg-white);
+  max-width: 960px; /* Avoiding an not-needed breakpoint definition */
+  margin-inline: auto; /* Centers the container */
+}
