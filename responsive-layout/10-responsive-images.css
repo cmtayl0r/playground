@@ -1,20 +1,12 @@
 body {
-    margin: 50px;
     background-image: var(--gradient-velvetsun);
-    min-height: calc(100vh - 100px);
-    font-weight: 700;
-}
-
-.container {
-    max-width: 100rem;
-    margin: 0 auto;
 }
 
 h2 {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: var(--spacing-l);
+    margin: var(--spacing-l) 0;
 }
 h2::before,
 h2::after {
@@ -26,10 +18,8 @@ h2::after {
 .media {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    padding: 1rem;
-
-    background: var(--demo-bg-white);
+    gap: var(--spacing-l);
+    padding: var(--spacing-l);
 }
 .media-illustration {
     flex: 1;
