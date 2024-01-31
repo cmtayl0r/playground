@@ -1,8 +1,5 @@
 body {
-    margin: 50px 0;
     background-image: var(--gradient-velvetsun);
-    min-height: calc(100vh - 100px);
-
     overflow-x: hidden;
 }
 
@@ -13,12 +10,6 @@ STRUCTURE
 */
 
 .container {
-    width: min(100% - 6rem, 1240px);
-    margin-inline: auto;
-    /* width: 90%;
-    max-width: 1240px;
-    margin: 0 auto; */
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -49,7 +40,6 @@ CARD
 */
 
 .card {
-    background: var(--demo-bg-white);
     text-decoration: none;
     box-shadow: var(--shadow-default);
 

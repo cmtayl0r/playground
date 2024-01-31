@@ -5,62 +5,62 @@ Foundations
 */
 
 body {
-  font-family: var(--font-plain);
-  color: var(--color-black);
-  /* Use margin and gradient below on body of each css file */
-  /* 
+    font-family: var(--font-plain);
+    color: var(--color-black);
+    /* Use margin and gradient below on body of each css file */
+    /* 
     margin: 4.8rem;
     background-image: var(--gradient-yoda); 
     */
-  /* 100vh minus the margin on body */
-  /* min-height: calc(100vh - 100px);  */
+    /* 100vh minus the margin on body */
+    /* min-height: calc(100vh - 100px);  */
 }
 
 .flow > * + * {
-  /* 
+    /* 
     - setting a variable that can adjusted on elements elsewhere
     - e.g. on a h2 I could set --flow-space:2em; 
     - 1em is the fallback and used by everything else
     - em used to give variable spacing based on font size
     - preferable to same spacing for h1 and p for example
     */
-  margin-top: var(--flow-space, 1em);
+    margin-top: var(--flow-space, 1em);
 }
 
 *:focus-visible {
-  outline: 3px solid rgb(255, 0, 179);
-  outline-offset: 0.25rem;
-  border-radius: 0.125rem;
+    outline: 3px solid rgb(255, 0, 179);
+    outline-offset: 0.25rem;
+    border-radius: 0.125rem;
 }
 
 /* 
---------------------------------------------------------
-Typography
---------------------------------------------------------
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+TYPOGRAPHY
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 */
 
 small,
 .text-small {
-  font-size: var(--font-size-sm);
+    font-size: var(--font-size-sm);
 }
 
 p {
-  font-size: var(--font-size-base);
+    font-size: var(--font-size-base);
 }
 h5 {
-  font-size: var(--font-size-md);
+    font-size: var(--font-size-md);
 }
 h4 {
-  font-size: var(--font-size-lg);
+    font-size: var(--font-size-lg);
 }
 h3 {
-  font-size: var(--font-size-xl);
+    font-size: var(--font-size-xl);
 }
 h2 {
-  font-size: var(--font-size-xxl);
+    font-size: var(--font-size-xxl);
 }
 h1 {
-  font-size: var(--font-size-xxxl);
+    font-size: var(--font-size-xxxl);
 }
 
 h1,
@@ -69,126 +69,149 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-special);
-  line-height: var(--line-height-small);
-  margin: 3rem 0 1.38rem;
+    font-family: var(--font-special);
+    line-height: var(--line-height-small);
+    margin: 3rem 0 1.38rem;
 }
 p {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 .text-light {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 /* Lists */
 ul {
-  list-style-position: inside;
-  padding-left: 1rem;
+    list-style-position: inside;
+    padding-left: 1rem;
 }
 ul li::marker,
 ol li::marker {
-  color: var(--color-gray);
+    color: var(--color-gray);
 }
 
 /* 
---------------------------------------------------------
-Structure
---------------------------------------------------------
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+STRUCTURE
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 */
 
-body.fluid {
-  margin: 50px;
-  min-height: calc(100vh - 100px);
+/* Container style */
+.container {
+    border: 5px dashed var(--color-black);
+    background: var(--demo-bg-white);
 }
 
-.container {
-  border: 5px dashed var(--color-black);
-  background: var(--demo-bg-white);
+/* Frame around content */
+body.frame {
+    margin: 5rem;
+    min-height: calc(100vh - 100px);
+}
+
+@media all and (max-width: 700px) {
+    body.frame {
+        margin: 2.4rem;
+    }
+}
+
+/* Fixed width container */
+.fixed {
+    max-width: 100rem; /* Avoiding an not-needed breakpoint definition */
+    margin-inline: auto; /* Centers the container */
+}
+.fixed-l {
+    max-width: 124rem; /* Avoiding an not-needed breakpoint definition */
+    margin-inline: auto; /* Centers the container */
 }
 
 /* Demo blocks to illustrate grid items */
-
-.item {
-  background: var(--demo-bg-white);
+.bg-white {
+    background: var(--demo-bg-white);
 }
 
-.item-rose {
-  background: var(--demo-bg-rose);
+.bg-rose {
+    background: var(--demo-bg-rose);
 }
 
-.item-black {
-  background: var(--demo-bg-black);
-  color: var(--color-white);
+.bg-black {
+    background: var(--demo-bg-black);
+    color: var(--color-white);
 }
 
-.item-yellow {
-  background: var(--color-yellow);
+.bg-yellow {
+    background: var(--color-yellow);
 }
 
 /* Use values in this class for sub items demoed in grids */
-.item-simple {
-  display: grid;
-  justify-content: center;
-  align-items: center;
+.content-center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 4.8rem 2rem;
 
-  background: var(--demo-bg-white);
-  font-size: var(--font-size-lg);
-  font-weight: 900;
-  padding: 4.8rem 2rem;
-  border-radius: var(--border-radius-md);
+    & > * {
+        margin: 0;
+    }
+}
+.content-detail {
+    padding: 2rem;
+}
+.content-bare > * {
+    margin: 0;
+    padding: 0;
 }
 
 /* 
---------------------------------------------------------
-Components
---------------------------------------------------------
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+COMPONENTS
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 */
 
 .button {
-  display: block;
-  border-radius: 32px;
-  border: 3px solid var(--color-black);
-  color: var(--color-black);
-  text-align: center;
-  font-size: 2.4rem;
-  text-decoration: none;
-  padding: 1rem 2rem;
-  /* max-width: 20rem; */
-  transition: all 0.2s;
-  cursor: pointer;
+    display: block;
+    border-radius: 32px;
+    border: 3px solid var(--color-black);
+    color: var(--color-black);
+    text-align: center;
+    font-size: 2.4rem;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    /* max-width: 20rem; */
+    transition: all 0.2s;
+    cursor: pointer;
 
-  &:hover {
-    color: var(--color-white);
-    background-color: rgba(0, 0, 0, 0.5);
+    &:hover {
+        color: var(--color-white);
+        background-color: rgba(0, 0, 0, 0.5);
+
+        & span {
+            padding-right: 25px;
+
+            &:after {
+                opacity: 1;
+                right: 0;
+            }
+        }
+    }
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
     & span {
-      padding-right: 25px;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.2s;
 
-      &:after {
-        opacity: 1;
-        right: 0;
-      }
+        &:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.2s;
+        }
     }
-  }
-
-  &:active {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  & span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.2s;
-
-    &:after {
-      content: "\00bb";
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      right: -20px;
-      transition: 0.2s;
-    }
-  }
 }

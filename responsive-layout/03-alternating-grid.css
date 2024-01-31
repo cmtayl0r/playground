@@ -1,18 +1,10 @@
 body {
-    margin: 50px;
     background-image: var(--gradient-fizz);
-    min-height: calc(100vh - 100px);
 }
 
-@media all and (max-width: 700px) {
-    body {
-        margin: 2.4rem;
-    }
-}
+/* Centred fixed width container */
 
 .container {
-    max-width: 100rem;
-    margin: 0 auto;
     padding: 2.4rem;
 }
 
@@ -45,7 +37,7 @@ article {
             grid-column: 1;
             grid-row: 1;
 
-            .cta {
+            .button {
                 align-self: flex-end;
             }
         }
@@ -70,67 +62,11 @@ article {
             margin: 0;
         }
 
-        & h1 {
-            font-size: 3.6rem;
-        }
-
         & p {
             display: inline-block;
         }
-        .cta {
+        .button {
             align-self: flex-start;
-            /* display: block; */
-            /* margin: 10px auto 0; */
-        }
-    }
-}
-
-/* BUTTON */
-
-.cta {
-    display: block;
-    border-radius: 32px;
-    border: 3px solid var(--color-black);
-    color: var(--color-black);
-    text-align: center;
-    font-size: 2.4rem;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    /* max-width: 20rem; */
-    transition: all 0.2s;
-    cursor: pointer;
-
-    &:hover {
-        color: var(--color-white);
-        background-color: rgba(0, 0, 0, 0.5);
-
-        & span {
-            padding-right: 25px;
-
-            &:after {
-                opacity: 1;
-                right: 0;
-            }
-        }
-    }
-
-    &:active {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    & span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.2s;
-
-        &:after {
-            content: '\00bb';
-            position: absolute;
-            opacity: 0;
-            top: 0;
-            right: -20px;
-            transition: 0.2s;
         }
     }
 }
@@ -151,6 +87,12 @@ article {
             grid-column: 1 / -1;
         }
 
+        .content {
+            .button {
+                align-self: stretch;
+            }
+        }
+
         /* Left aligned version */
         &:nth-child(odd) {
             .content {
@@ -159,8 +101,8 @@ article {
                 grid-row: 2;
                 text-align: left;
 
-                .cta {
-                    align-self: flex-start;
+                .button {
+                    align-self: stretch;
                 }
             }
 

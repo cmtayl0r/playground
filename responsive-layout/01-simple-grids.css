@@ -17,13 +17,6 @@ Simple grid / CSS Grid
   grid-gap: 1rem;
 }
 
-.item-detail {
-  background: rgba(255, 255, 255, 0.5);
-  font-size: var(--font-size-base);
-  padding: 1rem;
-  border-radius: var(--border-radius-md);
-}
-
 /* 
 --------------------------------------------------------
 Simple gallery / CSS Grid
