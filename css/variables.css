@@ -1,76 +1,95 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Merriweather:ital@0;1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Merriweather:ital@0;1&display=swap');
 
 :root {
-  --font-plain: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-serif: "Merriweather", serif;
-  --font-special: "Barlow Condensed", sans-serif;
-  /* 
+    --font-plain: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-serif: 'Merriweather', serif;
+    --font-special: 'Barlow Condensed', sans-serif;
+    /* 
     Fluid typography scale 
     https://www.fluid-type-scale.com/
     */
-  --font-size-sm: clamp(1.28rem, -0.09vw + 1.32rem, 1.2rem);
-  --font-size-base: clamp(1.6rem, 0vw + 1.6rem, 1.6rem);
-  --font-size-md: clamp(2rem, 0.15vw + 1.94rem, 2.13rem);
-  --font-size-lg: clamp(2.5rem, 0.39vw + 2.34rem, 2.84rem);
-  --font-size-xl: clamp(3.13rem, 0.76vw + 2.82rem, 3.79rem);
-  --font-size-xxl: clamp(3.91rem, 1.3vw + 3.39rem, 5.05rem);
-  --font-size-xxxl: clamp(4.88rem, 2.1vw + 4.04rem, 6.73rem);
+    --font-size-sm: clamp(1.28rem, -0.09vw + 1.32rem, 1.2rem);
+    --font-size-base: clamp(1.6rem, 0vw + 1.6rem, 1.6rem);
+    --font-size-md: clamp(2rem, 0.15vw + 1.94rem, 2.13rem);
+    --font-size-lg: clamp(2.5rem, 0.39vw + 2.34rem, 2.84rem);
+    --font-size-xl: clamp(3.13rem, 0.76vw + 2.82rem, 3.79rem);
+    --font-size-xxl: clamp(3.91rem, 1.3vw + 3.39rem, 5.05rem);
+    --font-size-xxxl: clamp(4.88rem, 2.1vw + 4.04rem, 6.73rem);
 
-  /* Ratios */
-  /* 
+    /* Ratios */
+    /* 
     Add accessible line-height for paragraph content
     https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html 
     */
-  --ratio: 1.6;
-  --line-height: var(--ratio);
-  --line-height-small: calc(0.7 * var(--ratio));
+    --ratio: 1.6;
+    --line-height: var(--ratio);
+    --line-height-small: calc(0.7 * var(--ratio));
 
-  /* Colours */
-  --color-white: #f3f3f3;
-  --color-black: #0a0a23;
-  --color-gray-light: #c8c8c8;
-  --color-gray: #8e8e8e;
-  --color-gray-dark: #444;
-  --color-yellow: #ffc608;
+    /* Colours */
+    --color-white: #f3f3f3;
+    --color-black: #0a0a23;
+    --color-gray-light: #c8c8c8;
+    --color-gray: #8e8e8e;
+    --color-gray-dark: #444;
+    --color-yellow: #ffc608;
 
-  /* Gradients */
-  --gradient-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
-  --gradient-witch: linear-gradient(to right, #c31432, #240b36);
-  --gradient-wiretap: linear-gradient(
-    to right,
-    #8a2387,
-    rgb(233, 64, 87),
-    #f27121
-  );
-  --gradient-expresso: linear-gradient(to right, #ad5389, #3c1053);
-  --gradient-fizz: linear-gradient(to right, #00f260, #0575e6);
-  --gradient-velvetsun: linear-gradient(to right, #e1eec3, #f05053);
-  --gradient-grandeur: linear-gradient(to right, #000046, #1cb5e0);
-  --gradient-martini: linear-gradient(to top left, #fdfc47, #24fe41);
-  --gradient-combi: linear-gradient(to top left, #00416a, #799f0c, #ffe000);
-  --gradient-mushy: linear-gradient(to top left, #28b487, #7dd56f);
+    /* Gradients */
+    --gradient-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    --gradient-witch: linear-gradient(to right, #c31432, #240b36);
+    --gradient-wiretap: linear-gradient(
+        to right,
+        #8a2387,
+        rgb(233, 64, 87),
+        #f27121
+    );
+    --gradient-expresso: linear-gradient(to right, #ad5389, #3c1053);
+    --gradient-fizz: linear-gradient(to right, #00f260, #0575e6);
+    --gradient-velvetsun: linear-gradient(to right, #e1eec3, #f05053);
+    --gradient-grandeur: linear-gradient(to right, #000046, #1cb5e0);
+    --gradient-martini: linear-gradient(to top left, #fdfc47, #24fe41);
+    --gradient-combi: linear-gradient(to top left, #00416a, #799f0c, #ffe000);
+    --gradient-mushy: linear-gradient(to top left, #28b487, #7dd56f);
 
-  /* Demo block backgrounds */
-  --demo-bg-white: rgba(255, 255, 255, 0.3);
-  --demo-bg-black: rgba(0, 0, 0, 0.6);
-  --demo-bg-rose: rgb(233, 64, 87, 0.3);
+    /* Demo block backgrounds */
+    --demo-bg-white: rgba(255, 255, 255, 0.3);
+    --demo-bg-black: rgba(0, 0, 0, 0.6);
+    --demo-bg-rose: rgb(233, 64, 87, 0.3);
 
-  /* Border radius */
-  --border-radius-sm: 0.4rem;
-  --border-radius-md: 0.8rem;
-  --border-radius-lg: 1.2rem;
-  --border-radius-circle: 50%;
+    /* Border radius */
+    --border-radius-sm: 0.4rem;
+    --border-radius-md: 0.8rem;
+    --border-radius-lg: 1.2rem;
+    --border-radius-circle: 50%;
 
-  /* Box shadow */
-  --shadow-default: 0 2px 5px rgba(0, 0, 0, 0.1);
-  --shadow-dark: 0 4px 7px rgba(0, 0, 0, 0.2);
-  --shadow-dark-big: 1px 1px 20px rgba(0, 0, 0, 0.4);
+    /* Box shadow */
+    --shadow-default: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 4px 7px rgba(0, 0, 0, 0.2);
+    --shadow-dark-big: 1px 1px 20px rgba(0, 0, 0, 0.4);
 
-  /* Spacing */
-  --spacing-xxs: 0.4rem;
-  --spacing-xs: 0.8rem;
-  --spacing-s: 1rem;
-  --spacing-m: 1.6rem;
-  --spacing-l: 2rem;
-  --spacing-xl: 2.4rem;
+    /* Spacing */
+    --spacing-xxs: 0.4rem;
+    --spacing-xs: 0.8rem;
+    --spacing-s: 1rem;
+    --spacing-m: 1.6rem;
+    --spacing-l: 2rem;
+    --spacing-xl: 2.4rem;
+
+    /* Dark light mode */
+    /*
+    --color-text: hsl(204, 100%, 1%);
+    --color-surface: hsl(0, 0%, 100%);
+    --color-primary: hsl(329, 85%, 53%);
+    --color-secondary: hsl(208, 83%, 93%);
+    --color-accent: hsl(89, 85%, 33%);
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-text: hsl(0, 0%, 100%);
+        --color-surface: hsl(204, 100%, 1%);
+        --color-primary: hsl(329, 85%, 53%);
+        --color-secondary: hsl(208, 83%, 17%);
+        --color-accent: hsl(89, 85%, 33%);
+      }
+    }
+
+  */
 }

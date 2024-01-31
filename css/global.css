@@ -7,13 +7,14 @@ Foundations
 body {
     font-family: var(--font-plain);
     color: var(--color-black);
-    /* Use margin and gradient below on body of each css file */
-    /* 
-    margin: 4.8rem;
-    background-image: var(--gradient-yoda); 
-    */
     /* 100vh minus the margin on body */
     /* min-height: calc(100vh - 100px);  */
+    /* 
+    To sort horizontal scroll bar issue 
+    when using full-with trick on image and callout
+    vw unit counts under the vertical scrollbar
+    */
+    overflow-x: hidden;
 }
 
 .flow > * + * {
