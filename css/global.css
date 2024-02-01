@@ -107,16 +107,16 @@ ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 /* Frame around content */
 body.frame {
     margin: 5rem;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 10rem);
 }
 
-@media all and (max-width: 700px) {
+@media (width < 700px) {
     body.frame {
         margin: 2.4rem;
     }
 }
 
-/* Fixed width container */
+/* Fixed width wrapper */
 .fixed {
     max-width: 100rem; /* Avoiding an not-needed breakpoint definition */
     margin-inline: auto; /* Centers the container */
