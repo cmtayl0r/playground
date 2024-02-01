@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Component → 03 Modal</title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/variables.css" />
+        <link rel="stylesheet" href="../css/global.css" />
+        <link rel="stylesheet" href="03-modal.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Component → 03 Modal</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="03-modal.css">
-</head>
-
-<body>
-
-    <div class="modal container">
-        <header class="modal__header">
-            <h3>Modal Title</h3>
-            <span>❌</span>
-        </header>
-        <section class="modal__content flow">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatem officia et nobis
-                dignissimos, eum obcaecati quaerat suscipit sint iste inventore architecto modi numquam placeat corrupti
-                necessitatibus? Accusamus, illo tempore!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptatem officia et nobis
-                dignissimos, eum obcaecati quaerat suscipit sint iste inventore architecto modi numquam placeat corrupti
-                necessitatibus? Accusamus, illo tempore!</p>
-        </section>
-        <footer class="modal__footer">
-            <button class="btn__primary">Save</button>
+    <body>
+        <div class="modal container">
+            <header class="modal__header">
+                <h3>Modal Title</h3>
+                <a href="#" class="button">⛌</a>
+            </header>
+            <section class="modal__content flow">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita voluptatem officia et nobis dignissimos, eum
+                    obcaecati quaerat suscipit sint iste inventore architecto
+                    modi numquam placeat corrupti necessitatibus? Accusamus,
+                    illo tempore!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita voluptatem officia et nobis dignissimos, eum
+                    obcaecati quaerat suscipit sint iste inventore architecto
+                    modi numquam placeat corrupti necessitatibus? Accusamus,
+                    illo tempore!
+                </p>
+            </section>
+            <footer class="modal__footer">
+                <!-- <button class="btn__primary">Save</button>
             <button class="btn__secondary">Clean</button>
-            <a href="">Cancel</a>
-        </footer>
-    </div>
-
-</body>
-
+            <a href="">Cancel</a> -->
+                <a href="#" class="button">Save</a>
+                <a href="#" class="button">Clean</a>
+                <a href="#" class="button">Cancel</a>
+            </footer>
+        </div>
+    </body>
 </html>

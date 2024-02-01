@@ -3,30 +3,32 @@ body {
     background-image: var(--gradient-combi);
     /* min-height: calc(100vh - 100px); */
     min-height: 100vh;
-
     display: grid;
     place-content: center;
 }
 
-
-
 .modal {
-    width: min(100% - 6rem, 60rem);
+    width: min(100% - 4.8rem, 60rem);
     margin-inline: auto;
-
     display: grid;
     grid-template-rows: auto 1fr auto;
+    max-height: 90vh; /* To trigger scroll on content */
+    z-index: 1000;
 }
 
 .modal__content,
 .modal__header,
 .modal__footer {
-    padding: 3rem;
+    padding: var(--spacing-xxl);
 }
 
 .modal__header,
 .modal__footer {
     background: var(--demo-bg-white);
+}
+
+.modal__content {
+    overflow-y: auto; /* scroll *//
 }
 
 .modal__header {
@@ -45,21 +47,9 @@ body {
     gap: 1rem;
     align-items: center;
 
-    font-size: 1.8rem;
-    font-weight: 500;
-
-    & > button {
+    /* Have buttons 100 %width at < 37.5rem */
+    & a.button {
         width: 100%;
-        padding: 1rem 3rem;
-        cursor: pointer;
-        border: 0;
-
-        border-radius: var(--border-radius-md);
-    }
-
-    & > .btn__primary {
-        background-color: var(--color-black);
-        color: var(--color-white);
     }
 }
 
@@ -67,10 +57,11 @@ body {
     .modal__footer {
         flex-direction: row;
 
-        & > a {
+        /* Have buttons width of button content > 37.5rem */
+        & > a.button:last-of-type {
             margin-left: auto;
         }
-        & > button {
+        & > a.button {
             width: auto;
         }
     }
