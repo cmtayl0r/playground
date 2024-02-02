@@ -37,7 +37,7 @@ body {
 MEDIA
 --------------------------------------------------------
 */
-.media-container {
+.layout__media {
     position: relative;
 }
 
