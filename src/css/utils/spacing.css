@@ -1,8 +1,8 @@
 /*
 Naming convention:
 .{property}{sides}-{size}
-.pb-x, pt-x, .pl-x, .pr-x
-.mb-x, mt-x, .ml-x, .mr-x
+.pb-x, pt-x, .pl-x, .pr-x, px-x, py-x
+.mb-x, mt-x, .ml-x, .mr-x, mx-x, my-x
 */
 
 /* Margin Utilities */
