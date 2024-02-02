@@ -22,11 +22,6 @@ body {
     padding: var(--sp-7);
 }
 
-.modal__header,
-.modal__footer {
-    background: var(--bg-tr-white);
-}
-
 .modal__content {
     overflow-y: auto; /* scroll *//
 }
@@ -48,7 +43,7 @@ body {
     align-items: center;
 
     /* Have buttons 100 %width at < 37.5rem */
-    & a.button {
+    & a.btn {
         width: 100%;
     }
 }
@@ -58,10 +53,10 @@ body {
         flex-direction: row;
 
         /* Have buttons width of button content > 37.5rem */
-        & > a.button:last-of-type {
+        & > a.btn:last-of-type {
             margin-left: auto;
         }
-        & > a.button {
+        & > a.btn {
             width: auto;
         }
     }

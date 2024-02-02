@@ -23,9 +23,9 @@
                 </p>
                 <hr />
                 <section role="region" aria-labelledby="contactInformation">
-                    <h4 id="contactInformation">Contact information</h4>
+                    <h3 id="contactInformation">Contact information</h3>
                     <fieldset class="form-group">
-                        <legend>Title</legend>
+                        <legend class="fieldset__legend--m">Title</legend>
                         <label for="title-1" class="radio__label"
                             ><input
                                 type="radio"
@@ -60,8 +60,8 @@
                         </label>
                     </fieldset>
                     <div class="form-group">
-                        <label for="name">
-                            <span>Name:</span>
+                        <label for="name" class="label--m">
+                            <span>Name</span>
                             <strong
                                 ><span aria-label="required">*</span></strong
                             >
@@ -70,15 +70,15 @@
                             type="text"
                             id="name"
                             name="name"
-                            class="input-text"
+                            class="input-text input--width-three-quarters"
                             placeholder="Enter your name"
                             autocomplete="name"
                             required
                         />
                     </div>
                     <div class="form-group">
-                        <label for="email">
-                            <span>Email: </span>
+                        <label for="email" class="label--m">
+                            <span>Email</span>
                             <strong
                                 ><span aria-label="required">*</span></strong
                             >
@@ -94,27 +94,33 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="password">
-                            <span>Password: </span>
+                        <label for="password" class="label--m">
+                            <span>Password</span>
                             <strong
                                 ><span aria-label="required">*</span></strong
                             >
                         </label>
+                        <div class="input__hint">
+                            This is some description text to give more context
+                            to this input
+                        </div>
                         <input
                             type="password"
                             id="password"
                             name="password"
-                            class="input-text"
+                            class="input-text input--width-half"
                             pattern="[a-z0-5]{8,}"
                             placeholder="Enter your password"
                             required
                         />
                     </div>
                     <div class="form-group">
-                        <label for="birth-date"> Date of Birth</label>
+                        <label for="birth-date" class="label--m">
+                            Date of Birth</label
+                        >
                         <input
                             type="date"
-                            class="input-text"
+                            class="input-text input--width-third"
                             name="birth-date"
                             id="birth-date"
                         />
@@ -122,92 +128,104 @@
                 </section>
                 <hr />
                 <section role="region" aria-labelledby="someSelections">
-                    <h4 id="someSelections">Some more selections</h4>
-                    <fieldset class="form-group">
-                        <legend>Favourite dogs</legend>
-                        <label class="check__label">
-                            <input
-                                type="checkbox"
-                                name="dogs"
-                                class="input-checkbox"
-                                value="husky"
-                            />
-                            Husky
-                        </label>
-                        <label class="check__label">
-                            <input
-                                type="checkbox"
-                                name="dogs"
-                                class="input-checkbox"
-                                value="spanial"
-                            />
-                            Spanial
-                        </label>
-                        <label class="check__label">
-                            <input
-                                type="checkbox"
-                                name="dogs"
-                                class="input-checkbox"
-                                value="labrador"
-                            />
-                            Labrador
-                        </label>
-                    </fieldset>
-                    <fieldset class="form-group error">
-                        <legend>Favourite movies</legend>
-                        <label class="check__label">
-                            <input
-                                type="checkbox"
-                                name="movies"
-                                class="input-checkbox"
-                                value="aliens"
-                            />
-                            Aliens
-                        </label>
-                        <label class="check__label">
-                            <input
-                                type="checkbox"
-                                name="movies"
-                                class="input-checkbox"
-                                value="predator"
-                            />
-                            Predator
-                        </label>
-                        <label class="check__label">
-                            <input
-                                type="checkbox"
-                                name="movies"
-                                class="input-checkbox"
-                                value="big trouble"
-                            />
-                            Big Trouble in Little China
-                        </label>
-                        <label class="check__label">
-                            <input
-                                type="checkbox"
-                                name="movies"
-                                class="input-checkbox"
-                                value="anchorman"
-                            />
-                            Anchorman
-                        </label>
-                        <label class="check__label">
-                            <input
-                                type="checkbox"
-                                name="movies"
-                                class="input-checkbox"
-                                value="wonder-boys"
-                            />
-                            Wonder Boys
-                        </label>
-                    </fieldset>
+                    <h3 id="someSelections">Some more selections</h3>
+                    <div class="form-group">
+                        <fieldset>
+                            <legend class="fieldset__legend--m">
+                                Favourite dogs
+                            </legend>
+                            <label class="check__label">
+                                <input
+                                    type="checkbox"
+                                    name="dogs"
+                                    class="input-checkbox"
+                                    value="husky"
+                                />
+                                Husky
+                            </label>
+                            <label class="check__label">
+                                <input
+                                    type="checkbox"
+                                    name="dogs"
+                                    class="input-checkbox"
+                                    value="spanial"
+                                />
+                                Spanial
+                            </label>
+                            <label class="check__label">
+                                <input
+                                    type="checkbox"
+                                    name="dogs"
+                                    class="input-checkbox"
+                                    value="labrador"
+                                />
+                                Labrador
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="form-group error">
+                        <fieldset>
+                            <legend class="fieldset__legend--m">
+                                Favourite movies
+                            </legend>
+                            <div class="input__hint input__hint--error">
+                                This is some description text to give more
+                                context to this input
+                            </div>
+                            <label class="check__label">
+                                <input
+                                    type="checkbox"
+                                    name="movies"
+                                    class="input-checkbox"
+                                    value="aliens"
+                                />
+                                Aliens
+                            </label>
+                            <label class="check__label">
+                                <input
+                                    type="checkbox"
+                                    name="movies"
+                                    class="input-checkbox"
+                                    value="predator"
+                                />
+                                Predator
+                            </label>
+                            <label class="check__label">
+                                <input
+                                    type="checkbox"
+                                    name="movies"
+                                    class="input-checkbox"
+                                    value="big trouble"
+                                />
+                                Big Trouble in Little China
+                            </label>
+                            <label class="check__label">
+                                <input
+                                    type="checkbox"
+                                    name="movies"
+                                    class="input-checkbox"
+                                    value="anchorman"
+                                />
+                                Anchorman
+                            </label>
+                            <label class="check__label">
+                                <input
+                                    type="checkbox"
+                                    name="movies"
+                                    class="input-checkbox"
+                                    value="wonder-boys"
+                                />
+                                Wonder Boys
+                            </label>
+                        </fieldset>
+                    </div>
                 </section>
                 <hr />
                 <section role="region" aria-labelledby="paymentInformation">
-                    <h4 id="paymentInformation">Payment information</h4>
+                    <h3 id="paymentInformation">Payment information</h3>
                     <div class="form-group error">
-                        <label for="card">
-                            <span>Card type:</span>
+                        <label for="card" class="label--m">
+                            <span>Card type</span>
                         </label>
                         <select id="card" name="usercard" class="input-select">
                             <option disabled="" selected="">
@@ -219,8 +237,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="number">
-                            <span>Card number:</span>
+                        <label for="number" class="label--m">
+                            <span>Card number</span>
                             <strong
                                 ><span aria-label="required">*</span></strong
                             >
@@ -234,8 +252,8 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="expiration">
-                            <span>Expiration date:</span>
+                        <label for="expiration" class="label--m">
+                            <span>Expiration date</span>
                             <strong
                                 ><span aria-label="required">*</span></strong
                             >
@@ -252,13 +270,12 @@
                 </section>
                 <hr />
                 <section role="region" aria-labelledby="questions">
-                    <h4 id="questions">Questions</h4>
+                    <h3 id="questions">Questions</h3>
                     <div class="form-group">
-                        <h5 class="question__num">1</h5>
+                        <h4 class="question__num">1</h4>
                         <fieldset>
-                            <legend>
-                                The legend element represents a caption for the
-                                content of its parent fieldset element
+                            <legend class="fieldset__legend--m">
+                                Are you a super dooper trooper?
                             </legend>
                             <ul class="question__list">
                                 <li>
@@ -289,24 +306,46 @@
                         </fieldset>
                     </div>
                     <div class="form-group">
-                        <h5 class="question__num">2</h5>
+                        <h4 class="question__num">2</h4>
                         <fieldset>
-                            <legend>
-                                The legend element represents a caption for the
-                                content of its parent fieldset element
+                            <legend class="fieldset__legend--m">
+                                Are you going to man up?
                             </legend>
+                            <ul class="question__list">
+                                <li>
+                                    <label for="q2-a1" class="radio__label">
+                                        <input
+                                            type="radio"
+                                            id="q2-a1"
+                                            name="q2"
+                                            value="true"
+                                            class="input-radio"
+                                        />
+                                        True
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="q2-a2" class="radio__label">
+                                        <input
+                                            type="radio"
+                                            id="q2-a2"
+                                            name="q2"
+                                            value="false"
+                                            class="input-radio"
+                                        />
+                                        False
+                                    </label>
+                                </li>
+                            </ul>
                         </fieldset>
                     </div>
                 </section>
                 <hr />
                 <section>
                     <div class="form-group">
-                        <button type="submit" class="button btn--full">
+                        <button type="submit" class="btn btn--fluid">
                             Submit the form
                         </button>
-                        <!-- <button type="submit" class="btn__submit">
-                            Submit the form
-                        </button> -->
                     </div>
                 </section>
             </form>

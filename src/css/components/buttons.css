@@ -9,15 +9,17 @@ TODO: Active keypress state
 ANIMATED BUTTON
 --------------------------------------------------------------------------------
 */
-.button {
+
+.btn {
     display: block;
-    border-radius: 32px;
+    border-radius: var(--br-xxl);
     border: 3px solid var(--color-black);
     color: var(--color-black);
     text-align: center;
-    font-size: 2.4rem;
+    font-size: 2rem;
+    font-weight: 700;
     text-decoration: none;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.6rem;
     /* max-width: 20rem; */
     transition: all 0.2s;
     cursor: pointer;
@@ -58,6 +60,57 @@ ANIMATED BUTTON
     }
 }
 
-.btn--full {
+.btn.btn--sm {
+    font-size: 1.6rem;
+    padding: 0.4rem 1.2rem;
+}
+.btn.btn--lg {
+    font-size: 2.4rem;
+    padding: 1rem 2rem;
+}
+
+.btn.btn--primary {
+    background-color: rgba(33, 133, 208, 1);
+    color: var(--color-white);
+
+    &:hover {
+        background-color: rgb(21, 99, 159);
+    }
+    &:active {
+        background-color: rgb(14, 72, 116);
+    }
+}
+
+.btn.btn--inverse {
+    border: 3px solid var(--color-white);
+    color: var(--color-white);
+
+    &:hover {
+        color: var(--color-black);
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    &:active {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.btn--primary.btn--inverse {
+    color: #54c8ff;
+    border: 3px solid #54c8ff;
+    background: transparent;
+
+    &:hover {
+        background-color: #74d1fd;
+    }
+    &:active {
+        background-color: #aae4ff;
+    }
+}
+
+.btn--fluid {
     width: 100%;
+}
+
+.btn--circle {
+    border-radius: var(--br-circle);
 }

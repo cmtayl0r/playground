@@ -30,7 +30,7 @@ article {
             grid-column: 1;
             grid-row: 1;
 
-            .button {
+            .btn {
                 align-self: flex-end;
             }
         }
@@ -58,7 +58,7 @@ article {
         & p {
             display: inline-block;
         }
-        .button {
+        .btn {
             align-self: flex-start;
         }
     }
@@ -81,7 +81,7 @@ article {
         }
 
         .content {
-            .button {
+            .btn {
                 align-self: stretch;
             }
         }
@@ -94,7 +94,7 @@ article {
                 grid-row: 2;
                 text-align: left;
 
-                .button {
+                .btn {
                     align-self: stretch;
                 }
             }

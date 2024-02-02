@@ -67,7 +67,7 @@ body {
         top: 0;
     }
     /* Set button width to fill container */
-    .header > a.button {
+    .header > a.btn {
         flex-basis: 100%;
     }
 
