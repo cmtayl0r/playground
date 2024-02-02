@@ -1,8 +1,6 @@
-/* Abstracts */
-@import url('abstracts/variables.css');
-@import url('abstracts/global.css');
-
 /* Base */
+@import url('base/variables.css');
+@import url('base/global.css');
 @import url('base/reset.css');
 @import url('base/typography.css');
 
@@ -19,5 +17,5 @@
 /* @import url('pages/contact.css'); */
 
 /* Utilities (optional) */
-@import url('utilities/spacing.css');
-@import url('utilities/sizing.css');
+@import url('utils/spacing.css');
+@import url('utils/sizing.css');
