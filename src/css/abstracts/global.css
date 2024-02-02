@@ -1,0 +1,44 @@
+/* 
+--------------------------------------------------------------------------------
+FOUNDATIONS
+--------------------------------------------------------------------------------
+*/
+
+body {
+    font-family: var(--f-plain);
+    color: var(--color-black);
+    /* 100vh minus the margin on body */
+    /* min-height: calc(100vh - 100px);  */
+    /* 
+    To sort horizontal scroll bar issue 
+    when using full-with trick on image and callout
+    vw unit counts under the vertical scrollbar
+    */
+    overflow-x: hidden;
+
+    /*Default background gradient if none defined */
+    background: var(--gr-wiretap);
+}
+
+.flow > * + * {
+    /* 
+    - setting a variable that can adjusted on elements elsewhere
+    - e.g. on a h2 I could set --flow-space:2em; 
+    - 1em is the fallback and used by everything else
+    - em used to give variable spacing based on font size
+    - preferable to same spacing for h1 and p for example
+    */
+    margin-top: var(--flow-space, 1em);
+}
+
+/* 
+--------------------------------------------------------------------------------
+ACCESSIBILITY
+--------------------------------------------------------------------------------
+*/
+
+*:focus-visible {
+    outline: 3px solid rgb(255, 0, 179);
+    outline-offset: 0.25rem;
+    border-radius: 0.125rem;
+}

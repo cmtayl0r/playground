@@ -1,0 +1,19 @@
+{
+    "name": "playground",
+    "version": "1.0.0",
+    "description": "CSS playground for layout and components",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "parcel src/index.html",
+        "build": "parcel build src/index.html"
+    },
+    "author": "Christopher Taylor",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.23.9",
+        "@babel/preset-env": "^7.23.9",
+        "parcel": "^2.11.0",
+        "prettier": "^3.2.4"
+    }
+}

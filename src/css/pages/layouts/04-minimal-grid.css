@@ -1,0 +1,134 @@
+/* 
+https://css-tricks.com/4-css-grid-properties-and-one-value-for-most-of-your-layout-needs/
+*/
+
+body {
+    background-image: var(--gr-velvetsun);
+}
+
+/* 
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+BASIC STYLE
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+*/
+
+header,
+footer {
+    grid-column: 1 / -1;
+    padding: var(--sp-5);
+}
+
+header,
+footer,
+nav {
+    margin: 2rem 0;
+}
+
+nav {
+    & ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        & li {
+            padding: 1rem;
+        }
+    }
+}
+
+.item-type-a,
+.item-type-b {
+    & h3 {
+        margin-top: 0;
+    }
+}
+
+.item-inner {
+    padding: var(--sp-5);
+
+    & span {
+        display: block;
+    }
+}
+
+/* 
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+GRID LAYOUT
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+*/
+
+/* 
+- Mobile first approach
+- Media queries to style table and above
+*/
+
+.container-main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+}
+
+.container-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.container-nav {
+    display: grid;
+    gap: 1rem;
+}
+
+.item-type-a,
+.item-type-b,
+.container-inner {
+    /* total number of cols in container */
+    grid-column: span 6;
+}
+.item-inner {
+    /* total number of cols in container */
+    grid-column: span 3;
+}
+
+/* 600px and up */
+@media screen and (min-width: 600px) {
+    .container-nav {
+        grid-auto-flow: column;
+    }
+
+    /* 1/2 of container */
+    .item-type-b {
+        grid-column: span 3;
+    }
+
+    /* 1/3 of container */
+    .item-inner {
+        grid-column: span 1;
+    }
+}
+
+/* 900px and up */
+@media screen and (min-width: 900px) {
+    .container-main {
+        grid-auto-flow: column;
+    }
+    .item-type-a {
+        /* 1/3 of container */
+        grid-column: span 3;
+        /* Stretch item A height of 2x item B */
+        grid-row: span 2;
+    }
+
+    .item-type-b {
+        grid-row: span 1;
+    }
+
+    .container-inner {
+        grid-row: span 2;
+        padding: var(--sp-5);
+    }
+
+    .item-inner {
+        /* Full width of container (container-inner) */
+        grid-column: span 3;
+    }
+}

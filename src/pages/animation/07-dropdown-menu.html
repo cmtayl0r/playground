@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Animation → 07 Dropdown menu</title>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link
+            rel="stylesheet"
+            href="../../css/pages/animation/07-dropdown-menu.css"
+        />
+        <script defer src="../../js/main.js"></script>
+    </head>
+
+    <body>
+        <div class="dropdown-container">
+            <button class="menu-title">MENU</button>
+            <ul class="dropdown-menu">
+                <li>ITEM 1</li>
+                <li>ITEM 2</li>
+                <li>ITEM 3</li>
+                <li>ITEM 4</li>
+                <li>ITEM 5</li>
+            </ul>
+        </div>
+
+        <script>
+            const dropdownContainer = document.querySelector(
+                '.dropdown-container',
+            );
+            const menuTitle = document.querySelector('.menu-title');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            // Toggle visibility on button click
+            menuTitle.addEventListener('click', e => {
+                if (e.target === e.currentTarget) {
+                    dropdownMenu.classList.toggle('visible');
+                }
+            });
+
+            // Toggle visibility if click outside of dropdown
+            window.addEventListener('click', e => {
+                if (!dropdownContainer.contains(e.target)) {
+                    dropdownMenu.classList.remove('visible');
+                }
+            });
+        </script>
+    </body>
+</html>

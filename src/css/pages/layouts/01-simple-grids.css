@@ -1,0 +1,93 @@
+body {
+    background-image: var(--gr-yoda);
+}
+
+.container {
+    margin-bottom: 3.6rem;
+}
+
+/* 
+--------------------------------------------------------
+Simple grid / CSS Grid
+--------------------------------------------------------
+*/
+.container-simple {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-gap: 1rem;
+}
+
+/* 
+--------------------------------------------------------
+Simple gallery / CSS Grid
+--------------------------------------------------------
+*/
+
+/* Gallery 1 */
+
+.container-gallery {
+    display: grid;
+    gap: 2rem;
+    /* Auto-fit on repeat creates a seamless wrapping of items with a minmax */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.container-gallery > div {
+    aspect-ratio: 3 / 2;
+}
+
+.container-gallery > div > img,
+.container-gallery--dense > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-position: center; */
+}
+
+/* Gallery 2 */
+
+.container-gallery--dense {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+}
+
+.container-gallery--dense > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;
+}
+
+.horizontal {
+    grid-column: span 2;
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* 
+--------------------------------------------------------
+Variable wrap / Flexbox
+--------------------------------------------------------
+*/
+
+.container-variable,
+.container-variable-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container-variable-2 > * {
+    flex: 1;
+}

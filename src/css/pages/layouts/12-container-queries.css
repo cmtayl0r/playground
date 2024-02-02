@@ -1,0 +1,89 @@
+body {
+    background-image: var(--gr-wiretap);
+}
+
+/* 
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+STRUCTURE
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+*/
+
+.wrapper {
+    padding: var(--sp-4);
+}
+
+main {
+    display: grid;
+    gap: var(--sp-4);
+}
+
+@media (width > 700px) {
+    main {
+        grid-template-columns: 1fr 300px;
+    }
+}
+
+.primary-content > h2 {
+    margin-top: 0;
+}
+
+/* 
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+CARD
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+*/
+
+.cards,
+.primary-content {
+    container-type: inline-size;
+}
+
+.cards {
+    container-name: cards;
+}
+
+.card {
+    display: grid;
+    gap: var(--sp-3);
+    padding: var(--sp-4);
+
+    & > * {
+        margin: 0;
+    }
+}
+
+/* Affects both section containers */
+
+@container (width > 45ch) {
+    .card {
+        grid-template-columns: auto minmax(25ch, 1fr);
+
+        & h3 {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+/* Affects ONLY the named section container */
+
+@container cards (width > 45ch) {
+    .card {
+        text-align: center;
+    }
+}
+
+/* 
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+IMAGES
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+*/
+
+img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
+}

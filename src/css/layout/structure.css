@@ -1,0 +1,75 @@
+/* 
+--------------------------------------------------------------------------------
+WRAPPER
+--------------------------------------------------------------------------------
+*/
+
+.container {
+    border: 5px dashed var(--color-black);
+    background: var(--bg-tr-white);
+}
+
+/* Frame around content */
+body.frame {
+    margin: 5rem;
+    min-height: calc(100vh - 10rem);
+}
+
+/* Responsive tactic to reduce frame margin when at mobile sizes */
+@media (width < 700px) {
+    body.frame {
+        margin: 2.4rem;
+    }
+}
+
+/* Fixed width wrapper */
+.fixed {
+    max-width: 100rem; /* Avoiding an not-needed breakpoint definition */
+    margin-inline: auto; /* Centers the container */
+}
+.fixed-l {
+    max-width: 124rem; /* Avoiding an not-needed breakpoint definition */
+    margin-inline: auto; /* Centers the container */
+}
+
+/* 
+--------------------------------------------------------------------------------
+STYLING
+--------------------------------------------------------------------------------
+*/
+
+/* Demo blocks to illustrate grid items */
+.bg-white {
+    background: var(--bg-tr-white);
+}
+
+.bg-rose {
+    background: var(--bg-tr-rose);
+}
+
+.bg-black {
+    background: var(--bg-tr-black);
+    color: var(--color-white);
+}
+
+.bg-yellow {
+    background: var(--color-yellow);
+}
+
+/* 
+--------------------------------------------------------------------------------
+POSITIONING
+--------------------------------------------------------------------------------
+*/
+
+/* Use values in this class for sub items demoed in grids */
+.content-center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 4.8rem 2rem;
+
+    & > * {
+        margin: 0;
+    }
+}

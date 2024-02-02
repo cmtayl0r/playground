@@ -1,0 +1,97 @@
+body {
+    margin: 50px;
+    background-image: var(--gr-combi);
+    min-height: calc(100vh - 100px);
+}
+
+@media all and (max-width: 600px) {
+    body {
+        margin: 2.4rem;
+    }
+}
+
+.container {
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* 
+--------------------------------------------------------
+BLOCKS
+--------------------------------------------------------
+*/
+
+.blocks {
+    --gap: 1rem;
+    display: grid;
+    gap: var(--gap);
+    grid-auto-flow: column;
+    grid-auto-columns: calc(50% - (var(--gap) / 2));
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: var(--gap);
+    padding: var(--gap);
+    background: var(--bg-tr-white);
+
+    > * {
+        scroll-snap-align: start;
+    }
+
+    .block {
+        font-size: 2.4rem;
+        font-weight: 500;
+        background: var(--bg-tr-white);
+        padding: 2rem;
+        border-radius: var(--br-lg);
+    }
+}
+
+/* 
+--------------------------------------------------------
+CARDS
+--------------------------------------------------------
+*/
+
+.cards {
+    background: var(--bg-tr-white);
+    padding: 1rem;
+
+    .card {
+        padding: 2rem;
+        background: var(--bg-tr-white);
+        border-radius: var(--br-lg);
+
+        & h2 {
+            margin-top: 0;
+        }
+    }
+}
+
+/* Up to 50 rem - trigger carousel */
+@media (max-width: 50em) {
+    .cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 2rem;
+        overflow-x: auto;
+        scroll-snap-type: inline mandatory;
+        scroll-behavior: smooth;
+        scroll-padding: 1rem;
+
+        .card {
+            flex-shrink: 0;
+            flex-basis: 15em;
+            scroll-snap-align: start;
+        }
+    }
+}
+
+/* 50 rem plus - NO carousel */
+@media (min-width: 50em) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+        gap: 2rem;
+    }
+}

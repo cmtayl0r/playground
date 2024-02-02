@@ -1,0 +1,244 @@
+body {
+    margin: 50px;
+    background-image: var(--gr-velvetsun);
+    min-height: calc(100vh - 100px);
+}
+
+/* @media all and (max-width: 600px) {
+    body {
+        margin: 2.4rem;
+    }
+} */
+
+.no-transition * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+/* 
+--------------------------------------------------------
+01 - Form container
+--------------------------------------------------------
+*/
+
+.demo1 {
+    max-width: 76rem;
+    margin: 0 auto;
+    padding: 2.4rem;
+}
+.demo1 > form {
+    font-size: 2rem;
+}
+
+#commentform {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-group {
+    position: relative;
+    min-height: 1px;
+    padding: 15px;
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 600px) {
+    .comment-form-name,
+    .comment-form-surname,
+    .comment-form-email,
+    .comment-form-url {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* 
+--------------------------------------------------------
+02 - Inputs
+--------------------------------------------------------
+*/
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+textarea {
+    background-color: #fff;
+    border: 2px solid var(--color-black);
+    border-radius: var(--br-md);
+    padding: 24px 10px 12px;
+
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+:focus {
+    outline: 0;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+textarea:focus {
+    background-color: goldenrod;
+}
+
+/* 
+--------------------------------------------------------
+03 - Labels
+--------------------------------------------------------
+*/
+
+#commentform label {
+    padding: 5px 0;
+    font-size: 1.4rem;
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 26px;
+    color: #8bc34a;
+    animation: silo-fade 0.2s;
+    max-width: 80%;
+}
+
+#commentform input:focus + label,
+#commentform input[required]:valid + label,
+#commentform input:not(:placeholder-shown) + label,
+#commentform textarea:focus + label,
+#commentform textarea:valid + label,
+#commentform textarea:not(:placeholder-shown) + label {
+    display: block;
+}
+
+/* Default state ------------------ */
+
+#commentform input:placeholder-shown,
+#commentform textarea:placeholder-shown {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+}
+
+/* Invalid state ------------------ */
+
+/* Invalid style */
+#commentform input:invalid,
+#commentform textarea:invalid {
+    border: 1px solid #b92326;
+    background-color: rgba(185, 35, 38, 0.25);
+}
+
+/* Focused */
+#commentform input:focus:invalid,
+#commentform textarea:focus:invalid {
+    background-color: var(--color-gray-light);
+    border: 1px solid #b92326;
+}
+
+/* label */
+#commentform input:invalid + label,
+#commentform textarea:invalid + label {
+    color: #601214;
+}
+
+/* Valid state ------------------ */
+
+/* Valid style */
+#commentform input:valid,
+#commentform textarea:valid {
+    border: 1px solid #8bc34a;
+    background-color: rgba(139, 195, 74, 0.25);
+}
+
+/* Focused */
+#commentform input:focus:valid,
+#commentform textarea:focus:valid {
+    background-color: var(--color-gray-light);
+    border: 1px solid #8bc34a;
+}
+
+/* label */
+#commentform input:valid + label,
+#commentform textarea:valid + label {
+    color: #3d5a1c;
+}
+
+/* Data help on invalid/error ------------------ */
+
+#commentform input:focus:invalid + label:after,
+#commentform textarea:focus:invalid + label:after {
+    content: ' (' attr(data-help) ')';
+    animation: silo-help 100s;
+}
+#commentform input:invalid + label:after,
+#commentform textarea:invalid + label:after {
+    content: ' (' attr(data-help) ')';
+}
+
+/* Placeholder ------------------ */
+
+/* Placeholder default color */
+#commentform input::placeholder,
+#commentform textarea::placeholder {
+    color: var(--color-black);
+}
+
+/* Hide placeholder when input focused */
+#commentform input:focus::placeholder,
+#commentform textarea:focus::placeholder {
+    color: transparent;
+}
+
+/* 
+--------------------------------------------------------
+XX - Submit Button
+--------------------------------------------------------
+*/
+
+button[type='submit'] {
+    background-color: transparent;
+    border: 3px solid var(--color-black);
+    color: var(--color-black);
+    padding: 1rem;
+    font-size: 3rem;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+/* input[type='submit']:hover {
+    background-color: rgba(139, 195, 74, 0.25);
+    border: 1px solid #8bc34a;
+} */
+
+/* 
+--------------------------------------------------------
+XX - Animations
+--------------------------------------------------------
+*/
+
+@keyframes silo-fade {
+    0% {
+        opacity: 0;
+        transform: translateY(-1.4em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes silo-help {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,59 @@
+/*
+TODO: Sizing
+TODO: Primary, Tertiary
+TODO: Active keypress state
+*/
+
+/* 
+--------------------------------------------------------------------------------
+ANIMATED BUTTON
+--------------------------------------------------------------------------------
+*/
+.button {
+    display: block;
+    border-radius: 32px;
+    border: 3px solid var(--color-black);
+    color: var(--color-black);
+    text-align: center;
+    font-size: 2.4rem;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    /* max-width: 20rem; */
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--color-white);
+        background-color: rgba(0, 0, 0, 0.5);
+
+        & span {
+            padding-right: 25px;
+
+            &:after {
+                opacity: 1;
+                right: 0;
+            }
+        }
+    }
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Optional span arrow animation */
+    & span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.2s;
+
+        &:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.2s;
+        }
+    }
+}

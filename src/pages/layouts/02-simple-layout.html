@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Layouts → 02 Simple layout</title>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link
+            rel="stylesheet"
+            href="../../css/pages/layouts/02-simple-layout.css"
+        />
+        <script defer src="../../js/main.js"></script>
+    </head>
+
+    <body class="frame">
+        <h1>Layouts</h1>
+        <h3>Grid ⊕ Flexbox <span class="text-light">Simple layout</span></h3>
+        <div class="container demo1">
+            <div class="header bg-white">
+                <!-- <div class="item-yellow">HOME</div>
+        <div class="item-yellow">SEARCH</div>
+        <div class="item-yellow">LOGOUT</div> -->
+                <a class="button" href="#" title="Home"><span>Home</span></a>
+                <a class="button" href="#" title="Search"
+                    ><span>Search</span></a
+                >
+                <a class="button" href="#" title="Logout"
+                    ><span>Logout</span></a
+                >
+            </div>
+            <div class="menu bg-white">
+                <h3>Menu</h3>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                    <li>Item 5</li>
+                </ul>
+            </div>
+            <div class="content bg-white flow">
+                <h3>Content</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Unde perspiciatis dolorem sunt corporis earum velit laborum
+                    fugiat ea eligendi sint, officia ut nulla aliquam alias qui
+                    rem. Consectetur, distinctio delectus.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Unde perspiciatis dolorem sunt corporis earum velit laborum
+                    fugiat ea eligendi sint, officia ut nulla aliquam alias qui
+                    rem. Consectetur, distinctio delectus.
+                </p>
+            </div>
+            <div class="footer bg-white">
+                <h3 class="p-0 m-0">🦶 Footer</h3>
+            </div>
+        </div>
+
+        <h3>
+            Grid ⊕ Flexbox
+            <span class="text-light">Simple nav with search</span>
+        </h3>
+        <div class="container demo2">
+            <nav class="bg-white">
+                <ul class="flex-nav">
+                    <li>
+                        <a class="button" href="#" title="Home"
+                            ><span>Home</span></a
+                        >
+                    </li>
+                    <li>
+                        <a class="button" href="#" title="Profile"
+                            ><span>Profile</span></a
+                        >
+                    </li>
+                    <li class="search bg-yellow">
+                        <input
+                            type="search"
+                            name=""
+                            id=""
+                            class="search-input"
+                            placeholder="Search"
+                        />
+                    </li>
+                    <li>
+                        <a class="button" href="#" title="Logout"
+                            ><span>Logout</span></a
+                        >
+                    </li>
+                </ul>
+            </nav>
+            <div class="content bg-white flow">
+                <h3>Content</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Unde perspiciatis dolorem sunt corporis earum velit laborum
+                    fugiat ea eligendi sint, officia ut nulla aliquam alias qui
+                    rem. Consectetur, distinctio delectus.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Unde perspiciatis dolorem sunt corporis earum velit laborum
+                    fugiat ea eligendi sint, officia ut nulla aliquam alias qui
+                    rem. Consectetur, distinctio delectus.
+                </p>
+            </div>
+        </div>
+
+        <script>
+            function setTheme() {
+                const root = document.documentElement;
+                const newTheme = root.className === 'dark' ? 'light' : 'dark';
+                root.className = newTheme;
+
+                document.querySelector('.theme-name').textContent = newTheme;
+            }
+
+            document
+                .querySelector('.theme-toggle')
+                .addEventListener('click', setTheme);
+        </script>
+    </body>
+</html>
