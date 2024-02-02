@@ -2,7 +2,7 @@ body {
     background-image: var(--gr-yoda);
 }
 
-.container {
+.wrapper {
     margin-bottom: 3.6rem;
 }
 

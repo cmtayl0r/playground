@@ -9,7 +9,7 @@ STRUCTURE
 ------------------------------------------------------
 */
 
-.container {
+.wrapper {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -18,7 +18,7 @@ STRUCTURE
 
 /* 600px */
 @media (min-width: 37.5em) {
-    .container {
+    .wrapper {
         grid-template-columns: 1fr 1fr;
     }
     .item-1 {
@@ -28,7 +28,7 @@ STRUCTURE
 
 /* 960px */
 @media (min-width: 60em) {
-    .container {
+    .wrapper {
         grid-template-columns: repeat(4, 1fr);
     }
 }

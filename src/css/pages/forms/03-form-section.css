@@ -11,13 +11,13 @@ STRUCTURE
 --------------------------------------------------------
 */
 
-.container {
+.wrapper {
     display: grid;
     width: min(100% - 6rem, 100rem);
     margin-inline: auto;
 }
 
-.container > aside {
+.wrapper > aside {
     background: #f05053;
     color: azure;
     padding: clamp(2rem, 2vw, 4rem);
@@ -31,7 +31,7 @@ STRUCTURE
     }
 }
 
-.container > section {
+.wrapper > section {
     background: var(--bg-tr-white);
     padding: clamp(2rem, 2vw, 4rem);
 }
@@ -114,11 +114,11 @@ MEDIA QUERIES _ MOBILE FIRST
 */
 
 @media (min-width: 50em) {
-    .container {
+    .wrapper {
         grid-template-columns: 30rem 1fr;
     }
 
-    .container > aside {
+    .wrapper > aside {
         & > span {
             margin-top: auto;
         }

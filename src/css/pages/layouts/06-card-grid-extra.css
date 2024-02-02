@@ -8,7 +8,7 @@ STRUCTURE
 ------------------------------------------------------
 */
 
-.container {
+.wrapper {
     display: grid;
 }
 
@@ -98,7 +98,7 @@ MEDIA QUERIES
 }
 
 @media (min-width: 60em) {
-    .container {
+    .wrapper {
         grid-template-columns: 2fr 1fr;
     }
 }

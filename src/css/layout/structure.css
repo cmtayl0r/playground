@@ -3,22 +3,21 @@
 WRAPPER
 --------------------------------------------------------------------------------
 */
-
-.container {
+.wrapper {
     border: 5px dashed var(--color-black);
     background: var(--bg-tr-white);
 }
 
 /* Frame around content */
 body.frame {
-    margin: 5rem;
-    min-height: calc(100vh - 10rem);
+    margin: var(--sp-8);
+    min-height: calc(100vh - calc(var(--sp-8) * 2));
 }
 
 /* Responsive tactic to reduce frame margin when at mobile sizes */
 @media (width < 700px) {
     body.frame {
-        margin: 2.4rem;
+        margin: var(--sp-6);
     }
 }
 

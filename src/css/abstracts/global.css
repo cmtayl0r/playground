@@ -7,8 +7,6 @@ FOUNDATIONS
 body {
     font-family: var(--f-plain);
     color: var(--color-black);
-    /* 100vh minus the margin on body */
-    /* min-height: calc(100vh - 100px);  */
     /* 
     To sort horizontal scroll bar issue 
     when using full-with trick on image and callout
@@ -16,8 +14,8 @@ body {
     */
     overflow-x: hidden;
 
-    /*Default background gradient if none defined */
-    background: var(--gr-wiretap);
+    /* Default background gradient if none defined */
+    background-image: var(--gr-wiretap);
 }
 
 .flow > * + * {

@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 
-.container {
+.wrapper {
     padding: clamp(1rem, 2vw, 5rem);
 }
 

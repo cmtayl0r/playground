@@ -93,15 +93,15 @@ section {
     }
 }
 
-.container::-webkit-scrollbar {
+.wrapper::-webkit-scrollbar {
     width: 2rem;
 }
-.container::-webkit-scrollbar-track {
+.wrapper::-webkit-scrollbar-track {
     background: var(--color-black);
 }
-.container::-webkit-scrollbar-thumb {
+.wrapper::-webkit-scrollbar-thumb {
     background: var(--color-white);
 }
-.container::-webkit-scrollbar-thumb:hover {
+.wrapper::-webkit-scrollbar-thumb:hover {
     background: var(--color-gray-light);
 }

@@ -9,7 +9,7 @@ body {
     animation-duration: 0.001s !important;
 }
 
-.container {
+.wrapper {
     z-index: 0;
     min-height: 100vh;
     display: grid;
