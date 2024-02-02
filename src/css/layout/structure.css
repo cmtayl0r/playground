@@ -22,6 +22,11 @@ body.frame {
 }
 
 /* Fixed width wrapper */
+.fixed-s {
+    max-width: 60rem; /* Avoiding an not-needed breakpoint definition */
+    margin-inline: auto; /* Centers the container */
+}
+
 .fixed {
     max-width: 100rem; /* Avoiding an not-needed breakpoint definition */
     margin-inline: auto; /* Centers the container */

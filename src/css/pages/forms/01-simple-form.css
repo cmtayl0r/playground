@@ -1,33 +1,14 @@
 body {
-    margin: 50px;
     background-image: var(--gr-expresso);
-    min-height: calc(100vh - 100px);
-}
-
-@media all and (max-width: 600px) {
-    body {
-        margin: 2.4rem;
-    }
 }
 
 /* 
 --------------------------------------------------------
-01 - Simple form
+FORM STRUCTURE
 --------------------------------------------------------
 */
 
-.demo1 {
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: 2.4rem;
-}
-.demo1 > form {
-    font-size: 2rem;
-}
-
-form > h2 {
-    margin-top: 0;
-}
+/* FIXME: hr is global element  */
 
 hr {
     box-shadow: none;
@@ -42,44 +23,42 @@ fieldset {
 label {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
-    gap: 1rem;
+    margin-bottom: var(--sp-2);
+    gap: var(--sp-2);
 }
 
 .form-group {
-    margin: 0 auto 1rem auto;
+    margin: 0 auto var(--sp-6) auto;
 }
 
 .form-group > legend,
 fieldset > legend {
-    margin-bottom: 1rem;
+    margin-bottom: var(--sp-2);
 }
 
-/* Inputs ----------------- */
+/* 
+--------------------------------------------------------
+INPUT, SELECT
+--------------------------------------------------------
+*/
 
 .input-text,
 .input-select {
     width: 100%;
-    border: 2px solid var(--color-black);
+    border: 0.4rem solid var(--color-black);
     border-radius: var(--br-sm);
-    padding: 0.6rem;
+    padding: var(--sp-2);
     min-height: 4rem;
-    line-height: 1.5;
+    line-height: var(--lh-default);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.input-text:focus,
-.input-select:focus {
-    outline: 3px solid #fd0;
-    outline-offset: 0;
-}
 
-/* .input-text:last-of-type,
-.input-select:last-of-type {
-    margin-bottom: 0;
-} */
-
-/* Checkbox / Radio ----------------- */
+/* 
+--------------------------------------------------------
+RADIO, CHECKBOX
+--------------------------------------------------------
+*/
 
 /* 
 https://moderncss.dev/pure-css-custom-styled-radio-buttons/
@@ -89,15 +68,11 @@ https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 .radio__label,
 .check__label {
     display: grid;
-    grid-template-columns: 2em auto;
-    gap: 1rem;
+    grid-template-columns: auto 1fr;
+    gap: var(--sp-2);
 }
 
 /* Remove last child margin bottom */
-/* 
-fieldset.form-group > label
-ul > li > label
-*/
 .form-group > .radio__label:last-child,
 .form-group > .check__label:last-child,
 .question__list > li:last-child > .radio__label {
@@ -113,10 +88,10 @@ input[type='radio'] {
     /* Not removed via appearance */
     margin: 0;
 
-    width: 2em;
-    height: 2em;
-    border: 0.2rem solid var(--color-black);
-    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    border: 0.4rem solid var(--color-black);
+    border-radius: var(--br-circle);
     transform: translateY(-0.075em);
 
     display: grid;
@@ -125,8 +100,8 @@ input[type='radio'] {
 
 input[type='radio']::before {
     content: '';
-    width: 1em;
-    height: 1em;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
@@ -145,13 +120,13 @@ input[type='checkbox'] {
     -webkit-appearance: none;
     appearance: none;
     /* For iOS < 15 to remove gradient background */
-    background-color: #fff;
+    background-color: var(--color-white);
     /* Not removed via appearance */
     margin: 0;
 
     width: 4rem;
     height: 4rem;
-    border: 0.2rem solid var(--color-black);
+    border: 0.4rem solid var(--color-black);
     border-radius: var(--br-sm);
     transform: translateY(-0.075em);
 
@@ -161,11 +136,11 @@ input[type='checkbox'] {
 
 input[type='checkbox']::before {
     content: '';
-    width: 1em;
-    height: 1em;
+    width: 2rem;
+    height: 2rem;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    /* box-shadow: inset 1em 1em var(--color-black); */
+    box-shadow: inset 1em 1em var(--color-black);
 
     /* Windows High Contrast Mode */
     background-color: CanvasText;
@@ -178,13 +153,11 @@ input[type='checkbox']:checked::before {
     transform: scale(1);
 }
 
-input[type='radio']:focus,
-input[type='checkbox']:focus {
-    outline: 3px solid var(--color-yellow);
-    outline-offset: 0;
-}
-
-/* REquired / errors ----------------- */
+/* 
+--------------------------------------------------------
+ERRORS, REQUIRED
+--------------------------------------------------------
+*/
 
 /* Required styling */
 input:required {
@@ -192,40 +165,19 @@ input:required {
 }
 
 input:invalid {
-    border-color: red;
+    /* border-color: red; */
 }
 
 .form-group.error {
     border-left: 5px solid red;
-    padding-left: 1rem;
+    padding-left: var(--sp-4);
 }
 
-/* Button ----------------- */
-
-.btn__submit {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    margin-top: 3rem;
-    background: var(--color-black);
-    color: var(--color-white);
-    border-radius: var(--br-sm);
-    cursor: pointer;
-    font-size: 2rem;
-    font-weight: 700;
-    border: none;
-}
-
-.btn__submit:active {
-    transform: translateY(5px);
-}
-
-.btn__submit:focus {
-    outline: 3px solid #fd0;
-    outline-offset: 0;
-}
-
-/* Questions ----------------- */
+/* 
+--------------------------------------------------------
+QUESTIONS
+--------------------------------------------------------
+*/
 
 .question__num::before {
     content: 'Question #';

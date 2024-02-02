@@ -57,3 +57,7 @@ ANIMATED BUTTON
         }
     }
 }
+
+.btn--full {
+    width: 100%;
+}
