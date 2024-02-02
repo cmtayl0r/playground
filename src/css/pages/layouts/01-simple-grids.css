@@ -11,7 +11,7 @@ body {
 Simple grid / CSS Grid
 --------------------------------------------------------
 */
-.container-simple {
+.layout__simple {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     grid-gap: 1rem;
@@ -25,19 +25,19 @@ Simple gallery / CSS Grid
 
 /* Gallery 1 */
 
-.container-gallery {
+.layout__gallery {
     display: grid;
     gap: 2rem;
     /* Auto-fit on repeat creates a seamless wrapping of items with a minmax */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.container-gallery > div {
+.layout__gallery > div {
     aspect-ratio: 3 / 2;
 }
 
-.container-gallery > div > img,
-.container-gallery--dense > div > img {
+.layout__gallery > div > img,
+.layout__gallery--dense > div > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -46,7 +46,7 @@ Simple gallery / CSS Grid
 
 /* Gallery 2 */
 
-.container-gallery--dense {
+.layout__gallery--dense {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -54,7 +54,7 @@ Simple gallery / CSS Grid
     grid-auto-flow: dense;
 }
 
-.container-gallery--dense > div {
+.layout__gallery--dense > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,13 +81,13 @@ Variable wrap / Flexbox
 --------------------------------------------------------
 */
 
-.container-variable,
-.container-variable-2 {
+.layout__variable,
+.layout__variable--2 {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.container-variable-2 > * {
+.layout__variable--2 > * {
     flex: 1;
 }

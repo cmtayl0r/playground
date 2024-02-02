@@ -61,26 +61,26 @@ ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 - Media queries to style table and above
 */
 
-.container-main {
+.layout__main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
 }
 
-.container-inner {
+.layout__inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
-.container-nav {
+.layout__nav {
     display: grid;
     gap: 1rem;
 }
 
 .item-type-a,
 .item-type-b,
-.container-inner {
+.layout__inner {
     /* total number of cols in container */
     grid-column: span 6;
 }
@@ -91,7 +91,7 @@ ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 /* 600px and up */
 @media screen and (min-width: 600px) {
-    .container-nav {
+    .layout__nav {
         grid-auto-flow: column;
     }
 
@@ -108,7 +108,7 @@ ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 /* 900px and up */
 @media screen and (min-width: 900px) {
-    .container-main {
+    .layout__main {
         grid-auto-flow: column;
     }
     .item-type-a {
@@ -122,13 +122,13 @@ ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
         grid-row: span 1;
     }
 
-    .container-inner {
+    .layout__inner {
         grid-row: span 2;
         padding: var(--sp-5);
     }
 
     .item-inner {
-        /* Full width of container (container-inner) */
+        /* Full width of container (layout__inner) */
         grid-column: span 3;
     }
 }
