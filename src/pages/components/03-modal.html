@@ -9,11 +9,35 @@
         <script defer src="../../js/main.js"></script>
     </head>
 
-    <body>
-        <div class="modal wrapper">
+    <body class="frame">
+        <main class="wrapper fixed p-5 flow">
+            <h1>Modal component</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                consequatur facilis tempore eveniet, commodi voluptatibus
+                laudantium et corporis sint voluptatum! Impedit quod, iste sunt
+                maiores consectetur necessitatibus aut obcaecati voluptate!
+            </p>
+            <a href="#" class="btn show-modal">Show modal</a>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                consequatur facilis tempore eveniet, commodi voluptatibus
+                laudantium et corporis sint voluptatum! Impedit quod, iste sunt
+                maiores consectetur necessitatibus aut obcaecati voluptate!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                consequatur facilis tempore eveniet, commodi voluptatibus
+                laudantium et corporis sint voluptatum! Impedit quod, iste sunt
+                maiores consectetur necessitatibus aut obcaecati voluptate!
+            </p>
+            <a href="#" class="btn show-modal">Show modal</a>
+        </main>
+
+        <div class="modal wrapper hidden">
             <header class="modal__header bg-white">
                 <h3>Modal Title</h3>
-                <a href="#" class="btn btn--lg btn--circle">⛌</a>
+                <a href="#" class="btn btn--lg btn--circle close-modal">⛌</a>
             </header>
             <section class="modal__content flow">
                 <p>
@@ -38,8 +62,11 @@
                 <a href="#" class="btn btn--inverse" title="Clear"
                     ><span>Clear</span></a
                 >
-                <a href="#" class="btn btn--inverse" title="Cancel">Cancel</a>
+                <a href="#" class="btn btn--inverse close-modal" title="Cancel"
+                    >Cancel</a
+                >
             </footer>
         </div>
+        <div class="overlay hidden"></div>
     </body>
 </html>

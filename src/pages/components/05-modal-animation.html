@@ -3,19 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Animation → 06 Modal Animation</title>
+        <title>Component → 05 Modal Animation</title>
         <link rel="stylesheet" href="../../css/main.css" />
         <link
             rel="stylesheet"
-            href="../../css/pages/animation/06-modal-animation.css"
+            href="../../css/pages/components/05-modal-animation.css"
         />
         <script defer src="../../js/main.js"></script>
     </head>
 
     <body class="preload">
         <div class="backdrop"></div>
-        <div class="popup-modal">
-            <h1>Look at me!</h1>
+        <div class="popup-modal p-5 flow">
+            <h1 class="m-0">Look at me!</h1>
             <p>I'm a pop up dialog!</p>
             <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -23,11 +23,11 @@
                 doloremque eligendi vel perspiciatis, quisquam facilis natus
                 harum quo? Mollitia impedit sapiente deleniti at aut.
             </p>
-            <button id="close-modal">Close Modal</button>
+            <a id="close-modal" class="btn">Close Modal</a>
         </div>
 
-        <div class="Wrapper">
-            <button id="trigger-modal">Open Modal</button>
+        <div class="wrapper">
+            <a id="trigger-modal" class="btn">Open Modal</a>
         </div>
 
         <script>

@@ -67,8 +67,8 @@ body {
             background: var(--color-black);
             color: var(--color-white);
             margin-top: -1px;
-            padding: 16px;
-            border-radius: 0 0 20px 20px;
+            padding: var(--sp-4);
+            border-radius: 0 0 var(--br-xl) var(--br-xl);
             z-index: -1;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
@@ -160,7 +160,7 @@ We created a centered horizontal scroll snap and added a “reveal” animation 
 
 .timeline::-webkit-scrollbar {
     width: 5px;
-    height: 2rem;
+    height: 3rem;
 }
 .timeline::-webkit-scrollbar-track {
     background: var(--color-black);

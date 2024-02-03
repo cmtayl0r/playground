@@ -29,6 +29,7 @@ h1 {
 
     /* centre contents vertically */
     min-height: 100vh;
+    min-width: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -66,18 +67,27 @@ h1 {
     /* box styling */
     width: var(--boxSize);
     aspect-ratio: 1;
-    background: radial-gradient(circle at 25% 50%, black 10%, transparent 0),
+    background:
+        radial-gradient(circle at 25% 50%, black 10%, transparent 0),
         radial-gradient(circle at 75% 50%, black 10%, transparent 0),
         radial-gradient(circle at 50% 0, black 10%, transparent 0) deeppink;
-    background-position: center center, center center,
-        center calc(var(--boxSize) * 0.6), center center;
-    background-size: 100% 100%, 100% 100%, 100% 100%;
+    background-position:
+        center center,
+        center center,
+        center calc(var(--boxSize) * 0.6),
+        center center;
+    background-size:
+        100% 100%,
+        100% 100%,
+        100% 100%;
     background-repeat: no-repeat;
     border-radius: max(10%, 0.2rem);
     border: min(5px, 1vw) solid;
 
     /* Animation of box move and spin */
-    animation: move auto linear, spin auto linear;
+    animation:
+        move auto linear,
+        spin auto linear;
     animation-timeline: scroll(root block);
     translate: calc(var(--x) - var(--boxSize))
         calc(sin(var(--angle)) * var(--amplitude));

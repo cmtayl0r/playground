@@ -39,6 +39,9 @@ Naming convention:
 .p-5 {
     padding: var(--sp-5); /* 20px */
 }
+.p-7 {
+    padding: var(--sp-7); /* 20px */
+}
 
 /* Positioning */
 .mx-left {

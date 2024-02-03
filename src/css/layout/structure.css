@@ -14,6 +14,12 @@ body.frame {
     min-height: calc(100vh - calc(var(--sp-8) * 2));
 }
 
+/*
+FIXME: Padding clamp
+Maybe a clamp is best for responsive padding
+padding: clamp(1rem, 2vw, 5rem);
+*/
+
 /* Responsive tactic to reduce frame margin when at mobile sizes */
 @media (width < 700px) {
     body.frame {

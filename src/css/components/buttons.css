@@ -2,6 +2,7 @@
 TODO: Sizing
 TODO: Primary, Tertiary
 TODO: Active keypress state
+TODO: button, input[file] etc styled same as buttons
 */
 
 /* 
@@ -11,7 +12,7 @@ BUTTON
 */
 
 .btn {
-    display: block;
+    display: inline-block;
     border-radius: var(--br-xxl);
     border: 3px solid var(--color-black);
     color: var(--color-black);
@@ -124,6 +125,7 @@ input[type='reset'] {
 /* Utilities */
 
 .btn--fluid {
+    display: block;
     width: 100%;
 }
 

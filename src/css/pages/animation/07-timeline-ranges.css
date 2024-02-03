@@ -49,7 +49,7 @@ section {
 }
 
 .text {
-    padding: 4rem;
+    padding: var(--sp-7);
     flex: 0 0 50vw;
 }
 
