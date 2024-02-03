@@ -6,7 +6,7 @@
         <title>Component → 03 Modal</title>
         <link rel="stylesheet" href="../../css/main.css" />
         <link rel="stylesheet" href="../../css/pages/components/03-modal.css" />
-        <script defer src="../../js/main.js"></script>
+        <script type="module" src="../../js/main.js" defer></script>
     </head>
 
     <body class="frame">
@@ -34,12 +34,18 @@
             <a href="#" class="btn show-modal">Show modal</a>
         </main>
 
-        <div class="modal wrapper hidden">
+        <div
+            class="modal wrapper hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal__title"
+            aria-describedby="modal__desc"
+        >
             <header class="modal__header bg-white">
-                <h3>Modal Title</h3>
-                <a href="#" class="btn btn--lg btn--circle close-modal">⛌</a>
+                <h3 id="modal__title">Modal Title</h3>
+                <button class="btn btn--lg btn--circle close-modal">⛌</button>
             </header>
-            <section class="modal__content flow">
+            <section class="modal__content flow" id="modal__desc">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Expedita voluptatem officia et nobis dignissimos, eum
