@@ -10,6 +10,16 @@ Naming convention:
     margin: 0;
 }
 
+.mb-2 {
+    margin-bottom: var(--sp-2);
+}
+.mb-4 {
+    margin-bottom: var(--sp-4);
+}
+.mb-5 {
+    margin-bottom: var(--sp-5);
+}
+
 /* Padding Utilities */
 .p-0 {
     padding: 0;

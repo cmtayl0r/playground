@@ -6,7 +6,7 @@ TODO: Active keypress state
 
 /* 
 --------------------------------------------------------------------------------
-ANIMATED BUTTON
+BUTTON
 --------------------------------------------------------------------------------
 */
 
@@ -40,6 +40,7 @@ ANIMATED BUTTON
 
     &:active {
         background-color: rgba(0, 0, 0, 0.8);
+        transform: translateY(var(--sp-1));
     }
 
     /* Optional span arrow animation */
@@ -60,6 +61,15 @@ ANIMATED BUTTON
     }
 }
 
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+    background: transparent;
+}
+
+/* Sizes */
+
 .btn.btn--sm {
     font-size: 1.6rem;
     padding: 0.4rem 1.2rem;
@@ -68,6 +78,8 @@ ANIMATED BUTTON
     font-size: 2.4rem;
     padding: 1rem 2rem;
 }
+
+/* Hierarchy */
 
 .btn.btn--primary {
     background-color: rgba(33, 133, 208, 1);
@@ -80,6 +92,8 @@ ANIMATED BUTTON
         background-color: rgb(14, 72, 116);
     }
 }
+
+/* Inverse buttons */
 
 .btn.btn--inverse {
     border: 3px solid var(--color-white);
@@ -106,6 +120,8 @@ ANIMATED BUTTON
         background-color: #aae4ff;
     }
 }
+
+/* Utilities */
 
 .btn--fluid {
     width: 100%;

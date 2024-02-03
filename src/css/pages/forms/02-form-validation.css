@@ -1,14 +1,6 @@
 body {
-    margin: 50px;
     background-image: var(--gr-velvetsun);
-    min-height: calc(100vh - 100px);
 }
-
-/* @media all and (max-width: 600px) {
-    body {
-        margin: 2.4rem;
-    }
-} */
 
 .no-transition * {
     -webkit-transition: none !important;
@@ -23,15 +15,6 @@ body {
 01 - Form wrapper
 --------------------------------------------------------
 */
-
-.demo1 {
-    max-width: 76rem;
-    margin: 0 auto;
-    padding: 2.4rem;
-}
-.demo1 > form {
-    font-size: 2rem;
-}
 
 #commentform {
     display: flex;
@@ -73,10 +56,6 @@ textarea {
 
     width: 100%;
     transition: all 0.5s ease-in-out;
-}
-
-:focus {
-    outline: 0;
 }
 
 input[type='text']:focus,
@@ -190,27 +169,6 @@ textarea:focus {
 #commentform textarea:focus::placeholder {
     color: transparent;
 }
-
-/* 
---------------------------------------------------------
-XX - Submit Button
---------------------------------------------------------
-*/
-
-button[type='submit'] {
-    background-color: transparent;
-    border: 3px solid var(--color-black);
-    color: var(--color-black);
-    padding: 1rem;
-    font-size: 3rem;
-    margin: 0 auto;
-    display: block;
-    cursor: pointer;
-}
-/* input[type='submit']:hover {
-    background-color: rgba(139, 195, 74, 0.25);
-    border: 1px solid #8bc34a;
-} */
 
 /* 
 --------------------------------------------------------

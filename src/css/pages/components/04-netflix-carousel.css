@@ -4,32 +4,7 @@ FOUNDATION
 --------------------------------------------------------
 */
 body {
-    color: white;
-    background: #121212;
-}
-
-.wrapper {
-    inline-size: min(100% - 4rem, 70rem);
-    /* margin-inline: auto; */
-}
-
-.page-header {
-    padding-block: 5rem;
-    margin-block-end: 5rem;
-    background-image: url('https://images.unsplash.com/photo-1641353989082-9b15fa661805?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzM5ODcyOA&ixlib=rb-1.2.1&q=80&w=1200'),
-        linear-gradient(-25deg, rgb(0 0 0 / 0), rgb(0 0 0 / 1) 50%);
-    background-size: cover;
-    background-blend-mode: multiply;
-    color: white;
-}
-
-.page-title {
-    /* font-size: 4rem; */
-    margin: 0;
-}
-
-.section-title {
-    margin-block: 4rem 1rem;
+    background-image: var(--gr-witch);
 }
 
 /* 
@@ -158,7 +133,7 @@ Navigation indicators
     opacity: 0;
     position: absolute;
     display: flex;
-    gap: 3px;
+    gap: var(--sp-1);
 
     top: -1rem;
     right: 2rem;
