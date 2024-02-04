@@ -38,6 +38,9 @@ export class Modal {
         // After closing the modal, return the focus to the element that had it before the modal was opened
         if (this.lastFocusedElement) this.lastFocusedElement.focus();
     }
+    /*
+    The trapFocus function is a critical part of making modals accessible. It ensures that when a modal is open, focus doesn't escape to the background content, which can be disorienting for keyboard and screen reader users. This function specifically handles focus trapping by ensuring that the focus stays within the modal when the user navigates through it using the Tab key.
+    */
     trapFocus(event) {
         // Define all focusable elements inside the modal
         const focusableElements = this.modal.querySelectorAll(
@@ -101,6 +104,38 @@ export class Modal {
                 this.closeModal();
             }
         });
+    }
+    destroy() {
+        // Remove event listeners that were added in bindModalEvents
+        for (const btnOpen of this.btnsOpenModal) {
+            btnOpen.removeEventListener('click', () => this.openModal());
+        }
+        for (const btnClose of this.btnsCloseModal) {
+            btnClose.removeEventListener('click', () => this.closeModal());
+        }
+        // Remove event listener for trapping focus
+        this.modal.removeEventListener('keydown', event =>
+            this.trapFocus(event),
+        );
+        // Remove event listener for clicking on the overlay to close the modal
+        this.overlay.removeEventListener('click', () => this.closeModal());
+        // Remove global event listener for closing the modal with the Escape key
+        document.removeEventListener('keydown', event => {
+            if (
+                event.key === 'Escape' &&
+                !this.modal.classList.contains('hidden')
+            ) {
+                this.closeModal();
+            }
+        });
+
+        // Nullify references to DOM elements
+        this.modal = null;
+        this.overlay = null;
+        this.btnsOpenModal = null;
+        this.btnsCloseModal = null;
+
+        console.log('Modal instance destroyed.');
     }
 }
 
