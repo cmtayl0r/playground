@@ -27,6 +27,12 @@
     --lh-default: var(--ratio);
     --lh-sm: calc(0.7 * var(--ratio));
 
+    /* Font weights */
+    --f-bold: 700;
+    --f-semiBold: 600;
+    --f-regular: 400;
+    --f-light: 300;
+
     /* Gradients */
     --gr-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
     --gr-witch: linear-gradient(to right, #c31432, #240b36);
