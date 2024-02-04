@@ -1,9 +1,10 @@
 /*
-TODO: Sizing
-TODO: Primary, Tertiary
-TODO: Active key
-press state
-TODO: button, input[file] etc styled same as buttons
+TODO: Secondary, outline styles
+TODO: Move variables
+FIXME: Flexible paddings using calc or clamp
+FIXME: More robust responsive behavior
+TODO: Icon and text option??
+TODO: Explore SASS mixins complex structures
 */
 
 /*

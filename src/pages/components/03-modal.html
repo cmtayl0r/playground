@@ -34,15 +34,16 @@
             <button class="btn btn--primary show-modal">Show modal</button>
         </main>
 
-        <div
-            class="modal wrapper hidden"
-            role="dialog"
+        <dialog
+            class="modal wrapper"
+            id="modal"
             aria-modal="true"
             aria-labelledby="modal__title"
             aria-describedby="modal__desc"
         >
+        <main class="modal__container">
             <header class="modal__header bg-white">
-                <h3 id="modal__title m-0">Modal Title</h3>
+                <h3 class="modal__title m-0">Modal Title</h3>
                 <button class="btn btn--lg btn--circle close-modal">⛌</button>
             </header>
             <section class="modal__content flow" id="modal__desc">
@@ -70,7 +71,7 @@
                 </button>
                 <button class="btn btn--inverse close-modal">Cancel</button>
             </footer>
-        </div>
-        <div class="overlay hidden"></div>
+        </dialog>
+    </main>
     </body>
 </html>

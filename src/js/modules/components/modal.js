@@ -5,8 +5,7 @@ export class Modal {
     // DATA
     constructor() {
         // DOM Selections
-        this.modal = document.querySelector('.modal');
-        this.overlay = document.querySelector('.overlay');
+        this.modal = document.querySelector('#modal');
         this.btnsOpenModal = document.querySelectorAll('.show-modal');
         this.btnsCloseModal = document.querySelectorAll('.close-modal');
         // Helper variable for accessibility focus trap
@@ -16,8 +15,15 @@ export class Modal {
     }
     // METHODS
     openModal() {
-        this.modal.classList.remove('hidden');
-        this.overlay.classList.remove('hidden');
+        this.modal.showModal();
+        this.modal.addEventListener(
+            'animationend',
+            () => {
+                // Clear the animation style after it completes, to reset the state
+                this.modal.style.animation = '';
+            },
+            { once: true }, // Ensure the listener is removed after it's invoked once
+        );
         console.log('Modal open');
 
         // Accessibility focus management
@@ -30,8 +36,15 @@ export class Modal {
         if (firstFocusableElement) firstFocusableElement.focus();
     }
     closeModal() {
-        this.modal.classList.add('hidden');
-        this.overlay.classList.add('hidden');
+        this.modal.classList.add('closing'); // Trigger the fadeOut animation
+        this.modal.addEventListener(
+            'animationend',
+            () => {
+                this.modal.classList.remove('closing'); // Remove the class when animation ends
+                this.modal.close(); // This removes the `open` attribute
+            },
+            { once: true }, // Ensure the listener is removed after it's invoked once
+        );
         console.log('Modal close');
 
         // Accessibility focus management
@@ -93,17 +106,13 @@ export class Modal {
         }
         // 03 - Trap focus within modal
         this.modal.addEventListener('keydown', event => this.trapFocus(event));
-        // 04 - Close modal when clicking on overlay
-        this.overlay.addEventListener('click', () => this.closeModal());
-        // 05 - Close modal on Escape key press
-        document.addEventListener('keydown', event => {
-            if (
-                event.key === 'Escape' &&
-                !this.modal.classList.contains('hidden')
-            ) {
-                this.closeModal();
+        // 04 - Close modal when clicking on dialog backdrop area
+        this.modal.addEventListener('click', e => {
+            if (e.target === modal) {
+                this.modal.close();
             }
         });
+        // 05 - Esc key dismiss part of dialog
     }
     destroy() {
         // Remove event listeners that were added in bindModalEvents
@@ -117,21 +126,9 @@ export class Modal {
         this.modal.removeEventListener('keydown', event =>
             this.trapFocus(event),
         );
-        // Remove event listener for clicking on the overlay to close the modal
-        this.overlay.removeEventListener('click', () => this.closeModal());
-        // Remove global event listener for closing the modal with the Escape key
-        document.removeEventListener('keydown', event => {
-            if (
-                event.key === 'Escape' &&
-                !this.modal.classList.contains('hidden')
-            ) {
-                this.closeModal();
-            }
-        });
 
         // Nullify references to DOM elements
         this.modal = null;
-        this.overlay = null;
         this.btnsOpenModal = null;
         this.btnsCloseModal = null;
 
