@@ -10,8 +10,59 @@
     </head>
     <body class="frame">
         <h1>Accessible tabs</h1>
-        <main class="wrapper">
-            <h3>Tabs</h3>
+        <main class="wrapper p-5">
+            <h3 id="tabs__title" class="m-0">Tabs title</h3>
+            <div class="tabs__container">
+                <ul aria-labelledby="tabs__title">
+                    <li><a id="tab-1" href="#advertising">Advertising</a></li>
+                    <li><a id="tab-2" href="#social-media">Social media</a></li>
+                    <li>
+                        <a id="tab-3" href="content-marketing"
+                            >Content marketing</a
+                        >
+                    </li>
+                    <li><a id="tab-4" href="email">Email</a></li>
+                </ul>
+            </div>
+            <!-- PANELS - START -->
+            <div class="tabs__panels flow">
+                <!-- PANEL 1 - START -->
+                <div id="advertising">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni minus eum recusandae voluptas non beatae vel eius
+                        quisquam ex veniam, culpa impedit provident, nihil iusto
+                        assumenda facilis a, modi fugit!
+                    </p>
+                </div>
+                <!-- PANEL 2 - START -->
+                <div id="social-media">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni minus eum recusandae voluptas non beatae vel eius
+                        quisquam ex veniam, culpa impedit provident, nihil iusto
+                        assumenda facilis a, modi fugit!
+                    </p>
+                </div>
+                <!-- PANEL 3 - START -->
+                <div id="content-marketing">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni minus eum recusandae voluptas non beatae vel eius
+                        quisquam ex veniam, culpa impedit provident, nihil iusto
+                        assumenda facilis a, modi fugit!
+                    </p>
+                </div>
+                <!-- PANEL 4 - START -->
+                <div id="email">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni minus eum recusandae voluptas non beatae vel eius
+                        quisquam ex veniam, culpa impedit provident, nihil iusto
+                        assumenda facilis a, modi fugit!
+                    </p>
+                </div>
+            </div>
         </main>
     </body>
 </html>
