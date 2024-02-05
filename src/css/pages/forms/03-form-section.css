@@ -63,7 +63,7 @@ label {
 .input-text,
 .input-area {
     width: 100%;
-    border: 2px solid var(--color-black);
+    border: 2px solid var(--clr-black);
     border-radius: var(--br-sm);
     padding: 0.6rem;
     min-height: 4rem;
@@ -81,8 +81,8 @@ label {
     display: block;
     width: 100%;
     padding: 1rem;
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--clr-black);
+    color: var(--clr-white);
     border-radius: var(--br-sm);
     cursor: pointer;
     font-size: 2rem;

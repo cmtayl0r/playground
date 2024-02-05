@@ -73,16 +73,16 @@ CARD
     & p {
         /* to make p grow to fil available vertical space */
         flex: 1;
-        color: var(--color-gray);
+        color: var(--clr-gray);
     }
 
     & h3 {
         margin: 0;
-        color: var(--color-gray-dark);
+        color: var(--clr-gray-dark);
     }
 
     & span {
-        color: var(--color-black);
+        color: var(--clr-black);
         text-transform: uppercase;
     }
 }

@@ -64,5 +64,5 @@ ul {
 }
 ul li::marker,
 ol li::marker {
-    color: var(--color-gray);
+    color: var(--clr-gray);
 }

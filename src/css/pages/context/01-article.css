@@ -11,8 +11,8 @@ img {
 }
 
 a {
-    color: var(--color-black);
-    text-decoration: underline wavy var(--color-yellow);
+    color: var(--clr-black);
+    text-decoration: underline wavy var(--clr-yellow);
 }
 
 /* 
@@ -58,7 +58,7 @@ blockquote > p {
     font-style: italic;
     margin: 6rem 0;
     font-size: 4rem;
-    color: var(--color-gray);
+    color: var(--clr-gray);
 }
 /* 
 --------------------------------------------------------
@@ -76,11 +76,11 @@ TIPS
 .tip-left {
     grid-column: 1 / span 1;
     text-align: right;
-    border-right: 0.2rem solid var(--color-yellow);
+    border-right: 0.2rem solid var(--clr-yellow);
 }
 
 .tip-right {
     grid-column: span 1 / -1;
     text-align: left;
-    border-left: 0.2rem solid var(--color-yellow);
+    border-left: 0.2rem solid var(--clr-yellow);
 }

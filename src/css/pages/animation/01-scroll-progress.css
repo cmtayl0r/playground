@@ -21,7 +21,7 @@ ANIMATION
 
 .progress {
     height: 3rem;
-    background: var(--color-black);
+    background: var(--clr-black);
     position: fixed;
     top: 0;
     left: 0;
@@ -41,7 +41,7 @@ ANIMATION
 
 .progress-multiple {
     height: 3rem;
-    background: var(--color-black);
+    background: var(--clr-black);
     position: fixed;
     top: 3rem;
     left: 0;
@@ -83,7 +83,7 @@ ANIMATION
 .progress-ball {
     width: 6rem;
     height: 6rem;
-    background: var(--color-yellow);
+    background: var(--clr-yellow);
     border-radius: var(--br-circle);
 
     position: fixed;

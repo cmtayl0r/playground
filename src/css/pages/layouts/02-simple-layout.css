@@ -124,14 +124,14 @@ body {
     width: 100%;
     /* outline: 0; */
     background: transparent;
-    border-bottom: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--clr-black);
     padding: 0.6rem;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 ::placeholder {
-    color: var(--color-gray);
+    color: var(--clr-gray);
 }
 
 /* Media queries to change Flexbox nav */

@@ -76,27 +76,27 @@
     --sp-9: calc(var(--sp-base) * 10.5); /* 84px */
 
     /* Colours */
-    --color-white: #f3f3f3;
-    --color-black: #0a0a23;
-    --color-gray-light: #c8c8c8;
-    --color-gray: #8e8e8e;
-    --color-gray-dark: #444;
-    --color-yellow: #ffc608;
+    --clr-white: #f3f3f3;
+    --clr-black: #0a0a23;
+    --clr-gray-light: #c8c8c8;
+    --clr-gray: #8e8e8e;
+    --clr-gray-dark: #444;
+    --clr-yellow: #ffc608;
 
     /* Dark light mode */
     /*
-    --color-text: hsl(204, 100%, 1%);
-    --color-surface: hsl(0, 0%, 100%);
-    --color-primary: hsl(329, 85%, 53%);
-    --color-secondary: hsl(208, 83%, 93%);
-    --color-accent: hsl(89, 85%, 33%);
+    --clr-text: hsl(204, 100%, 1%);
+    --clr-surface: hsl(0, 0%, 100%);
+    --clr-primary: hsl(329, 85%, 53%);
+    --clr-secondary: hsl(208, 83%, 93%);
+    --clr-accent: hsl(89, 85%, 33%);
     @media (prefers-color-scheme: dark) {
       :root {
-        --color-text: hsl(0, 0%, 100%);
-        --color-surface: hsl(204, 100%, 1%);
-        --color-primary: hsl(329, 85%, 53%);
-        --color-secondary: hsl(208, 83%, 17%);
-        --color-accent: hsl(89, 85%, 33%);
+        --clr-text: hsl(0, 0%, 100%);
+        --clr-surface: hsl(204, 100%, 1%);
+        --clr-primary: hsl(329, 85%, 53%);
+        --clr-secondary: hsl(208, 83%, 17%);
+        --clr-accent: hsl(89, 85%, 33%);
       }
     }
 

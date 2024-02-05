@@ -6,7 +6,7 @@ FOUNDATIONS
 
 body {
     font-family: var(--f-plain);
-    color: var(--color-black);
+    color: var(--clr-black);
     /* 
     To sort horizontal scroll bar issue 
     when using full-with trick on image and callout
@@ -36,7 +36,7 @@ ACCESSIBILITY
 */
 
 *:focus-visible {
-    outline: 3px solid var(--color-yellow);
+    outline: 3px solid var(--clr-yellow);
     outline-offset: 0.25rem;
     border-radius: 0.125rem;
 }

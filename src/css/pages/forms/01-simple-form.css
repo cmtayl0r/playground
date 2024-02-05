@@ -41,7 +41,7 @@ label {
 .input__hint {
     margin-top: -0.8rem;
     margin-bottom: var(--sp-2);
-    color: var(--color-gray-dark);
+    color: var(--clr-gray-dark);
 }
 
 .input__hint--error {
@@ -61,15 +61,15 @@ INPUT, SELECT
 .input-text,
 .input-select {
     width: 100%;
-    border: 0.4rem solid var(--color-black);
+    border: 0.4rem solid var(--clr-black);
     border-radius: var(--br-sm);
     padding: var(--sp-2);
     min-height: 4.4rem;
     line-height: var(--lh-default);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--color-black);
-    background-color: var(--color-white);
+    color: var(--clr-black);
+    background-color: var(--clr-white);
 
     font-size: var(--fs-md);
 }
@@ -129,13 +129,13 @@ input[type='radio'] {
     -webkit-appearance: none;
     appearance: none;
     /* For iOS < 15 to remove gradient background */
-    background-color: var(--color-white);
+    background-color: var(--clr-white);
     /* Not removed via appearance */
     margin: 0;
 
     width: 4.4rem;
     height: 4.4rem;
-    border: 0.4rem solid var(--color-black);
+    border: 0.4rem solid var(--clr-black);
     border-radius: var(--br-circle);
     transform: translateY(-0.075em);
 
@@ -150,7 +150,7 @@ input[type='radio']::before {
     border-radius: 50%;
     transform: scale(0);
     transition: 100ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--color-black);
+    box-shadow: inset 1em 1em var(--clr-black);
 
     /* Windows High Contrast Mode */
     background-color: CanvasText;
@@ -165,13 +165,13 @@ input[type='checkbox'] {
     -webkit-appearance: none;
     appearance: none;
     /* For iOS < 15 to remove gradient background */
-    background-color: var(--color-white);
+    background-color: var(--clr-white);
     /* Not removed via appearance */
     margin: 0;
 
     width: 4.4rem;
     height: 4.4rem;
-    border: 0.4rem solid var(--color-black);
+    border: 0.4rem solid var(--clr-black);
     border-radius: var(--br-sm);
     transform: translateY(-0.075em);
 
@@ -185,7 +185,7 @@ input[type='checkbox']::before {
     height: 2rem;
     transform: scale(0);
     transition: 100ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--color-black);
+    box-shadow: inset 1em 1em var(--clr-black);
 
     /* Windows High Contrast Mode */
     background-color: CanvasText;

@@ -15,7 +15,7 @@ main {
 
 #sticky-header {
     /* Hero / sticky header styling */
-    color: var(--color-white);
+    color: var(--clr-white);
     font-family: var(--f-special);
     font-size: calc(4vw + 1em);
 
@@ -41,7 +41,7 @@ main {
 
     & h1 {
         margin: 0;
-        /* color: var(--color-white); */
+        /* color: var(--clr-white); */
     }
 }
 

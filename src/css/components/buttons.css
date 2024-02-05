@@ -39,9 +39,9 @@ CORE
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid var(--color-black);
+    border: 3px solid var(--clr-black);
     border-radius: var(--br-xxl);
-    color: var(--color-black);
+    color: var(--clr-black);
     font-size: var(--btn-font-md);
     font-weight: var(--f-bold);
     text-decoration: none;
@@ -50,11 +50,11 @@ CORE
     cursor: pointer;
 
     &:hover {
-        color: var(--color-white);
+        color: var(--clr-white);
         background-color: rgba(0, 0, 0, 0.5);
     }
     &:active {
-        color: var(--color-white);
+        color: var(--clr-white);
         background-color: rgba(0, 0, 0, 0.8);
         transform: translateY(0.2rem);
     }
@@ -181,7 +181,7 @@ TYPE
 .btn--primary {
     border: 3px solid rgb(14, 72, 116);
     background-color: rgba(33, 133, 208, 1);
-    color: var(--color-black);
+    color: var(--clr-black);
 
     &:hover {
         background-color: rgb(21, 99, 159);
@@ -198,15 +198,15 @@ TYPE
 /* Inverse buttons */
 
 .btn--inverse {
-    border: 3px solid var(--color-white);
-    color: var(--color-white);
+    border: 3px solid var(--clr-white);
+    color: var(--clr-white);
 
     &:hover {
-        color: var(--color-black);
+        color: var(--clr-black);
         background-color: rgba(255, 255, 255, 0.5);
     }
     &:active {
-        color: var(--color-black);
+        color: var(--clr-black);
         background-color: rgba(255, 255, 255, 0.8);
     }
 }
@@ -217,11 +217,11 @@ TYPE
     background: transparent;
 
     &:hover {
-        color: var(--color-black);
+        color: var(--clr-black);
         background-color: #74d1fd;
     }
     &:active {
-        color: var(--color-black);
+        color: var(--clr-black);
         background-color: #aae4ff;
     }
 }

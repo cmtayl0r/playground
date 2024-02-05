@@ -1,7 +1,7 @@
 :root {
-    --color-blau: #1992d4;
-    --color-gelb: #facc14;
-    --color-grau: #e2e8f0;
+    --clr-blau: #1992d4;
+    --clr-gelb: #facc14;
+    --clr-grau: #e2e8f0;
 }
 
 body {
@@ -27,8 +27,8 @@ button {
     line-height: 1.1;
     cursor: pointer;
     outline: none;
-    border: 2px solid var(--color-gray-light);
-    background: var(--color-white);
+    border: 2px solid var(--clr-gray-light);
+    background: var(--clr-white);
     border-radius: var(--br-md);
 }
 
@@ -43,11 +43,11 @@ button:focus-visible {
 }
 
 button:hover {
-    background: var(--color-gray-light);
+    background: var(--clr-gray-light);
 }
 button:active {
-    background: var(--color-gray-dark);
-    color: var(--color-white);
+    background: var(--clr-gray-dark);
+    color: var(--clr-white);
 
     box-shadow: 0 1px #666;
     transform: translateY(4px);
@@ -133,7 +133,7 @@ SIDEBAR
 
 .sidebar {
     background-image: var(--gr-expresso);
-    color: var(--color-white);
+    color: var(--clr-white);
     padding: 2rem;
 
     & h1 {
@@ -160,7 +160,7 @@ SIDEBAR
 
     & a {
         text-decoration: none;
-        color: var(--color-white);
+        color: var(--clr-white);
 
         display: flex;
         gap: 2rem;
@@ -196,7 +196,7 @@ HEADER
 .header {
     display: grid;
     gap: 2rem;
-    background: var(--color-white);
+    background: var(--clr-white);
     padding: 2rem;
 }
 .header__search {
@@ -210,7 +210,7 @@ HEADER
 
     #site-search {
         width: 100%;
-        border: 2px solid var(--color-gray-light);
+        border: 2px solid var(--clr-gray-light);
         border-radius: var(--br-lg);
         padding: 0.6rem;
         min-height: 4rem;
@@ -251,7 +251,7 @@ PROJECTS
 --------------------------------------------
 */
 .content {
-    background: var(--color-grau);
+    background: var(--clr-grau);
 
     display: grid;
     gap: 3rem;
@@ -303,7 +303,7 @@ PROJECTS
 .project__card,
 .announcements,
 .trending {
-    background: var(--color-white);
+    background: var(--clr-white);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
     border-radius: var(--br-md);
 }

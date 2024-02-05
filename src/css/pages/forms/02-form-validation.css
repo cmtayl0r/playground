@@ -50,7 +50,7 @@ input[type='email'],
 input[type='url'],
 textarea {
     background-color: #fff;
-    border: 2px solid var(--color-black);
+    border: 2px solid var(--clr-black);
     border-radius: var(--br-md);
     padding: 24px 10px 12px;
 
@@ -96,8 +96,8 @@ textarea:focus {
 
 #commentform input:placeholder-shown,
 #commentform textarea:placeholder-shown {
-    background-color: var(--color-white);
-    border: 1px solid var(--color-black);
+    background-color: var(--clr-white);
+    border: 1px solid var(--clr-black);
 }
 
 /* Invalid state ------------------ */
@@ -112,7 +112,7 @@ textarea:focus {
 /* Focused */
 #commentform input:focus:invalid,
 #commentform textarea:focus:invalid {
-    background-color: var(--color-gray-light);
+    background-color: var(--clr-gray-light);
     border: 1px solid #b92326;
 }
 
@@ -134,7 +134,7 @@ textarea:focus {
 /* Focused */
 #commentform input:focus:valid,
 #commentform textarea:focus:valid {
-    background-color: var(--color-gray-light);
+    background-color: var(--clr-gray-light);
     border: 1px solid #8bc34a;
 }
 
@@ -161,7 +161,7 @@ textarea:focus {
 /* Placeholder default color */
 #commentform input::placeholder,
 #commentform textarea::placeholder {
-    color: var(--color-black);
+    color: var(--clr-black);
 }
 
 /* Hide placeholder when input focused */

@@ -13,8 +13,8 @@ body {
 .menu-title {
     width: 100%;
     padding: 1rem 0;
-    color: var(--color-white);
-    background-color: var(--color-black);
+    color: var(--clr-white);
+    background-color: var(--clr-black);
     border: none;
     cursor: pointer;
 }
@@ -23,7 +23,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    background: var(--color-gray-dark);
+    background: var(--clr-gray-dark);
 
     display: none;
 
@@ -33,8 +33,8 @@ body {
 }
 
 ul.dropdown-menu li:hover {
-    background: var(--color-yellow);
-    color: var(--color-black);  red green blue)
+    background: var(--clr-yellow);
+    color: var(--clr-black);  red green blue)
 }
 
 

@@ -4,7 +4,7 @@ WRAPPER
 --------------------------------------------------------------------------------
 */
 .wrapper {
-    border: 5px dashed var(--color-black);
+    border: 5px dashed var(--clr-black);
     background: var(--bg-tr-white);
 }
 
@@ -65,11 +65,11 @@ COMMON STYLING
 
 .bg-black {
     background: var(--bg-tr-black);
-    color: var(--color-white);
+    color: var(--clr-white);
 }
 
 .bg-yellow {
-    background: var(--color-yellow);
+    background: var(--clr-yellow);
 }
 
 /* 

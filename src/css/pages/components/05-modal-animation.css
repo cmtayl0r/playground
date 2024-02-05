@@ -16,7 +16,7 @@ body {
 
 .popup-modal {
     width: min(100% - 6rem, 50rem);
-    background-color: var(--color-white);
+    background-color: var(--clr-white);
     border-radius: var(--br-lg);
     pointer-events: none;
     opacity: 0%;
@@ -39,7 +39,7 @@ body {
     pointer-events: none;
     position: fixed;
     inset: 0;
-    background: var(--color-black);
+    background: var(--clr-black);
     opacity: 0%;
 
     transition: opacity 0.3s ease-out;
