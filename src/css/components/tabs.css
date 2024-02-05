@@ -11,6 +11,18 @@ body {
 CONTROLS
 --------------------------------------------------------------------------------
 */
+[role='tablist'] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--sp-6);
+}
+
+[aria-selected='true'] {
+    color: red;
+}
+
 #tabs__title {
 }
 .tabs__container {
