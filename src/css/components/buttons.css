@@ -43,7 +43,7 @@ CORE
     border-radius: var(--br-xxl);
     color: var(--clr-black);
     font-size: var(--btn-font-md);
-    font-weight: var(--ff-bold);
+    font-weight: var(--fw-bold);
     text-decoration: none;
     transition: all 0.2s;
     padding: 0.8rem 1.6rem;

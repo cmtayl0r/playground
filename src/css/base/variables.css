@@ -28,10 +28,10 @@
     --lh-sm: calc(0.7 * var(--ratio));
 
     /* Font weights */
-    --ff-bold: 700;
-    --ff-semiBold: 600;
-    --ff-regular: 400;
-    --ff-light: 300;
+    --fw-bold: 700;
+    --fw-semiBold: 600;
+    --fw-regular: 400;
+    --fw-light: 300;
 
     /* Gradients */
     --gr-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
