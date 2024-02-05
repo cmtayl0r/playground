@@ -78,7 +78,7 @@ STRUCTURE
     gap: 1rem;
     align-items: center;
 
-    /* Have buttons 100 %width at < 37.5rem */
+    /* Have buttons 100% width at < 37.5rem */
     & .btn {
         width: 100%;
     }
