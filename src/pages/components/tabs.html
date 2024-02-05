@@ -6,7 +6,8 @@
         <title>Component → Tabs</title>
         <link rel="stylesheet" href="../../css/main.css" />
         <link rel="stylesheet" href="../../css/components/tabs.css" />
-        <script type="module" src="../../js/main.js" defer></script>
+        <script src="../../js/modules/components/tabs.js" defer></script>
+        <!-- <script type="module" src="../../js/main.js" defer></script> -->
     </head>
     <body class="frame">
         <h1>Accessible tabs</h1>
@@ -17,50 +18,71 @@
                     <li><a id="tab-1" href="#advertising">Advertising</a></li>
                     <li><a id="tab-2" href="#social-media">Social media</a></li>
                     <li>
-                        <a id="tab-3" href="content-marketing"
+                        <a id="tab-3" href="#content-marketing"
                             >Content marketing</a
                         >
                     </li>
-                    <li><a id="tab-4" href="email">Email</a></li>
+                    <li><a id="tab-4" href="#email">Email</a></li>
                 </ul>
-            </div>
-            <!-- PANELS - START -->
-            <div class="tabs__panels flow">
-                <!-- PANEL 1 - START -->
-                <div id="advertising">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Magni minus eum recusandae voluptas non beatae vel eius
-                        quisquam ex veniam, culpa impedit provident, nihil iusto
-                        assumenda facilis a, modi fugit!
-                    </p>
-                </div>
-                <!-- PANEL 2 - START -->
-                <div id="social-media">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Magni minus eum recusandae voluptas non beatae vel eius
-                        quisquam ex veniam, culpa impedit provident, nihil iusto
-                        assumenda facilis a, modi fugit!
-                    </p>
-                </div>
-                <!-- PANEL 3 - START -->
-                <div id="content-marketing">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Magni minus eum recusandae voluptas non beatae vel eius
-                        quisquam ex veniam, culpa impedit provident, nihil iusto
-                        assumenda facilis a, modi fugit!
-                    </p>
-                </div>
-                <!-- PANEL 4 - START -->
-                <div id="email">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Magni minus eum recusandae voluptas non beatae vel eius
-                        quisquam ex veniam, culpa impedit provident, nihil iusto
-                        assumenda facilis a, modi fugit!
-                    </p>
+
+                <!-- PANELS - START -->
+                <div class="tabs__panels flow">
+                    <!-- PANEL 1 - START -->
+                    <div
+                        id="advertising"
+                        class="tabs__panel"
+                        aria-labelledby="tab-1"
+                    >
+                        <p>
+                            Using links instead of buttons for tabs is a good
+                            idea so the component can progressively fallback to
+                            a list of links to navigate the user to sections of
+                            content if Javascript is turned off.
+                            <a href="#">Lorem ipsum</a>
+                            dolor sit amet consectetur adipisicing elit. Magni
+                            minus eum recusandae voluptas non beatae vel eius
+                            quisquam ex veniam, culpa impedit provident, nihil
+                            iusto assumenda facilis a, modi fugit!
+                        </p>
+                    </div>
+                    <!-- PANEL 2 - START -->
+                    <div
+                        id="social-media"
+                        class="tabs__panel"
+                        aria-labelledby="tab-2"
+                    >
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Magni minus eum recusandae voluptas non beatae
+                            vel eius quisquam ex veniam, culpa impedit
+                            provident, nihil iusto assumenda facilis a, modi
+                            fugit!
+                        </p>
+                    </div>
+                    <!-- PANEL 3 - START -->
+                    <div
+                        id="content-marketing"
+                        class="tabs__panel"
+                        aria-labelledby="tab-3"
+                    >
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Magni minus eum recusandae voluptas non beatae
+                            vel eius quisquam ex veniam, culpa impedit
+                            provident, nihil iusto assumenda facilis a, modi
+                            fugit!
+                        </p>
+                    </div>
+                    <!-- PANEL 4 - START -->
+                    <div id="email" class="tabs__panel" aria-labelledby="tab-4">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Magni minus eum recusandae voluptas non beatae
+                            vel eius quisquam ex veniam, culpa impedit
+                            provident, nihil iusto assumenda facilis a, modi
+                            fugit!
+                        </p>
+                    </div>
                 </div>
             </div>
         </main>
