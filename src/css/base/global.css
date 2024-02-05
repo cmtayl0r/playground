@@ -5,7 +5,7 @@ FOUNDATIONS
 */
 
 body {
-    font-family: var(--f-plain);
+    font-family: var(--ff-plain);
     color: var(--clr-black);
     /* 
     To sort horizontal scroll bar issue 

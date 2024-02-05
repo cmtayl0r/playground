@@ -33,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--f-special);
+    font-family: var(--ff-special);
     line-height: var(--lh-sm);
     margin: 3rem 0 1.38rem;
 }
