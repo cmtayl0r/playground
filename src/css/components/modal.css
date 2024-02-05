@@ -3,6 +3,16 @@ body {
     min-height: 100vh;
 }
 
+/*
+FIXME: Vertical scroll on content area not entire modal dialog
+*/
+
+/* 
+--------------------------------------------------------------------------------
+DIALOG
+--------------------------------------------------------------------------------
+*/
+
 #modal {
     margin: auto; 
     width: min(100% - 4.8rem, 60rem);
@@ -32,6 +42,12 @@ body {
     animation: fade-out-backdrop 0.3s forwards;
 }
 
+/* 
+--------------------------------------------------------------------------------
+STRUCTURE
+--------------------------------------------------------------------------------
+*/
+
 .modal__container {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -50,6 +66,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    /* On mobile views header stays on vertical scroll */
+    position: sticky;
+    top: 0;
 }
 
 .modal__footer {
@@ -63,6 +83,12 @@ body {
         width: 100%;
     }
 }
+
+/* 
+--------------------------------------------------------------------------------
+RESPONSIVE
+--------------------------------------------------------------------------------
+*/
 
 @media (min-width: 37.5em) {
     .modal__footer {
