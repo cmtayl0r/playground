@@ -7,115 +7,136 @@ const tabsList = tabsContainer.querySelector('ul');
 const tabButtons = tabsList.querySelectorAll('a');
 const tabPanels = tabsContainer.querySelectorAll('.tabs__panel');
 
-// Add semantics role of tab list to ul
+// -----------------------------------------------------------------------------
+// ATTRIBUTE SETTING
+// -----------------------------------------------------------------------------
+
+// Set the 'role' attribute of 'tabsList' to 'tablist' (ul)
+// indicating its role in accessibility features
 tabsList.setAttribute('role', 'tablist');
 
-// Remove semantics role of the li's, so to ignore for screen readers in the tab list
+// For each 'li' element in 'tabsList', set its 'role' attribute to 'presentation'
+// indicating it should be ignored by screen readers
 tabsList.querySelectorAll('li').forEach(listItem => {
     listItem.setAttribute('role', 'presentation');
 });
 
+// For each tab button, assign the role of 'tab'
+// manage its selected state and visibility
 tabButtons.forEach((tab, index) => {
-    // Add semantics role of "tab" to the a links
+    // Set the 'role' attribute of each tab link to 'tab'
     tab.setAttribute('role', 'tab');
     if (index === 0) {
-        // Set first tab as selected
+        // For the first tab, set it as selected by setting 'aria-selected' attribute to 'true'
         tab.setAttribute('aria-selected', 'true');
     } else {
+        // For other tabs, make them not focusable by setting 'tabindex' to '-1'
+        // and set their corresponding panels as hidden
         tab.setAttribute('tabindex', '-1');
         tabPanels[index].setAttribute('hidden', '');
     }
 });
 
-// Navigate via keyboard into the content of the visible tab
-// Progressive enhancement technique, if no JS, tabindex handled by JS, so no negative effect if JS disabled
+// Set each tab panel's role to 'tabpanel'
+// make it focusable by setting 'tabindex' to '0'
+// Setting tabindex in JS has no negative effect to tab order, if no javascript
 tabPanels.forEach(panel => {
     panel.setAttribute('role', 'tabpanel');
     panel.setAttribute('tabindex', '0');
 });
 
+// -----------------------------------------------------------------------------
+// TAB NAVIGATION
+// -----------------------------------------------------------------------------
+
+// Add a click event listener to 'tabsContainer'
 tabsContainer.addEventListener('click', evt => {
-    // If we don't click on a link, we don't want JS to do anything
-    // Look for closest link when click, if not a link = null
+    // Get the closest ancestor 'a' element of the clicked target, or null if none
     const clickedTab = evt.target.closest('a');
-    // Guard clause, if no tab clicked (null), escape and don't do any more
+    // Guard clause
+    // If no tab was clicked (i.e., 'clickedTab' is null), return early from the function
     if (!clickedTab) return;
-    // Prevent default behaviour of link, stop link jumping
+    // Prevent the default action of the clicked link (stop link jumping)
     evt.preventDefault;
-    // Helper Function for switching tab panels
+    // Call 'switchTab' to switch to the clicked tab
     switchTab(clickedTab);
-    //
 });
 
+// Add a keydown event listener to 'tabsContainer' for keyboard navigation
 tabsContainer.addEventListener('keydown', evt => {
     switch (evt.key) {
         case 'ArrowLeft':
-            moveLeft();
+            moveLeft(); // Call 'moveLeft' to move focus to the previous tab
             break;
         case 'ArrowRight':
-            moveRight();
+            moveRight(); // Call 'moveRight' to move focus to the next tab
             break;
         case 'Home':
-            // Go to first tab
-            evt.preventDefault();
-            switchTab(tabButtons[0]);
+            evt.preventDefault(); // Prevent the default action
+            switchTab(tabButtons[0]); // Switch to the first tab
             break;
         case 'End':
-            // Go to last tab
-            evt.preventDefault();
-            switchTab(tabButtons[tabButtons.length - 1]);
+            evt.preventDefault(); // Prevent the default action
+            switchTab(tabButtons[tabButtons.length - 1]); // Switch to the last tab
             break;
     }
 });
 
+// Define 'moveLeft' function to move focus to the previous tab or loop around to the last tab
 const moveLeft = function () {
-    // Look at current active tab
+    // Get the currently focused element
     const currentTab = document.activeElement;
     // If at the furthest left tab, loop to end on the right
+    // If there is no previous sibling (we are at the first tab)
     if (!currentTab.parentElement.previousElementSibling) {
+        // Loop around and focus the last tab
         switchTab(tabButtons[tabButtons.length - 1]);
     } else {
-        // Find the previous a link using DOM traversal
+        // Otherwise, focus the previous tab (using DOM traversal)
         // PreviousElement will be the li
         switchTab(
             currentTab.parentElement.previousElementSibling.querySelector('a'),
         );
     }
 };
+
+// Define 'moveRight' function to move focus to the next tab or loop around to the first tab
 const moveRight = function () {
-    // Look at current active tab
+    // Get the currently focused element
     const currentTab = document.activeElement;
-    // If at the furthest right tab, loop to start on the left
+    // If there is no next sibling (we are at the last tab)
     if (!currentTab.parentElement.nextElementSibling) {
+        // Loop around and focus the first tab
         switchTab(tabButtons[0]);
     } else {
-        // Find the previous a link using DOM traversal
-        // PreviousElement will be the li
+        // Otherwise, focus the previous tab (using DOM traversal)
         switchTab(
             currentTab.parentElement.nextElementSibling.querySelector('a'),
         );
     }
 };
 
+// Define 'switchTab' function to switch between tabs and manage visibility of tab panels
 const switchTab = function (newTab) {
-    // When click on a link, get href value (#xxxx)
+    // Get the 'href' attribute of the clicked tab
     const activePanelId = newTab.getAttribute('href');
-    // Make clicked link the active panel based on the id (#xxxx)
+    // Find the corresponding panel for the clicked tab (based on the id)
     const activePanel = tabsContainer.querySelector(activePanelId);
-    // Loop through each of the buttons, set to assistive state
+    // Loop through each of the buttons
+    // Set all tab buttons to non-selected and not focusable
     tabButtons.forEach(button => {
         button.setAttribute('aria-selected', false);
         button.setAttribute('tabindex', '-1');
     });
-    // Loop through each of the panels, set to hidden
+    // Loop through each of the panels
+    // Set all panels to hidden
     tabPanels.forEach(panel => {
         panel.setAttribute('hidden', true);
     });
-    // Set the active panel as not hidden
+    // Make the active panel visible and the clicked tab selected and focusable
     activePanel.removeAttribute('hidden');
-    // Set clicked tab as selected
     newTab.setAttribute('aria-selected', true);
     newTab.setAttribute('tabindex', '0');
+    // Set focus to the new tab
     newTab.focus();
-    console.log(activePanelId);
 };
