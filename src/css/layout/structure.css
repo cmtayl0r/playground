@@ -29,15 +29,21 @@ padding: clamp(1rem, 2vw, 5rem);
 
 /* Fixed width wrapper */
 .fixed-s {
+    /* all in one method */
+    /* width: min(100% - 6.4rem, 60rem); */
     max-width: 60rem; /* Avoiding an not-needed breakpoint definition */
     margin-inline: auto; /* Centers the container */
 }
 
 .fixed {
+    /* all in one method */
+    /* width: min(100% - 6.4rem, 100rem); */
     max-width: 100rem; /* Avoiding an not-needed breakpoint definition */
     margin-inline: auto; /* Centers the container */
 }
 .fixed-l {
+    /* all in one method */
+    /* width: min(100% - 6.4rem, 120rem); */
     max-width: 124rem; /* Avoiding an not-needed breakpoint definition */
     margin-inline: auto; /* Centers the container */
 }

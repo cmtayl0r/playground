@@ -15,7 +15,7 @@ export class Modal {
     }
     // METHODS
     openModal() {
-        this.modal.showModal();
+        this.modal.showModal(); // This adds the `open` dialog attribute
         this.modal.addEventListener(
             'animationend',
             () => {
@@ -41,7 +41,7 @@ export class Modal {
             'animationend',
             () => {
                 this.modal.classList.remove('closing'); // Remove the class when animation ends
-                this.modal.close(); // This removes the `open` attribute
+                this.modal.close(); // This removes the `open` dialog attribute
             },
             { once: true }, // Ensure the listener is removed after it's invoked once
         );
