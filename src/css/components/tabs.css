@@ -1,5 +1,5 @@
 /*
-TODO: Lorem
+TODO: Make responsive version
 */
 
 body {
@@ -18,21 +18,54 @@ TABS
     display: flex;
     gap: var(--sp-2);
 
-    border-bottom: 5px solid var(--clr-white);
+    /* border-bottom: 5px solid var(--clr-white); */
 }
 
 [aria-selected='true'] {
     color: var(--clr-black);
     background-color: var(--clr-white);
     text-decoration: none;
+    /* content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #427eea; */
 }
 
 #tabs__title {
 }
+
 .tabs__container {
     & li > a {
-        display: block;
+        display: flex;
+        position: relative;
         padding: var(--sp-4);
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #427eea;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.25s ease-in;
+        }
+
+        &:hover::after {
+            transform: scale(1);
+            transform-origin: left;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    [role='tablist'] {
+        flex-direction: column;
     }
 }
 
