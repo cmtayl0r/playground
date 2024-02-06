@@ -8,7 +8,7 @@ body {
 
 /* 
 --------------------------------------------------------------------------------
-CONTROLS
+TABS
 --------------------------------------------------------------------------------
 */
 [role='tablist'] {
@@ -16,16 +16,24 @@ CONTROLS
     margin: 0;
     padding: 0;
     display: flex;
-    gap: var(--sp-6);
+    gap: var(--sp-2);
+
+    border-bottom: 5px solid var(--clr-white);
 }
 
 [aria-selected='true'] {
-    color: red;
+    color: var(--clr-black);
+    background-color: var(--clr-white);
+    text-decoration: none;
 }
 
 #tabs__title {
 }
 .tabs__container {
+    & li > a {
+        display: block;
+        padding: var(--sp-4);
+    }
 }
 
 /* 
@@ -34,4 +42,5 @@ PANELS
 --------------------------------------------------------------------------------
 */
 .tabs__panels {
+    margin-top: var(--sp-5);
 }

@@ -46,7 +46,7 @@ tabPanels.forEach(panel => {
 });
 
 // -----------------------------------------------------------------------------
-// TAB NAVIGATION
+// TABS BEHAVIOUR
 // -----------------------------------------------------------------------------
 
 // Add a click event listener to 'tabsContainer'
@@ -140,3 +140,41 @@ const switchTab = function (newTab) {
     // Set focus to the new tab
     newTab.focus();
 };
+
+// -----------------------------------------------------------------------------
+// CONVERSION TO A CLASS
+// -----------------------------------------------------------------------------
+
+/*
+class TabController {
+    constructor(containerSelector) {
+        this.tabsContainer = document.querySelector(containerSelector);
+        this.tabsList = this.tabsContainer.querySelector('ul');
+        this.tabButtons = this.tabsList.querySelectorAll('a');
+        this.tabPanels = this.tabsContainer.querySelectorAll('.tabs__panel');
+
+        this.initializeTabs();
+        this.attachEventListeners();
+    }
+
+    initializeTabs() {
+        // Initialize tabs, set attributes, etc.
+    }
+
+    attachEventListeners() {
+        this.tabsContainer.addEventListener('click', this.handleTabClick.bind(this));
+        this.tabsContainer.addEventListener('keydown', this.handleTabKeydown.bind(this));
+        // Bind other event listeners as needed
+    }
+
+    handleTabClick(evt) {
+        // Handle tab click
+    }
+
+    handleTabKeydown(evt) {
+        // Handle keydown events for left, right, home, and end keys
+    }
+
+    // Other methods like moveLeft, moveRight, switchTab, etc.
+}
+*/
