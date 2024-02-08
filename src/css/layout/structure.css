@@ -23,7 +23,7 @@ padding: clamp(1rem, 2vw, 5rem);
 /* Responsive tactic to reduce frame margin when at mobile sizes */
 @media (width < 700px) {
     body.frame {
-        margin: var(--sp-6);
+        margin: var(--sp-2);
     }
 }
 

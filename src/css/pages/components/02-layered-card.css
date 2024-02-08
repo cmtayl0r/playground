@@ -61,7 +61,7 @@ body {
     .status {
         border: 1px solid var(--clr-gray-light);
         border-radius: 100vw;
-        padding: var(--sp-1) var(--sp-2);
+        padding: var(--sp--3) var(--sp--2);
         font-size: 1.2rem;
 
         /* centers, and fits border to content NOT full width */
@@ -71,7 +71,7 @@ body {
         /* Align status dot */
         display: flex;
         align-items: center;
-        gap: var(--sp-1);
+        gap: var(--sp--3);
 
         &::before {
             content: '';

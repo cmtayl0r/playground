@@ -7,7 +7,6 @@ small,
 .text-small {
     font-size: var(--fs-sm);
 }
-
 p {
     font-size: var(--fs-base);
 }
@@ -34,7 +33,8 @@ h4,
 h5,
 h6 {
     font-family: var(--ff-special);
-    line-height: var(--lh-sm);
+    line-height: var(--lh-tight);
+    font-weight: var(--fw-bold);
     margin: 3rem 0 1.38rem;
 }
 
@@ -45,11 +45,11 @@ WEIGHTS
 */
 
 p {
-    font-weight: 500;
+    font-weight: var(--fw-regular);
 }
 
 .text-light {
-    font-weight: 300;
+    font-weight: var(--fw-light);
 }
 
 /* 

@@ -6,17 +6,12 @@
         'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --ff-serif: 'Merriweather', serif;
     --ff-special: 'Barlow Condensed', sans-serif;
-    /* 
-    Fluid typography scale 
-    https://www.fluid-type-scale.com/
-    */
-    --fs-sm: clamp(1.28rem, -0.09vw + 1.32rem, 1.2rem);
-    --fs-base: clamp(1.6rem, 0vw + 1.6rem, 1.6rem);
-    --fs-md: clamp(2rem, 0.15vw + 1.94rem, 2.13rem);
-    --fs-lg: clamp(2.5rem, 0.39vw + 2.34rem, 2.84rem);
-    --fs-xl: clamp(3.13rem, 0.76vw + 2.82rem, 3.79rem);
-    --fs-xxl: clamp(3.91rem, 1.3vw + 3.39rem, 5.05rem);
-    --fs-xxxl: clamp(4.88rem, 2.1vw + 4.04rem, 6.73rem);
+
+    /* Font weights */
+    --fw-bold: 700;
+    --fw-semiBold: 600;
+    --fw-regular: 400;
+    --fw-light: 300;
 
     /* Ratios */
     /* 
@@ -24,14 +19,49 @@
     https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html 
     */
     --ratio: 1.6;
-    --lh-default: var(--ratio);
-    --lh-sm: calc(0.7 * var(--ratio));
+    --lh-base: var(--ratio);
+    --lh-tight: calc(0.7 * var(--ratio));
 
-    /* Font weights */
-    --fw-bold: 700;
-    --fw-semiBold: 600;
-    --fw-regular: 400;
-    --fw-light: 300;
+    /* 
+    Fluid typography system
+    https://www.fluid-type-scale.com/
+    - Line height (line spacing) to at least 1.5 times the font size;
+    - Spacing following paragraphs to at least 2 times the font size;
+    */
+    --fs-sm: clamp(0.75rem, 0.31vw + 0.69rem, 0.94rem);
+    --fs-base: clamp(1rem, 0.42vw + 0.92rem, 1.25rem);
+    --fs-md: clamp(1.33rem, 0.56vw + 1.22rem, 1.67rem);
+    --fs-lg: clamp(1.78rem, 0.74vw + 1.63rem, 2.22rem);
+    --fs-xl: clamp(2.37rem, 0.99vw + 2.17rem, 2.96rem);
+    --fs-xxl: clamp(3.16rem, 1.32vw + 2.89rem, 3.95rem);
+    --fs-xxxl: clamp(4.21rem, 1.75vw + 3.86rem, 5.26rem);
+
+    /* Static Spacing system */
+    --sp--3: calc(var(--sp-base) * 0.25); /* 4px */
+    --sp--2: calc(var(--sp-base) * 0.5); /* 8px */
+    --sp--1: calc(var(--sp-base) * 0.75); /* 12px */
+    --sp-base: 1rem; /* 16px */
+    --sp-1: calc(var(--sp-base) * 1.25); /* 20px */
+    --sp-2: calc(var(--sp-base) * 1.5); /* 24px */
+    --sp-3: calc(var(--sp-base) * 2); /* 32px */
+    --sp-4: calc(var(--sp-base) * 2.5); /* 40px */
+    --sp-5: calc(var(--sp-base) * 3); /* 48px */
+    --sp-6: calc(var(--sp-base) * 3.5); /* 56px */
+    --sp-7: calc(var(--sp-base) * 4); /* 64px */
+    --sp-8: calc(var(--sp-base) * 4.5); /* 72px */
+    --sp-9: calc(var(--sp-base) * 5); /* 80px */
+
+    /* Dynamic Spacing system */
+    /* Min viewport: 320 > Max viewport: 1240 */
+    --sp-dyn--3: clamp(0.25rem, 0.2283rem + 0.1087vi, 0.3125rem); /* 4 > 5 */
+    --sp-dyn--2: clamp(0.5rem, 0.4565rem + 0.2174vi, 0.625rem); /* 8 > 10 */
+    --sp-dyn--1: clamp(0.75rem, 0.6848rem + 0.3261vi, 0.9375rem); /* 12 > 15 */
+    --sp-dyn-0: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem); /* 16 > 20 */
+    --sp-dyn-1: clamp(1.5rem, 1.3696rem + 0.6522vi, 1.875rem); /* 24 > 30 */
+    --sp-dyn-2: clamp(2rem, 1.8261rem + 0.8696vi, 2.5rem); /* 32 > 40 */
+    --sp-dyn-3: clamp(3rem, 2.7391rem + 1.3043vi, 3.75rem); /* 48 > 60 */
+    --sp-dyn-4: clamp(4rem, 3.6522rem + 1.7391vi, 5rem); /* 64 > 80 */
+    --sp-dyn-5: clamp(6rem, 5.4783rem + 2.6087vi, 7.5rem); /* 96 > 120 */
 
     /* Gradients */
     --gr-yoda: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
@@ -62,18 +92,6 @@
     --bs-default: 0 2px 5px rgba(0, 0, 0, 0.1);
     --bs-dark: 0 4px 7px rgba(0, 0, 0, 0.2);
     --bs-dark-big: 1px 1px 20px rgba(0, 0, 0, 0.4);
-
-    /* Spacing */
-    --sp-base: 0.8rem;
-    --sp-1: calc(var(--sp-base) * 0.5); /* 4px */
-    --sp-2: calc(var(--sp-base) * 1); /* 8px */
-    --sp-3: calc(var(--sp-base) * 1.5); /* 12px */
-    --sp-4: calc(var(--sp-base) * 2); /* 16px */
-    --sp-5: calc(var(--sp-base) * 2.5); /* 20px */
-    --sp-6: calc(var(--sp-base) * 3); /* 24px */
-    --sp-7: calc(var(--sp-base) * 4); /* 32px */
-    --sp-8: calc(var(--sp-base) * 6.5); /* 52px */
-    --sp-9: calc(var(--sp-base) * 10.5); /* 84px */
 
     /* Colours */
     --clr-white: #f3f3f3;

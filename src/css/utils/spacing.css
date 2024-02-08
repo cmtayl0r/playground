@@ -6,41 +6,31 @@ Naming convention:
 */
 
 /* Margin Utilities */
-.m-0 {
+.mg-0 {
     margin: 0;
 }
-
-.mb-2 {
-    margin-bottom: var(--sp-2);
-}
-.mb-4 {
-    margin-bottom: var(--sp-4);
-}
-.mb-5 {
-    margin-bottom: var(--sp-5);
+.mgb-8 {
+    margin-bottom: var(--sp--2);
 }
 
 /* Padding Utilities */
-.p-0 {
+.pd-0 {
     padding: 0;
 }
-.p-1 {
-    padding: var(--sp-1); /* 4px */
+.pd-4 {
+    padding: var(--sp--3); /* 4px */
 }
-.p-2 {
-    padding: var(--sp-2); /* 8px */
+.pd-8 {
+    padding: var(--sp--2); /* 8px */
 }
-.p-3 {
-    padding: var(--sp-3); /* 12px */
+.pd-16 {
+    padding: var(--sp-base); /* 16px */
 }
-.p-4 {
-    padding: var(--sp-4); /* 16px */
+.pd-20 {
+    padding: var(--sp-1); /* 20px */
 }
-.p-5 {
-    padding: var(--sp-5); /* 20px */
-}
-.p-7 {
-    padding: var(--sp-7); /* 20px */
+.pd-24 {
+    padding: var(--sp-2); /* 24px */
 }
 
 /* Positioning */

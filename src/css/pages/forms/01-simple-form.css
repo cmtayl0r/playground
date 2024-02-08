@@ -25,22 +25,22 @@ fieldset {
 label {
     display: flex;
     align-items: center;
-    gap: var(--sp-2);
+    gap: var(--sp--2);
 }
 
 .form-group {
-    margin-bottom: var(--sp-6);
+    margin-bottom: var(--sp-2);
 }
 
 .label--m,
 .fieldset__legend--m {
-    margin-bottom: var(--sp-2);
+    margin-bottom: var(--sp--2);
     font-weight: 700;
     font-size: var(--fs-md);
 }
 .input__hint {
     margin-top: -0.8rem;
-    margin-bottom: var(--sp-2);
+    margin-bottom: var(--sp--2);
     color: var(--clr-gray-dark);
 }
 
@@ -49,7 +49,7 @@ label {
 }
 
 /* .form-group {
-    margin: 0 auto var(--sp-6) auto;
+    margin: 0 auto var(--sp-2) auto;
 }
 
 /* 
@@ -63,7 +63,7 @@ INPUT, SELECT
     width: 100%;
     border: 0.4rem solid var(--clr-black);
     border-radius: var(--br-sm);
-    padding: var(--sp-2);
+    padding: var(--sp--2);
     min-height: 4.4rem;
     line-height: var(--lh-default);
     -webkit-font-smoothing: antialiased;
@@ -89,8 +89,8 @@ https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 .check__label {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: var(--sp-2);
-    margin-bottom: var(--sp-2);
+    gap: var(--sp--2);
+    margin-bottom: var(--sp--2);
     font-size: var(--fs-base);
 }
 

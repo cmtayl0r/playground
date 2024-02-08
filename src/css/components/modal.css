@@ -55,7 +55,7 @@ STRUCTURE
 .modal__content,
 .modal__header,
 .modal__footer {
-    padding: var(--sp-7);
+    padding: var(--sp-2);
 }
 
 .modal__content {

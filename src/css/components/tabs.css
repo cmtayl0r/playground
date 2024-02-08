@@ -16,7 +16,7 @@ TABS
     margin: 0;
     padding: 0;
     display: flex;
-    gap: var(--sp-2);
+    gap: var(--sp--2);
 
     /* border-bottom: 5px solid var(--clr-white); */
 }

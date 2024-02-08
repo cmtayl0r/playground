@@ -133,7 +133,7 @@ Navigation indicators
     opacity: 0;
     position: absolute;
     display: flex;
-    gap: var(--sp-1);
+    gap: var(--sp--3);
 
     top: -1rem;
     right: 2rem;

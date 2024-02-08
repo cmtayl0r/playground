@@ -5,7 +5,7 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 
 html {
     /* 62.5% of 16px browser font size is 10px */
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
     /* Users preference */
     color-scheme: light dark;
 }
@@ -23,14 +23,14 @@ html {
 
 body {
     /* Set default size to 16px equivalent */
-    font-size: 1.6rem;
+    font-size: 1rem;
     /* Improve text rendering */
     -webkit-font-smoothing: antialiased;
     /* 
     Add accessible line-height for paragraph, li content etc
     Decrease to 1.1 for h1, h2 etc
     */
-    line-height: var(--ratio);
+    line-height: var(--lh-base);
 }
 
 /* Improve media defaults */

@@ -26,7 +26,7 @@ body {
     - em used to give variable spacing based on font size
     - preferable to same spacing for h1 and p for example
     */
-    margin-top: var(--flow-space, 1em);
+    margin-block-start: var(--flow-space, 1em);
 }
 
 /* 
