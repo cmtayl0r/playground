@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Every layout → The Cover</title>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <style>
+            body {
+                background: var(--gr-mushy) !important;
+            }
+            .demo-blox {
+                border: 5px solid var(--clr-black);
+                width: 200px;
+                height: 100px;
+                background: var(--gr-mushy);
+            }
+            ul.demo-list {
+                list-style-type: none;
+
+                & > li {
+                    font-weight: 700;
+                    cursor: pointer;
+                    line-height: 1.1;
+                    font-family: var(--ff-special);
+                    font-size: var(--fs-lg);
+                }
+            }
+            footer {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="cover wrapper">
+            <header>
+                <div class="cluster cluster-space">
+                    <div class="demo-blox"></div>
+                    <ul class="cluster demo-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </header>
+            <h1>The Cover, creating a hero-like section</h1>
+            <footer>
+                <p>↓ This is what I do</p>
+            </footer>
+        </div>
+    </body>
+</html>
