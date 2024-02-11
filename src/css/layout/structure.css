@@ -89,3 +89,48 @@ POSITIONING
         margin: 0;
     }
 }
+
+/* 
+--------------------------------------------------------------------------------
+THE STACK
+--------------------------------------------------------------------------------
+*/
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.stack > * {
+    margin-block: 0;
+}
+.stack > * + * {
+    margin-block-start: var(--sp-base);
+}
+.stack-large > * + * {
+    margin-block-start: var(--sp-2);
+}
+.stack-small > * + * {
+    margin-block-start: var(--sp--2);
+}
+/* flexbox allows to separate items vertically (i.e. Card) */
+.stack > :nth-child(2) {
+    margin-block-end: auto;
+}
+/* exception above and below */
+/* or just above*/
+.stack-exception,
+.stack-exception > * {
+    margin-block-start: var(--sp-5);
+}
+
+.stack:only-child {
+    /* ↓ `height` in horizontal-tb writing mode */
+    block-size: 100%;
+}
+
+/* 
+--------------------------------------------------------------------------------
+THE BOX
+--------------------------------------------------------------------------------
+*/

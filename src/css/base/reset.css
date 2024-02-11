@@ -23,7 +23,7 @@ html {
 
 body {
     /* Set default size to 16px equivalent */
-    font-size: 1rem;
+    font-size: var(--sp-base);
     /* Improve text rendering */
     -webkit-font-smoothing: antialiased;
     /* 

@@ -1,4 +1,31 @@
 /*
+FIXME: Better naming conventions for padding and margin 
+*/
+
+/* 
+--------------------------------------------------------------------------------
+VERTICAL RHYTHM
+--------------------------------------------------------------------------------
+*/
+
+.flow > * + * {
+    /* 
+    - setting a variable that can adjusted on elements elsewhere
+    - e.g. on a h2 I could set --flow-space:2em; 
+    - 1em is the fallback and used by everything else
+    - em used to give variable spacing based on font size
+    - preferable to same spacing for h1 and p for example
+    */
+    margin-block-start: var(--flow-space, 1em);
+}
+
+/* 
+--------------------------------------------------------------------------------
+PADDING AND MARGINS
+--------------------------------------------------------------------------------
+*/
+
+/*
 Naming convention:
 .{property}{sides}-{size}
 .pb-x, pt-x, .pl-x, .pr-x, px-x, py-x

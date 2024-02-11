@@ -4,6 +4,18 @@ width: w-xx
 viewport-width: vw-100
 */
 
+/* em media queries */
+/*
+80em = 1280px
+70em = 1120px
+60em = 960px
+50em = 800px
+40em = 640px
+30em = 480px
+25em = 400px
+20em = 320px
+*/
+
 /* 
 --------------------------------------------------------------------------------
 VIEWPORT

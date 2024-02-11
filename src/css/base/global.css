@@ -18,17 +18,6 @@ body {
     background-image: var(--gr-wiretap);
 }
 
-.flow > * + * {
-    /* 
-    - setting a variable that can adjusted on elements elsewhere
-    - e.g. on a h2 I could set --flow-space:2em; 
-    - 1em is the fallback and used by everything else
-    - em used to give variable spacing based on font size
-    - preferable to same spacing for h1 and p for example
-    */
-    margin-block-start: var(--flow-space, 1em);
-}
-
 /* 
 --------------------------------------------------------------------------------
 ACCESSIBILITY

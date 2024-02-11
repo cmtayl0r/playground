@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Merriweather:ital@0;1&display=swap');
 
 :root {
+    /* Font faces */
     --ff-plain: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
         'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji',
         'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -13,14 +14,14 @@
     --fw-regular: 400;
     --fw-light: 300;
 
-    /* Ratios */
+    /* Line Height */
     /* 
     Add accessible line-height for paragraph content
     https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html 
     */
-    --ratio: 1.6;
-    --lh-base: var(--ratio);
-    --lh-tight: calc(0.7 * var(--ratio));
+    /* FIXME: Dynamic line heights for typography */
+    --lh-base: 1.6;
+    --lh-tight: calc(0.7 * var(--lh-base));
 
     /* 
     Fluid typography system
@@ -56,7 +57,7 @@
     --sp-dyn--3: clamp(0.25rem, 0.2283rem + 0.1087vi, 0.3125rem); /* 4 > 5 */
     --sp-dyn--2: clamp(0.5rem, 0.4565rem + 0.2174vi, 0.625rem); /* 8 > 10 */
     --sp-dyn--1: clamp(0.75rem, 0.6848rem + 0.3261vi, 0.9375rem); /* 12 > 15 */
-    --sp-dyn-0: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem); /* 16 > 20 */
+    --sp-dyn-base: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem); /* 16 > 20 */
     --sp-dyn-1: clamp(1.5rem, 1.3696rem + 0.6522vi, 1.875rem); /* 24 > 30 */
     --sp-dyn-2: clamp(2rem, 1.8261rem + 0.8696vi, 2.5rem); /* 32 > 40 */
     --sp-dyn-3: clamp(3rem, 2.7391rem + 1.3043vi, 3.75rem); /* 48 > 60 */

@@ -6,66 +6,56 @@
         <title>Document</title>
         <link rel="stylesheet" href="../../css/main.css" />
         <style>
-            .stack {
+            .wrapper {
                 display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
+                /* flex-wrap: wrap; */
+                /* gap: var(--sp-2); */
             }
-            .stack > * {
-                margin-block: 0;
+            main {
+                flex-basis: 0;
+                flex-grow: 999;
+                min-inline-size: 66.666%;
             }
-            .stack > * + * {
-                margin-block-start: var(--space-l, 1.6rem);
+            aside {
+                flex-grow: 1;
             }
-
-            .s-5 {
-                height: var(--s-5);
+            aside.stack > :nth-child(2) {
+                margin-block-end: auto;
             }
-            .s-4 {
-                height: var(--s-4);
-            }
-            .s-3 {
-                height: var(--s-3);
-            }
-            .s-2 {
-                height: var(--s-2);
-            }
-            .s-1 {
-                height: var(--s-1);
-            }
-            .s0 {
-                height: var(--s0);
+            @media (max-width: 50em) {
+                .wrapper {
+                    flex-wrap: wrap;
+                }
             }
         </style>
     </head>
     <body class="frame">
         <h1>The Stack</h1>
         <div class="wrapper">
-            <main class="stack">
-                <h2>Sub heading</h2>
-                <section class="stack">
+            <aside class="stack bg-black pd-24">
+                <h4>Sidebar</h4>
+                <p>
+                    This aside uses a <code>stack</code> class but also shows
+                    how you can push elements vertically to the bottom (the
+                    button). This is useful on components such as cards.
+                </p>
+                <button class="btn btn--inverse">Button</button>
+            </aside>
+            <main class="stack pd-24">
+                <h2>Main section</h2>
+                <section>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Ratione dolorem perferendis, quisquam ipsum hic
-                        asperiores enim voluptatem, quod fuga officia et
-                        blanditiis eveniet! Vero impedit veritatis sed
-                        aspernatur dolorum quia.
+                        <code>stack</code> is applied to the main and sections,
+                        with a <code>stack-large</code> used for the nested
+                        sections.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Iusto corrupti eius nobis, aperiam sint officia itaque?
-                        Eos, beatae animi, fugit iure pariatur sed consectetur
-                        repudiandae velit sint qui quas voluptatibus!
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eius hic corporis, consectetur ex sequi praesentium
-                        assumenda illo fugit repellat doloremque tempore et!
-                        Nihil voluptatem atque vel porro vero perferendis ab.
+                        These classes apply a consistent vertical rhythm for
+                        content.
                     </p>
                 </section>
-                <h2>Sub heading</h2>
-                <section class="flow">
+                <h3>Sub section</h3>
+                <section>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Ratione dolorem perferendis, quisquam ipsum hic
@@ -73,28 +63,31 @@
                         blanditiis eveniet! Vero impedit veritatis sed
                         aspernatur dolorum quia.
                     </p>
+                    <section class="bg-rose stack-large pd-24">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Aspernatur, libero quod consequuntur
+                            asperiores exercitationem dolores explicabo animi
+                            impedit. Aspernatur dolorem debitis omnis alias
+                            dolores expedita. Porro repudiandae debitis beatae
+                            autem.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eius hic corporis, consectetur ex sequi
+                            praesentium assumenda illo fugit repellat doloremque
+                            tempore et! Nihil voluptatem atque vel porro vero
+                            perferendis ab.
+                        </p>
+                    </section>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Iusto corrupti eius nobis, aperiam sint officia itaque?
                         Eos, beatae animi, fugit iure pariatur sed consectetur
                         repudiandae velit sint qui quas voluptatibus!
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eius hic corporis, consectetur ex sequi praesentium
-                        assumenda illo fugit repellat doloremque tempore et!
-                        Nihil voluptatem atque vel porro vero perferendis ab.
                     </p>
                 </section>
             </main>
-            <aside class="stack">
-                <div class="s-5 bg-black">Lorem</div>
-                <div class="s-4 bg-black">Lorem</div>
-                <div class="s-3 bg-black">Lorem</div>
-                <div class="s-2 bg-black">Lorem</div>
-                <div class="s-1 bg-black">Lorem</div>
-                <div class="s0 bg-black">Lorem</div>
-            </aside>
         </div>
     </body>
 </html>
