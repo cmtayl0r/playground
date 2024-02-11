@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Every layout → The Frame</title>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <style>
+            .frame > img {
+                filter: grayscale(100%);
+                mix-blend-mode: multiply;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The Frame</h1>
+        <!-- <img
+            src="	https://source.unsplash.com/random/800x500?dog,v=1"
+            alt="Doggy pops!"
+        /> -->
+        <div class="wrapper pd-16 grid">
+            <article class="box">
+                <div class="stack">
+                    <div class="frame">
+                        <img
+                            src="https://source.unsplash.com/random/800x500?dog,v=1"
+                            alt="Doggy pops!"
+                        />
+                    </div>
+                    <h4>Doggy 1</h4>
+                    <p>
+                        Frames for images and video using <code>frame</code> set
+                        a responsive 16:9 ratio image size by default.
+                    </p>
+                </div>
+            </article>
+            <article class="box">
+                <div class="stack">
+                    <div class="frame frame--4-3">
+                        <img
+                            src="https://source.unsplash.com/random/800x500?dog,v=2"
+                            alt="Doggy pops!"
+                        />
+                    </div>
+                    <h4>Doggy 2</h4>
+                    <p>
+                        You can use bespoke frame ratios such as 3:2 aspect
+                        ratio using an andditional class of
+                        <code>frame--4-3</code> or <code>frame--3-2</code> for
+                        example.
+                    </p>
+                </div>
+            </article>
+            <article class="box">
+                <div class="stack">
+                    <div class="frame">
+                        <img
+                            src="https://source.unsplash.com/random/800x500?dog,v=3"
+                            alt="Doggy pops!"
+                        />
+                    </div>
+                    <h4>Doggy 3</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quaerat provident illo pariatur? Repellat porro
+                        voluptate odit rem quas soluta dignissimos est labore?
+                        Hic alias ducimus magnam, iste provident tenetur iusto!
+                    </p>
+                </div>
+            </article>
+            <article class="box">
+                <div class="stack">
+                    <div class="frame frame--1-1">
+                        <img
+                            src="https://source.unsplash.com/random/800x500?dog,v=4"
+                            alt="Doggy pops!"
+                        />
+                    </div>
+                    <h4>Doggy 4</h4>
+                    <p>
+                        Using a <code>frame--1-1</code> for a square frame.
+                        Quaerat provident illo pariatur? Repellat porro
+                        voluptate odit rem quas soluta dignissimos est labore?
+                        Hic alias ducimus magnam, iste provident tenetur iusto!
+                    </p>
+                </div>
+            </article>
+            <article class="box">
+                <div class="stack">
+                    <div class="frame frame--3-2">
+                        <img
+                            src="https://source.unsplash.com/random/800x500?dog,v=5"
+                            alt="Doggy pops!"
+                        />
+                    </div>
+                    <h4>Doggy 5</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quaerat provident illo pariatur? Repellat porro
+                        voluptate odit rem quas soluta dignissimos est labore?
+                        Hic alias ducimus magnam, iste provident tenetur iusto!
+                    </p>
+                </div>
+            </article>
+        </div>
+    </body>
+</html>

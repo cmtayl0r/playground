@@ -179,3 +179,72 @@ THE COVER
     margin-block: auto;
     text-align: center !important; /* Remove as necessary */
 }
+
+/* 
+--------------------------------------------------------------------------------
+THE GRID
+--------------------------------------------------------------------------------
+*/
+
+.grid {
+    display: grid;
+    grid-gap: var(--sp-base);
+}
+
+@supports (width: min(250px, 100%)) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    }
+}
+
+/* 
+--------------------------------------------------------------------------------
+THE FRAME
+--------------------------------------------------------------------------------
+*/
+
+.frame {
+    --n: 16;
+    --d: 9;
+    aspect-ratio: var(--n) / var(--d);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame > img,
+.frame > video {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+.frame.frame--4-3 {
+    --n: 4;
+    --d: 3;
+    aspect-ratio: var(--n) / var(--d);
+}
+.frame.frame--3-2 {
+    --n: 3;
+    --d: 2;
+    aspect-ratio: var(--n) / var(--d);
+}
+.frame.frame--1-1 {
+    --n: 1;
+    --d: 1;
+    aspect-ratio: var(--n) / var(--d);
+}
+
+/*
+.card > img {
+    aspect-ratio: 3 / 2;
+    object-position: center;
+    object-fit: cover;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+}
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+*/

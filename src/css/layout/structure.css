@@ -9,7 +9,7 @@ WRAPPER
 }
 
 /* Frame around content */
-body.frame {
+body.body-frame {
     margin: var(--sp-8);
     min-height: calc(100vh - calc(var(--sp-8) * 2));
 }
@@ -22,7 +22,7 @@ padding: clamp(1rem, 2vw, 5rem);
 
 /* Responsive tactic to reduce frame margin when at mobile sizes */
 @media (width < 700px) {
-    body.frame {
+    body.body-frame {
         margin: var(--sp-2);
     }
 }
