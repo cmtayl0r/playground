@@ -3,7 +3,8 @@
 - The Box / Basic box padding
 - The Center / Center elements
 - The Sidebar / Flex based responsive sidebar
-- The Cluster / 
+- The Cluster / Groups of similar elements
+- The Switcher /
 */
 
 /* 
@@ -124,4 +125,27 @@ THE CLUSTER
 
 .cluster.cluster-space {
     justify-content: space-between;
+}
+
+/* 
+--------------------------------------------------------------------------------
+THE SWITCHER
+--------------------------------------------------------------------------------
+*/
+
+.switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-base);
+}
+
+.switcher > * {
+    flex-grow: 1;
+    /* ↓ 40rem is the threshold width to trigger the switch */
+    flex-basis: calc((40rem - 100%) * 999);
+}
+
+.switcher > :nth-last-child(n + 5),
+.switcher > :nth-last-child(n + 5) ~ * {
+    flex-basis: 100%;
 }
