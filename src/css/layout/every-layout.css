@@ -1,0 +1,99 @@
+/* 
+--------------------------------------------------------------------------------
+THE STACK
+--------------------------------------------------------------------------------
+*/
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.stack > * {
+    margin-block: 0;
+}
+.stack > * + * {
+    margin-block-start: var(--sp-base);
+}
+.stack-large > * + * {
+    margin-block-start: var(--sp-2);
+}
+.stack-small > * + * {
+    margin-block-start: var(--sp--2);
+}
+/* flexbox allows to separate items vertically (i.e. Card) */
+/*
+.stack > :nth-child(2) {
+    margin-block-end: auto;
+}
+*/
+/* exception above and below */
+/* or just above*/
+.stack-exception,
+.stack-exception > * {
+    margin-block-start: var(--sp-5);
+}
+.stack:only-child {
+    /* ↓ `height` in horizontal-tb writing mode */
+    block-size: 100%;
+}
+
+/* 
+--------------------------------------------------------------------------------
+THE BOX
+--------------------------------------------------------------------------------
+*/
+
+.box {
+    padding: var(--sp-base);
+    color: var(--clr-black);
+    background-color: var(--bg-tr-white);
+    outline: 0.125rem solid transparent;
+    outline-offset: -0.125rem;
+}
+
+.box * {
+    color: inherit;
+}
+.box.invert {
+    color: var(--clr-white);
+    background-color: var(--bg-tr-black);
+}
+
+/* 
+--------------------------------------------------------------------------------
+THE CENTER
+--------------------------------------------------------------------------------
+*/
+.center {
+    box-sizing: content-box;
+    max-inline-size: 60ch;
+    margin-inline: auto;
+}
+/* 
+--------------------------------------------------------------------------------
+THE SIDEBAR
+--------------------------------------------------------------------------------
+*/
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-base);
+}
+
+/* 
+- Swap with-sidebar to :last-child if right column
+- flex-basis on :first-child to set sidebar fixed width
+- flex-grow: 999 takes all avilable space and squashes down the sidebar to ideal size
+*/
+
+.with-sidebar > :first-child {
+    flex-basis: 20em; /* Set if sidebar fixed width */
+    flex-grow: 1;
+}
+
+.with-sidebar > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: 60%; /* Determines when wrapping happens */
+}

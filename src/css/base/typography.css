@@ -86,3 +86,25 @@ ul li::marker,
 ol li::marker {
     color: var(--clr-gray);
 }
+
+/* 
+--------------------------------------------------------------------------------
+CODE
+--------------------------------------------------------------------------------
+*/
+
+code {
+    font-family: monospace;
+    font-size: inherit;
+}
+
+p > code,
+li > code,
+dd > code,
+td > code {
+    background: var(--bg-tr-white);
+    word-wrap: break-word;
+    box-decoration-break: clone;
+    padding: 0.1em 0.3em 0.2em;
+    border-radius: 0.2em;
+}

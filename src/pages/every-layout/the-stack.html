@@ -3,37 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Every layout → The Stack</title>
         <link rel="stylesheet" href="../../css/main.css" />
         <style>
-            .wrapper {
-                display: flex;
-                /* flex-wrap: wrap; */
-                /* gap: var(--sp-2); */
-            }
-            main {
-                flex-basis: 0;
-                flex-grow: 999;
-                min-inline-size: 66.666%;
-            }
-            aside {
-                flex-grow: 1;
-            }
-            aside.stack > :nth-child(2) {
+            .stack > :nth-child(3) {
                 margin-block-end: auto;
-            }
-            @media (max-width: 50em) {
-                .wrapper {
-                    flex-wrap: wrap;
-                }
             }
         </style>
     </head>
     <body class="frame">
         <h1>The Stack</h1>
-        <div class="wrapper">
-            <aside class="stack bg-black pd-24">
-                <h4>Sidebar</h4>
+        <div class="wrapper with-sidebar">
+            <aside class="stack box invert">
+                <h4>The Sidebar</h4>
+                <p>
+                    Uses the <code>with-sidebar</code> pattern to show a
+                    responsive layout use of centred elements.
+                </p>
                 <p>
                     This aside uses a <code>stack</code> class but also shows
                     how you can push elements vertically to the bottom (the
@@ -41,52 +27,69 @@
                 </p>
                 <button class="btn btn--inverse">Button</button>
             </aside>
-            <main class="stack pd-24">
-                <h2>Main section</h2>
-                <section>
-                    <p>
-                        <code>stack</code> is applied to the main and sections,
-                        with a <code>stack-large</code> used for the nested
-                        sections.
-                    </p>
-                    <p>
-                        These classes apply a consistent vertical rhythm for
-                        content.
-                    </p>
-                </section>
-                <h3>Sub section</h3>
-                <section>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Ratione dolorem perferendis, quisquam ipsum hic
-                        asperiores enim voluptatem, quod fuga officia et
-                        blanditiis eveniet! Vero impedit veritatis sed
-                        aspernatur dolorum quia.
-                    </p>
-                    <section class="bg-rose stack-large pd-24">
+            <main class="pd-16">
+                <div class="center stack">
+                    <h2>Main section</h2>
+                    <section class="stack">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Aspernatur, libero quod consequuntur
-                            asperiores exercitationem dolores explicabo animi
-                            impedit. Aspernatur dolorem debitis omnis alias
-                            dolores expedita. Porro repudiandae debitis beatae
-                            autem.
+                            <code>stack</code> is applied to the main and
+                            sections, with a <code>stack-large</code> used for
+                            the nested sections.
                         </p>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eius hic corporis, consectetur ex sequi
-                            praesentium assumenda illo fugit repellat doloremque
-                            tempore et! Nihil voluptatem atque vel porro vero
-                            perferendis ab.
+                            These classes apply a consistent vertical rhythm for
+                            content. The <code>center</code> is used to create a
+                            centred column based on ch.
                         </p>
                     </section>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Iusto corrupti eius nobis, aperiam sint officia itaque?
-                        Eos, beatae animi, fugit iure pariatur sed consectetur
-                        repudiandae velit sint qui quas voluptatibus!
-                    </p>
-                </section>
+                    <h3>Sub section</h3>
+                    <section class="stack">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Ratione dolorem perferendis, quisquam ipsum
+                            hic asperiores enim voluptatem, quod fuga officia et
+                            blanditiis eveniet! Vero impedit veritatis sed
+                            aspernatur dolorum quia.
+                        </p>
+                        <section class="box stack-large">
+                            <p>
+                                Using <code>stack-large</code> to demonstrate a
+                                larger stack spacing within this sub section.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Eius hic corporis, consectetur
+                                ex sequi praesentium assumenda illo fugit
+                                repellat doloremque tempore et! Nihil voluptatem
+                                atque vel porro vero perferendis ab.
+                            </p>
+                        </section>
+                        <section class="box pd-0">
+                            <div class="box invert">
+                                <h5 class="mg-0">Box header</h5>
+                            </div>
+                            <div class="box stack">
+                                <p>
+                                    Using <code>box</code> to create two
+                                    connected boxes for a header and a body.
+                                </p>
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quam delectus ipsam odio
+                                    quidem fuga quia, recusandae eveniet
+                                    similique.
+                                </p>
+                            </div>
+                        </section>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Iusto corrupti eius nobis, aperiam sint
+                            officia itaque? Eos, beatae animi, fugit iure
+                            pariatur sed consectetur repudiandae velit sint qui
+                            quas voluptatibus!
+                        </p>
+                    </section>
+                </div>
             </main>
         </div>
     </body>
