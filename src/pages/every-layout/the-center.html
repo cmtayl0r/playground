@@ -5,7 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Every layout → The Center</title>
         <link rel="stylesheet" href="../../css/main.css" />
-        <style></style>
+        <style>
+            .custom-input {
+                display: flex;
+
+                & :first-child {
+                    flex-grow: 1;
+                    font-size: inherit;
+                    font-family: monospace;
+                    border: 6px solid var(--clr-black);
+                    padding: var(--sp-base);
+                    /* box-shadow: inset 0.25rem 0.25rem 0 #303030; */
+                    background: var(--clr-gray-light);
+                    color: var(--clr-black);
+                    font-size: var(--fs-base);
+                }
+                & :last-child {
+                    cursor: pointer;
+                    color: var(--clr-white);
+                    background-color: var(--clr-black);
+                    padding: 0.5em 1.5em 0.7em;
+                    border: 6px solid var(--clr-black);
+                    font-size: var(--fs-base);
+                    font-weight: var(--fw-bold);
+                }
+            }
+        </style>
     </head>
     <body>
         <h1>The Center</h1>
@@ -35,6 +60,15 @@
                             porro quia consequuntur itaque asperiores temporibus
                             nobis veniam. Unde!
                         </p>
+                        <form action="">
+                            <div class="custom-input">
+                                <input
+                                    type="text"
+                                    placeholder="Search for anything ..."
+                                />
+                                <button>Search</button>
+                            </div>
+                        </form>
                         <p>
                             Lorem ipsum dolor sit amet consectetur, adipisicing
                             elit. Quasi ipsum maxime sequi facere fugit,

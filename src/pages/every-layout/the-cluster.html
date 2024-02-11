@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Every layout → The Cluster</title>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <style>
+            .cta {
+                font-size: inherit;
+                font-weight: 700;
+                display: inline-block;
+                cursor: pointer;
+                line-height: 1.1;
+                font-family: var(--ff-special);
+                font-size: var(--fs-md);
+                background-color: var(--color-dark);
+                padding: 0.5em 1.5em 0.7em;
+                border: 5px solid var(--clr-black);
+            }
+            .demo-blox {
+                border: 5px solid var(--clr-black);
+                width: 200px;
+                height: 100px;
+                background: var(--gr-mushy);
+            }
+            ul.demo-list {
+                list-style-type: none;
+
+                & > li {
+                    font-weight: 700;
+                    cursor: pointer;
+                    line-height: 1.1;
+                    font-family: var(--ff-special);
+                    font-size: var(--fs-lg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The Cluster</h1>
+        <div class="wrapper pd-16 stack">
+            <h4>Standard cluster</h4>
+            <div class="box">
+                <div class="cluster">
+                    <div role="listitem">
+                        <a class="cta" href="#">Rhea Ripley</a>
+                    </div>
+                    <div role="listitem">
+                        <a class="cta" href="#">Cody Rhodes</a>
+                    </div>
+                    <div role="listitem">
+                        <a class="cta" href="#">Ric Flair</a>
+                    </div>
+                    <div role="listitem">
+                        <a class="cta" href="#">Shawn Michaels</a>
+                    </div>
+                    <div role="listitem">
+                        <a class="cta" href="#">Bret Hart</a>
+                    </div>
+                    <div role="listitem">
+                        <a class="cta" href="#">Steve Austin</a>
+                    </div>
+                </div>
+            </div>
+            <h4>Nested clusters to simulate header</h4>
+            <div class="box">
+                <div class="cluster cluster-space">
+                    <div class="demo-blox"></div>
+                    <ul class="cluster demo-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

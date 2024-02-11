@@ -1,3 +1,11 @@
+/*
+- The Stack / Vertical rhythm
+- The Box / Basic box padding
+- The Center / Center elements
+- The Sidebar / Flex based responsive sidebar
+- The Cluster / 
+*/
+
 /* 
 --------------------------------------------------------------------------------
 THE STACK
@@ -88,12 +96,32 @@ THE SIDEBAR
 */
 
 .with-sidebar > :first-child {
+    /* ↓ The width when the sidebar _is_ a sidebar */
     flex-basis: 20em; /* Set if sidebar fixed width */
     flex-grow: 1;
 }
 
 .with-sidebar > :last-child {
+    /* ↓ Grow from nothing */
     flex-basis: 0;
     flex-grow: 999;
+    /* ↓ Wrap when the elements are of equal width (50%, or another %) */
     min-inline-size: 60%; /* Determines when wrapping happens */
+}
+/* 
+--------------------------------------------------------------------------------
+THE CLUSTER
+--------------------------------------------------------------------------------
+*/
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-base, 1rem);
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cluster.cluster-space {
+    justify-content: space-between;
 }
