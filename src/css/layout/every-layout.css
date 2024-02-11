@@ -4,7 +4,13 @@
 - The Center / Center elements
 - The Sidebar / Flex based responsive sidebar
 - The Cluster / Groups of similar elements
-- The Switcher /
+- The Switcher / Easy switch between horizontal and vertical layouts
+- The Cover / Hero area layout
+- The Grid / Simple layout of grid items
+- The Frame / Image aspect ratio control
+- The Reel / Overflow containers for horizontal scrolling
+- The Imposter /
+- The Icon /
 */
 
 /* 
@@ -212,7 +218,6 @@ THE FRAME
     justify-content: center;
     align-items: center;
 }
-
 .frame > img,
 .frame > video {
     inline-size: 100%;
@@ -235,16 +240,20 @@ THE FRAME
     aspect-ratio: var(--n) / var(--d);
 }
 
-/*
-.card > img {
-    aspect-ratio: 3 / 2;
-    object-position: center;
-    object-fit: cover;
-    filter: grayscale(100%);
-    mix-blend-mode: multiply;
-}
-img {
-    max-inline-size: 100%;
-    block-size: auto;
-}
+/* 
+--------------------------------------------------------------------------------
+THE REEL
+--------------------------------------------------------------------------------
+*/
+
+/* 
+--------------------------------------------------------------------------------
+THE IMPOSTER
+--------------------------------------------------------------------------------
+*/
+
+/* 
+--------------------------------------------------------------------------------
+THE REEL
+--------------------------------------------------------------------------------
 */
