@@ -1,0 +1,100 @@
+:root {
+    --text-dark: #171717;
+    --text-light: #e5e5e5;
+    --white: #ffffff;
+}
+
+.container__form {
+    min-height: 100vh;
+    /* BAckground image */
+    background-image: url('../../../assets/images/bg.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Child positioning */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__form {
+    width: min(100% - 6.4rem, 30em);
+    backdrop-filter: blur(8px);
+    border: 2px solid var(--clr-white);
+
+    padding: var(--sp-6) var(--sp-5);
+    border-radius: var(--br-lg);
+
+    /* Animation in */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: show 0.5s linear forwards;
+
+    & h1 {
+        /* margin: 0; */
+        color: var(--clr-white);
+        text-align: center;
+        font-size: var(--fs-xl);
+    }
+
+    & .input__row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-block: 5px;
+        border-bottom: 2px solid var(--clr-white);
+
+        & span {
+            font-size: var(--fs-md);
+            color: var(--clr-white);
+        }
+
+        & .input__group {
+            flex: 1;
+            position: relative;
+            isolation: isolate;
+
+            & label {
+                font-size: var(--fs-base);
+                color: var(--clr-white);
+
+                /* Position form placeholder animation */
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: 0.3s;
+                /* pointer-events: none; */
+            }
+
+            /* Placeholder animation on input focus */
+            & input:not(:placeholder-shown) ~ label,
+            input:focus ~ label {
+                font-size: var(--fs-sm);
+                top: -1.2rem;
+            }
+
+            & input {
+                width: 100%;
+                outline: none;
+                border: none;
+                font-size: var(--fs-base);
+                background-color: transparent !important;
+
+                & :focus {
+                    background-color: red;
+                }
+            }
+        }
+    }
+}
+
+#password-eye {
+    cursor: pointer;
+}
+
+@keyframes show {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

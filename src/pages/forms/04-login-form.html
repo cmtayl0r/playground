@@ -4,7 +4,38 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Forms → 04 Login form</title>
+        <link rel="stylesheet" href="../../css/main.css" />
         <link rel="stylesheet" href="../../css/pages/forms/04-login-form.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+        <script defer src="../../js/pages/forms/04-login-form.js"></script>
     </head>
-    <body></body>
+    <body>
+        <div class="container__form">
+            <form action="" class="login__form stack stack-large">
+                <h1>Login</h1>
+                <!-- Input: Name -->
+                <div class="input__row">
+                    <span><i class="ri-user-3-line"></i></span>
+                    <div class="input__group">
+                        <input id="name" type="text" placeholder=" " />
+                        <label for="name">Name</label>
+                    </div>
+                </div>
+                <!-- Input: Password -->
+                <div class="input__row">
+                    <span><i class="ri-lock-2-line"></i></span>
+                    <div class="input__group">
+                        <input id="password" type="password" placeholder=" " />
+                        <label for="password">Password</label>
+                    </div>
+                    <span id="password-eye"
+                        ><i class="ri-eye-off-line"></i
+                    ></span>
+                </div>
+            </form>
+        </div>
+    </body>
 </html>
