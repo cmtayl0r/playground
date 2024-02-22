@@ -1,8 +1,4 @@
-:root {
-    --text-dark: #171717;
-    --text-light: #e5e5e5;
-    --white: #ffffff;
-}
+/* FIXME: Focus color and style on text/password inputs, remember. Should be yellow */
 
 .container__form {
     min-height: 100vh;
@@ -90,6 +86,66 @@
 
 #password-eye {
     cursor: pointer;
+}
+
+.action__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .check-remember {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        & label {
+            font-size: var(--fs-sm);
+            color: var(--clr-gray-light);
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            &:hover {
+                color: var(--clr-white);
+            }
+        }
+    }
+
+    & .forgot-password {
+        text-decoration: none;
+        font-size: var(--fs-sm);
+        color: var(--clr-gray-light);
+        transition: 0.3s;
+
+        &:hover {
+            color: var(--clr-white);
+            text-decoration: underline;
+        }
+    }
+}
+
+input[type='checkbox'] {
+    outline-color: var(--clr-white);
+    border-color: var(--clr-white);
+    accent-color: var(--clr-white);
+    color: var(--clr-black);
+}
+
+.register {
+    text-align: center;
+    color: var(--clr-white);
+
+    & a {
+        text-decoration: none;
+        color: var(--clr-gray-light);
+        transition: 0.3s;
+        font-weight: 700;
+
+        &:hover {
+            color: var(--clr-white);
+            text-decoration: underline;
+        }
+    }
 }
 
 @keyframes show {

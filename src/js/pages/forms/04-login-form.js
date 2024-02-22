@@ -1,6 +1,6 @@
 const passwordBtn = document.getElementById('password-eye');
 
-// SHow and hide password input
+// Show and hide password input
 passwordBtn.addEventListener('click', e => {
     // Input and Icon DOM
     const passwordInput = document.getElementById('password');
