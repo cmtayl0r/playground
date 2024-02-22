@@ -9,9 +9,67 @@
             body {
                 background: var(--gr-mushy) !important;
             }
+            .layout {
+                display: flex;
+                flex-wrap: wrap;
+                gap: var(--sp-base);
+                container-type: inline-size;
+            }
+            .layout > * {
+                flex-basis: 100%;
+                /* flex-basis: calc(100% - var(--sp-base) * 999); */
+            }
+            @container (width > 500px) {
+                .layout > * {
+                    flex-basis: calc(50% - var(--sp--2));
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                }
+            }
         </style>
     </head>
     <body>
         <h1>The Imposter</h1>
+        <div class="wrapper pd-24 layout">
+            <section class="box stack">
+                <h4>Sub heading 1</h4>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Quibusdam illo modi reiciendis aut at accusantium sequi
+                    temporibus a beatae quos, laborum perferendis atque fugiat
+                    corporis sapiente consectetur animi sunt error.
+                </p>
+            </section>
+            <section class="box stack">
+                <h4>Sub heading 2</h4>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Quibusdam illo modi reiciendis aut at accusantium sequi
+                    temporibus a beatae quos, laborum perferendis atque fugiat
+                    corporis sapiente consectetur animi sunt error.
+                </p>
+            </section>
+            <section class="box stack">
+                <h4>Sub heading 3</h4>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Quibusdam illo modi reiciendis aut at accusantium sequi
+                    temporibus a beatae quos, laborum perferendis atque fugiat
+                    corporis sapiente consectetur animi sunt error.
+                </p>
+            </section>
+        </div>
+        <div class="imposter">
+            <div class="box stack invert">
+                <h3>An Imposter</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolorum tempora nulla beatae delectus repudiandae,
+                    perspiciatis eveniet quam nemo nostrum distinctio
+                    voluptatum, vero recusandae blanditiis quibusdam quisquam,
+                    rerum praesentium inventore! Dolorum.
+                </p>
+            </div>
+        </div>
     </body>
 </html>

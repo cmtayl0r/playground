@@ -1,7 +1,7 @@
 /*
-- The Stack / Vertical rhythm
+- The Stack / Vertical rhythm of items in a box
 - The Box / Basic box padding
-- The Center / Center elements
+- The Center / Center elements horizontally in a box
 - The Sidebar / Flex based responsive sidebar
 - The Cluster / Groups of similar elements
 - The Switcher / Easy switch between horizontal and vertical layouts
@@ -251,6 +251,20 @@ THE REEL
 THE IMPOSTER
 --------------------------------------------------------------------------------
 */
+
+.imposter {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imposter.contain {
+    --margin: 0px;
+    overflow: auto;
+    max-inline-size: calc(100% - (var(--margin) * 2));
+    max-block-size: calc(100% - (var(--margin) * 2));
+}
 
 /* 
 --------------------------------------------------------------------------------
