@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Component → Switch</title>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link rel="stylesheet" href="../../css/components/switch.css" />
+    </head>
+    <body>
+        <h1>Switch input</h1>
+        <div class="wrapper fixed-s pd-24">
+            <label for="">This is the switch label</label>
+            <input type="checkbox" />
+
+            <!-- Root of component is a <label>, good to increase tap area -->
+            <label class="switch-input">
+                <span class="visually-hidden">Enable setting</span>
+                <input type="checkbox" role="switch" class="visually-hidden" />
+                <!-- Decorative spans hidden from assistive tech -->
+                <!-- Tech will announce the states -->
+                <span
+                    class="switch-input__decor"
+                    data-switch-input-state="on"
+                    aria-hidden="true"
+                    >On</span
+                >
+                <span
+                    class="switch-input__decor"
+                    data-switch-input-state="off"
+                    aria-hidden="true"
+                    >Off</span
+                >
+                <span class="switch-input__thumb" aria-hidden="true"></span>
+            </label>
+        </div>
+    </body>
+</html>
