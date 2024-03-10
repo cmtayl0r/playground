@@ -143,7 +143,7 @@ ICON BUTTON
 }
 
 /* Icon styles */
-/* use as svg class, <i> 3rd party don't give class, rely on font-size above */
+/* use as svg class, <i> 3rd party don't use class, rely on font-size above */
 .icon {
     width: 1em; /* Scales based on font size */
     height: 1em;

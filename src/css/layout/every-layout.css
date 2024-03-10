@@ -324,12 +324,14 @@ THE ICON
 */
 
 .icon {
-    width: 0.75em;
+    width: 1em;
     width: 1cap;
-    height: 0.75em;
+    height: 1em;
     height: 1cap;
-
     fill: currentColor; /* Icon color matches the text color */
+    font-weight: var(
+        --fw-regular
+    ); /* Reset font weight for 3rd party Icons using <i> */
 }
 
 .with-icon {
@@ -341,6 +343,12 @@ THE ICON
     margin-inline-end: var(--sp-1);
 }
 
-.icon-button .icon {
-    margin-inline-end: var(--sp-1);
+.icon-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.125em;
+
+    & i.icon {
+        text-decoration: none !important;
+    }
 }

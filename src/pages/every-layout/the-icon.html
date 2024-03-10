@@ -17,61 +17,14 @@
     </head>
     <body>
         <h1>The Icon</h1>
-        <main class="wrapper pd-24 stack">
+        <main class="wrapper pd-24 stack stack-large">
+            <h3 class="with-icon">
+                <i class="ri-list-radio icon" aria-hidden="true"></i>
+                Lists with icons
+            </h3>
             <section class="cluster">
-                <!-- Button with text -->
-                <button
-                    aria-label="Voice Chat"
-                    type="button"
-                    class="btn with-icon icon-button"
-                >
-                    <i class="ri-radio-button-fill icon" aria-hidden="true"></i>
-                    <span>Button with icon</span>
-                </button>
-                <button
-                    aria-label="Voice Chat"
-                    type="button"
-                    class="btn btn--lg with-icon icon-button"
-                >
-                    <i class="ri-radio-button-fill icon" aria-hidden="true"></i>
-                    <span>Button with icon</span>
-                </button>
-                <button
-                    aria-label="Voice Chat"
-                    type="button"
-                    class="btn btn--sm with-icon icon-button"
-                >
-                    <i class="ri-radio-button-fill icon" aria-hidden="true"></i>
-                    <span>Button with icon</span>
-                </button>
-                <!-- Button with no text -->
-                <button aria-label="Voice Chat" type="button" class="btn">
-                    <i class="ri-fingerprint-fill" aria-hidden="true"></i>
-                    <span class="visually-hidden">Button with no text</span>
-                </button>
-                <button
-                    aria-label="Voice Chat"
-                    type="button"
-                    class="btn btn--lg"
-                >
-                    <i class="ri-fingerprint-fill" aria-hidden="true"></i>
-                    <span class="visually-hidden">Button with no text</span>
-                </button>
-                <button
-                    aria-label="Voice Chat"
-                    type="button"
-                    class="btn btn--sm"
-                >
-                    <i class="ri-fingerprint-fill" aria-hidden="true"></i>
-                    <span class="visually-hidden">Button with no text</span>
-                </button>
-                <!-- P with icon -->
-                <p class="with-icon">
-                    <i class="ri-screenshot-2-line icon" aria-hidden="true"></i>
-                    Take a screenshot
-                </p>
                 <!-- List with icons -->
-                <ul class="cluster">
+                <ul class="cluster mg-0 pd-0">
                     <li class="with-icon">
                         <i
                             class="ri-color-filter-fill icon"
@@ -95,47 +48,57 @@
                     </li>
                 </ul>
             </section>
+            <h3 class="with-icon">
+                <i class="ri-text-snippet icon" aria-hidden="true"></i>
+                Icons in headings and text blocks
+            </h3>
             <section class="stack">
-                <h3 class="with-icon">
-                    <i class="ri-text-snippet icon" aria-hidden="true"></i>
-                    Icons in headings and text blocks
-                </h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Iure corrupti accusantium, facilis illum aliquid
-                    <a href="#"
-                        ><i
+                    <a href="#" class="icon-link">
+                        Inline to something
+                        <i
                             class="ri-arrow-right-up-line icon"
                             aria-hidden="true"
                         ></i>
-                        Inline to something</a
-                    >
+                    </a>
                     quos expedita nulla maiores repellendus sunt eius laudantium
                     quas in blanditiis illo vitae, quis non sit.
                 </p>
-                <h3 class="with-icon">
-                    <i class="ri-links-line icon" aria-hidden="true"></i>
-                    Icons with links
-                </h3>
-                <a href="#">
-                    <i
-                        class="ri-arrow-right-up-line icon"
-                        aria-hidden="true"
-                    ></i>
-                    Link with icon
-                </a>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i
-                                class="ri-arrow-right-up-line icon"
-                                aria-hidden="true"
-                            ></i>
-                            List link 1
-                        </a>
-                    </li>
-                </ul>
             </section>
+            <section class="box pd-0">
+                <div class="box invert">
+                    <h5 class="mg-0 with-icon">
+                        <i class="ri-link-unlink icon" aria-hidden="true"></i>
+                        Icons with links
+                    </h5>
+                </div>
+                <div class="stack pd-16">
+                    <a href="#" class="icon-link">
+                        Link with icon
+                        <i
+                            class="ri-arrow-right-up-line icon"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i
+                                    class="ri-arrow-right-up-line icon"
+                                    aria-hidden="true"
+                                ></i>
+                                List link 1
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <a href="#" class="icon-link">
+                Link with icon
+                <i class="ri-arrow-right-up-line icon" aria-hidden="true"></i>
+            </a>
         </main>
     </body>
 </html>
