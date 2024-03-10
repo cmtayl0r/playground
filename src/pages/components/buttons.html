@@ -6,6 +6,10 @@
         <title>Component → Buttons</title>
         <link rel="stylesheet" href="../../css/main.css" />
         <link rel="stylesheet" href="../../css/components/buttons.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
         <script type="module" src="../../js/main.js" defer></script>
         <style>
             section {
@@ -23,8 +27,10 @@
     </head>
     <body class="body-frame">
         <h1>Buttons</h1>
-        <main class="wrapper fixed">
-            <section class="p-7">
+        <main class="wrapper fixed stack pd-24">
+            <!-- DEFAULT -->
+            <h3>Default</h3>
+            <section class="cluster">
                 <button class="btn btn--primary btn--lg btn--fluid">
                     Primary button
                 </button>
@@ -35,17 +41,54 @@
                     Primary button
                 </button>
             </section>
-            <section class="p-7">
+            <section class="cluster">
                 <button class="btn btn--lg">Default button</button>
                 <button class="btn">Default button</button>
                 <button class="btn btn--sm">Default button</button>
             </section>
-            <section class="p-7">
+            <section class="cluster">
                 <button class="btn btn--bare btn--lg">Bare button</button>
                 <button class="btn btn--bare">Bare button</button>
                 <button class="btn btn--bare btn--sm">Bare button</button>
             </section>
-            <section class="p-7">
+            <!-- DEFAULT WITH ICON -->
+            <h3>Default with icon</h3>
+            <section class="cluster">
+                <button class="btn btn--primary btn--lg btn--fluid">
+                    <i
+                        class="ri-fingerprint-fill icon--left"
+                        aria-hidden="true"
+                    ></i>
+                    Primary button
+                </button>
+                <button class="btn btn--primary btn--fluid">
+                    <i
+                        class="ri-fingerprint-fill icon--left"
+                        aria-hidden="true"
+                    ></i>
+                    Primary button
+                </button>
+                <button class="btn btn--primary btn--sm btn--fluid">
+                    <i
+                        class="ri-fingerprint-fill icon--left"
+                        aria-hidden="true"
+                    ></i>
+                    Primary button
+                </button>
+            </section>
+            <!-- <section class="cluster">
+                <button class="btn btn--lg">Default button</button>
+                <button class="btn">Default button</button>
+                <button class="btn btn--sm">Default button</button>
+            </section>
+            <section class="cluster">
+                <button class="btn btn--bare btn--lg">Bare button</button>
+                <button class="btn btn--bare">Bare button</button>
+                <button class="btn btn--bare btn--sm">Bare button</button>
+            </section> -->
+            <!-- INVERSE -->
+            <h3>Inverse</h3>
+            <section class="cluster">
                 <button class="btn btn--primary btn--inverse btn--lg">
                     Primary button
                 </button>
@@ -56,12 +99,12 @@
                     Primary button
                 </button>
             </section>
-            <section class="p-7">
+            <section class="cluster">
                 <button class="btn btn--lg btn--inverse">Default button</button>
                 <button class="btn btn--inverse">Default button</button>
                 <button class="btn btn--sm btn--inverse">Default button</button>
             </section>
-            <section class="p-7">
+            <section class="cluster">
                 <button class="btn btn--bare btn--inverse btn--lg">
                     Bare button
                 </button>
@@ -70,12 +113,14 @@
                     Bare button
                 </button>
             </section>
-            <section class="p-7">
-                <button class="btn--icon btn--lg">
+            <!-- ICON ONLY -->
+            <h3>Icon only</h3>
+            <section class="cluster">
+                <button class="btn btn--icon btn--lg">
                     <svg
                         aria-hidden="true"
                         focusable="false"
-                        class="btn--icon__icon"
+                        class="icon"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
                     >
@@ -85,11 +130,11 @@
                     </svg>
                     <span class="sr-only">Close</span>
                 </button>
-                <button class="btn--icon">
+                <button class="btn btn--icon">
                     <svg
                         aria-hidden="true"
                         focusable="false"
-                        class="btn--icon__icon"
+                        class="icon"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
                     >
@@ -99,55 +144,11 @@
                     </svg>
                     <span class="sr-only">Close</span>
                 </button>
-                <button class="btn--icon btn--sm">
+                <button class="btn btn--icon btn--sm">
                     <svg
                         aria-hidden="true"
                         focusable="false"
-                        class="btn--icon__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                    >
-                        <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                        />
-                    </svg>
-                    <span class="sr-only">Close</span>
-                </button>
-            </section>
-            <section class="p-7">
-                <button class="btn--icon btn--primary btn--lg">
-                    <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        class="btn--icon__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                    >
-                        <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                        />
-                    </svg>
-                    <span class="sr-only">Close</span>
-                </button>
-                <button class="btn--icon btn--primary">
-                    <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        class="btn--icon__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                    >
-                        <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                        />
-                    </svg>
-                    <span class="sr-only">Close</span>
-                </button>
-                <button class="btn--icon btn--primary btn--sm">
-                    <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        class="btn--icon__icon"
+                        class="icon"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
                     >
@@ -158,12 +159,12 @@
                     <span class="sr-only">Close</span>
                 </button>
             </section>
-            <section class="p-7">
-                <button class="btn--icon btn--bare btn--lg">
+            <section class="cluster">
+                <button class="btn btn--icon btn--primary btn--lg">
                     <svg
                         aria-hidden="true"
                         focusable="false"
-                        class="btn--icon__icon"
+                        class="icon"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
                     >
@@ -173,11 +174,11 @@
                     </svg>
                     <span class="sr-only">Close</span>
                 </button>
-                <button class="btn--icon btn--bare">
+                <button class="btn btn--icon btn--primary">
                     <svg
                         aria-hidden="true"
                         focusable="false"
-                        class="btn--icon__icon"
+                        class="icon"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
                     >
@@ -187,55 +188,11 @@
                     </svg>
                     <span class="sr-only">Close</span>
                 </button>
-                <button class="btn--icon btn--bare btn--sm">
+                <button class="btn btn--icon btn--primary btn--sm">
                     <svg
                         aria-hidden="true"
                         focusable="false"
-                        class="btn--icon__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                    >
-                        <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                        />
-                    </svg>
-                    <span class="sr-only">Close</span>
-                </button>
-            </section>
-            <section class="p-7">
-                <button class="btn--icon btn--inverse btn--lg">
-                    <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        class="btn--icon__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                    >
-                        <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                        />
-                    </svg>
-                    <span class="sr-only">Close</span>
-                </button>
-                <button class="btn--icon btn--inverse">
-                    <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        class="btn--icon__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                    >
-                        <path
-                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
-                        />
-                    </svg>
-                    <span class="sr-only">Close</span>
-                </button>
-                <button class="btn--icon btn--inverse btn--sm">
-                    <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        class="btn--icon__icon"
+                        class="icon"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
                     >
@@ -246,6 +203,80 @@
                     <span class="sr-only">Close</span>
                 </button>
             </section>
+            <section class="cluster">
+                <button class="btn btn--icon btn--bare btn--lg">
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        class="icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                        />
+                    </svg>
+                    <span class="sr-only">Close</span>
+                </button>
+                <button class="btn btn--icon btn--bare">
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        class="icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                        />
+                    </svg>
+                    <span class="sr-only">Close</span>
+                </button>
+                <button class="btn btn--icon btn--bare btn--sm">
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        class="icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                        />
+                    </svg>
+                    <span class="sr-only">Close</span>
+                </button>
+            </section>
+            <section class="cluster">
+                <button class="btn btn--icon btn--primary btn--inverse btn--lg">
+                    <i class="ri-color-filter-fill" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+                <button class="btn btn--icon btn--primary btn--inverse">
+                    <i class="ri-color-filter-fill" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+                <button class="btn btn--icon btn--primary btn--inverse btn--sm">
+                    <i class="ri-color-filter-fill" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+            </section>
+            <section class="cluster">
+                <button class="btn btn--icon btn--inverse btn--lg">
+                    <i class="ri-phone-line" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+                <button class="btn btn--icon btn--inverse">
+                    <i class="ri-phone-line" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+                <button class="btn btn--icon btn--inverse btn--sm">
+                    <i class="ri-phone-line" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+            </section>
+
+            <!-- SECTION -->
         </main>
     </body>
 </html>

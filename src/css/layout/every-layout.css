@@ -245,6 +245,7 @@ THE FRAME
 THE REEL
 --------------------------------------------------------------------------------
 */
+/* q: how do create a shadow affordance fro my reel container? */
 
 .reel {
     display: flex;
@@ -321,3 +322,25 @@ THE IMPOSTER
 THE ICON
 --------------------------------------------------------------------------------
 */
+
+.icon {
+    width: 0.75em;
+    width: 1cap;
+    height: 0.75em;
+    height: 1cap;
+
+    fill: currentColor; /* Icon color matches the text color */
+}
+
+.with-icon {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.with-icon .icon {
+    margin-inline-end: var(--sp-1);
+}
+
+.icon-button .icon {
+    margin-inline-end: var(--sp-1);
+}
