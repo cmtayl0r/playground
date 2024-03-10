@@ -246,6 +246,56 @@ THE REEL
 --------------------------------------------------------------------------------
 */
 
+.reel {
+    display: flex;
+    /* ↓ We only want horizontal scrolling */
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* ↓ First value: thumb; second value: track */
+    scrollbar-color: var(--clr-gray-light) var(--clr-gray-dark);
+    padding: var(--sp-base);
+
+    /* Optional height, usually for images */
+    block-size: 50vh;
+}
+
+.reel::-webkit-scrollbar {
+    block-size: 1rem;
+}
+
+.reel::-webkit-scrollbar-track {
+    background-color: var(--clr-gray-dark);
+}
+
+.reel::-webkit-scrollbar-thumb {
+    background-color: var(--clr-gray-dark);
+    background-image: linear-gradient(
+        var(--clr-gray-dark) 0,
+        var(--clr-gray-dark) 0.25rem,
+        var(--clr-gray-light) 0.25rem,
+        var(--clr-gray-light) 0.75rem,
+        var(--clr-gray-dark) 0.75rem
+    );
+}
+
+.reel > * {
+    flex: 0 0 auto;
+}
+
+.reel > img {
+    block-size: 100%;
+    flex-basis: auto;
+    width: auto;
+}
+
+.reel > * + * {
+    margin-inline-start: var(--sp-base);
+}
+
+.reel.overflowing {
+    padding-block-end: var(--sp-base);
+}
+
 /* 
 --------------------------------------------------------------------------------
 THE IMPOSTER
@@ -268,6 +318,6 @@ THE IMPOSTER
 
 /* 
 --------------------------------------------------------------------------------
-THE REEL
+THE ICON
 --------------------------------------------------------------------------------
 */
