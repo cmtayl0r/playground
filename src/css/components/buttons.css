@@ -12,9 +12,9 @@ TODO: Explore SASS mixins complex structures
 */
 
 :root {
-    --btn-font-sm: 1rem;
-    --btn-font-md: 1.25rem;
-    --btn-font-lg: 1.5rem;
+    --btn-font-sm: 0.875em;
+    --btn-font-md: 1em;
+    --btn-font-lg: 1.25em;
 }
 
 /* 
@@ -36,7 +36,7 @@ CORE
     color: var(--clr-black);
 
     /* font-size: var(--btn-font-md); */
-    font-size: 1em;
+    font-size: var(--btn-font-md);
     font-weight: var(--fw-bold);
     text-decoration: none;
 
@@ -107,15 +107,13 @@ SIZES
 */
 
 .btn--sm {
-    /* font-size: var(--btn-font-sm); */
     /* padding: 0.25rem 0.75rem; */
-    font-size: 0.875em;
+    font-size: var(--btn-font-sm);
     min-height: 2.25rem;
 }
 .btn--lg {
-    /* font-size: var(--btn-font-lg); */
     /* padding: 0.625rem 1.25rem; */
-    font-size: 1.125em;
+    font-size: var(--btn-font-lg);
     min-height: 3.375rem;
 }
 
