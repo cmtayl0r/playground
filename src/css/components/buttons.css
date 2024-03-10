@@ -3,7 +3,6 @@ TODO: Secondary, outline styles
 TODO: Move variables
 FIXME: Flexible paddings using calc or clamp
 FIXME: More robust responsive behavior
-TODO: Icon and text option??
 TODO: Explore SASS mixins complex structures
 */
 
@@ -22,13 +21,13 @@ TODO: Explore SASS mixins complex structures
 CORE
 --------------------------------------------------------------------------------
 */
-/* add btn--icon */
+
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0.5em 1em;
+    padding: 0 1em; /* 16px, 0 because affects min-height */
     min-height: 2.75rem;
 
     border: 3px solid var(--clr-black);
