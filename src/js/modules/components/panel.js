@@ -11,6 +11,9 @@ class Sidebar {
         this.sidebar = document.querySelector('.sidebar');
         this.overlay = document.querySelector('.overlay');
 
+        // Enable keyboard navigation in sidebar
+        this.toggleTabIndices(false);
+
         // Bind event listeners
         this.bindEvents();
     }
@@ -34,6 +37,9 @@ class Sidebar {
             },
             { once: true },
         );
+
+        // enable keyboard navigation in sidebar
+        this.toggleTabIndices(false);
     }
     closeSidebar() {
         console.log('CLOSE!');
@@ -56,6 +62,22 @@ class Sidebar {
             },
             { once: true },
         );
+
+        // disable keyboard navigation in sidebar
+        this.toggleTabIndices(true);
+    }
+
+    toggleTabIndices(disable) {
+        const focusableElements = Array.from(
+            this.sidebar.querySelectorAll('a, button, input, select, textarea'),
+        );
+        focusableElements.forEach(el => {
+            if (disable) {
+                el.setAttribute('tabindex', '-1');
+            } else {
+                el.removeAttribute('tabindex');
+            }
+        });
     }
     bindEvents() {
         // Bind event listeners
@@ -83,28 +105,3 @@ class Sidebar {
 document.addEventListener('DOMContentLoaded', () => {
     new Sidebar();
 });
-
-// sidebarToggle.addEventListener('click', () => {
-//     console.log('TOGGLE!');
-//     sidebar.classList.contains('show')
-//         ? sidebar.classList.remove('show')
-//         : sidebar.classList.add('show');
-//     overlay.classList.contains('show')
-//         ? overlay.classList.remove('show')
-//         : overlay.classList.add('show');
-// });
-
-// sidebarClose.addEventListener('click', () => {
-//     console.log('CLOSE!');
-//     // remove show
-//     sidebar.classList.remove('show');
-//     overlay.classList.remove('show');
-//     // add closing
-//     sidebar.classList.add('closing');
-//     overlay.classList.add('closing');
-//     // clear closing when done
-//     sidebar.addEventListener('animationend', () => {
-//         sidebar.classList.remove('closing');
-//         overlay.classList.remove('closing');
-//     });
-// });
