@@ -16,6 +16,7 @@ class Sidebar {
     }
 
     openSidebar() {
+        console.log('OPEN!');
         // show sidebar and overlay
         this.sidebar.classList.add('show');
         this.overlay.classList.add('show');
@@ -35,6 +36,7 @@ class Sidebar {
         );
     }
     closeSidebar() {
+        console.log('CLOSE!');
         // hide sidebar and overlay
         this.sidebar.classList.remove('show');
         this.overlay.classList.remove('show');
