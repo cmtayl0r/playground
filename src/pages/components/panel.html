@@ -34,13 +34,17 @@
             </p>
         </main>
         <!-- Toggle button -->
-        <button class="btn btn--icon btn--primary btn--inverse sidebar--toggle">
+        <button
+            class="btn btn--icon btn--primary btn--inverse sidebar--toggle"
+            aria-controls="sidebar"
+            aria-expanded="false"
+        >
             <i class="ri-menu-fill" aria-hidden="true"></i>
-            <span class="sr-only">Close</span>
+            <span class="sr-only">Toggle Panel</span>
         </button>
         <!-- Panel -->
-        <div class="overlay"></div>
-        <aside class="sidebar">
+        <div class="overlay" tabindex="-1"></div>
+        <aside id="sidebar" class="sidebar" aria-hidden="true">
             <div class="sidebar__header pd-16">
                 <h3 class="sidebar__title mg-0">Panel</h3>
                 <button class="btn btn--icon sidebar--close">

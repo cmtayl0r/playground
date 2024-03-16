@@ -1,3 +1,5 @@
+// TODO: trap focus in sidebar like modal
+
 // -----------------------------------------------------------------------------
 // DOM ELEMENTS
 // -----------------------------------------------------------------------------
@@ -14,9 +16,15 @@ class Sidebar {
     }
 
     openSidebar() {
+        // show sidebar and overlay
         this.sidebar.classList.add('show');
         this.overlay.classList.add('show');
-        // clear animation
+
+        // set aria attributes
+        this.sidebar.setAttribute('aria-hidden', 'false');
+        this.sidebarToggle.setAttribute('aria-expanded', 'true');
+
+        // clear animation when done
         this.sidebar.addEventListener(
             'animationend',
             () => {
@@ -27,10 +35,16 @@ class Sidebar {
         );
     }
     closeSidebar() {
+        // hide sidebar and overlay
         this.sidebar.classList.remove('show');
         this.overlay.classList.remove('show');
         this.sidebar.classList.add('closing');
         this.overlay.classList.add('closing');
+
+        // set aria attributes
+        this.sidebar.setAttribute('aria-hidden', 'true');
+        this.sidebarToggle.setAttribute('aria-expanded', 'false');
+
         // clear closing when done
         this.sidebar.addEventListener(
             'animationend',
@@ -42,6 +56,7 @@ class Sidebar {
         );
     }
     bindEvents() {
+        // Bind event listeners
         this.sidebarToggle.addEventListener(
             'click',
             this.openSidebar.bind(this),
@@ -51,7 +66,7 @@ class Sidebar {
             this.closeSidebar.bind(this),
         );
         this.overlay.addEventListener('click', this.closeSidebar.bind(this));
-
+        // Close sidebar on escape key
         document.addEventListener('keydown', e => {
             if (
                 (e.key === 'Escape' || e.key === 'Esc') &&
