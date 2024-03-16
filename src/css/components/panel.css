@@ -1,0 +1,159 @@
+:root {
+    --transition: all 0.3s ease-in-out;
+}
+
+/* 
+-------------------------------------------------------
+Sidebar toggle button
+-------------------------------------------------------
+*/
+
+.sidebar--toggle {
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+    transition: var(--transition);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 
+-------------------------------------------------------
+Sidebar header
+-------------------------------------------------------
+*/
+
+.sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--clr-gray-light);
+}
+
+/* Close button */
+.sidebar--close {
+    transition: var(--transition);
+
+    &:hover,
+    &:focus {
+        transform: rotate(360deg);
+    }
+}
+
+/* 
+-------------------------------------------------------
+Sidebar
+-------------------------------------------------------
+*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 10;
+    /* Grid layout */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    /* Animation */
+    opacity: 0;
+    transition: var(--transition);
+    /* transform: translate(-100%); */
+
+    &.show {
+        display: grid;
+        animation: fade-in 0.5s forwards;
+    }
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        width: 25em; /* 400px */
+    }
+}
+
+/* Overlay */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+    /* Animation */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &.show {
+        display: block;
+        animation: fade-in-backdrop 0.5s forwards;
+        backdrop-filter: blur(3px);
+    }
+}
+
+.sidebar.closing {
+    animation: fade-out 0.5s forwards;
+}
+.overlay.closing {
+    animation: fade-out-backdrop 0.5s forwards;
+}
+
+/* 
+--------------------------------------------------------------------------------
+ANIMATION
+--------------------------------------------------------------------------------
+*/
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translate(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translate(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-100%);
+    }
+}
+@keyframes fade-in-backdrop {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fade-out-backdrop {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

@@ -1,5 +1,22 @@
-.DS_Store
-node_modules
-/dist
-.vscode
+# .gitignore
+
+# Node.js
+node_modules/
+
+# Parcel
+.cache/
+dist/
 .parcel-cache/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.iml
+
+# Build artifacts
+*.js.map
+*.css.map
+
+# Miscellaneous
+.DS_Store
+Thumbs.db

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Component → Panel</title>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link rel="stylesheet" href="../../css/components/panel.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../js/modules/components/panel.js"
+            defer
+        ></script>
+    </head>
+    <body class="fixed-s">
+        <main class="wrapper fixed p-5 stack pd-24">
+            <h1>Panel</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                ducimus dolorum, eveniet tempore amet assumenda laboriosam
+                consequatur? Atque, dolorum? Veritatis magni ex accusantium
+                assumenda. Architecto consequatur laudantium consectetur
+                laboriosam earum?
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo
+                provident, eos ex, deserunt vel numquam laboriosam nisi dolorem
+                incidunt qui, perferendis voluptatibus excepturi eligendi non.
+                Tenetur labore corrupti atque eligendi!
+            </p>
+        </main>
+        <!-- Toggle button -->
+        <button class="btn btn--icon btn--primary btn--inverse sidebar--toggle">
+            <i class="ri-menu-fill" aria-hidden="true"></i>
+            <span class="sr-only">Close</span>
+        </button>
+        <!-- Panel -->
+        <div class="overlay"></div>
+        <aside class="sidebar">
+            <div class="sidebar__header pd-16">
+                <h3 class="sidebar__title mg-0">Panel</h3>
+                <button class="btn btn--icon sidebar--close">
+                    <i class="ri-close-fill" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="sidebar__content">
+                <ul>
+                    <li><a href="#">Link 1 Lorem ipsum</a></li>
+                    <li><a href="#">Link 2 Lorem ipsum</a></li>
+                    <li><a href="#">Link 3 Lorem ipsum</a></li>
+                    <li><a href="#">Link 4 Lorem ipsum</a></li>
+                </ul>
+                <p>
+                    A panel is a container that holds content and can be hidden
+                    or shown. It is often used for navigation, settings, or
+                    additional information.
+                </p>
+            </div>
+            <footer class="sidebar__footer pd-16">
+                <p>Something else</p>
+            </footer>
+        </aside>
+    </body>
+</html>
