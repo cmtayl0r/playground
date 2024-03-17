@@ -1,0 +1,27 @@
+/* 
+-------------------------------------------------------
+SCROLLBARS
+-------------------------------------------------------
+*/
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--clr-yellow);
+    border-radius: var(--br-sm);
+}
+body::-webkit-scrollbar-track {
+    background: var(--clr-black);
+}
+
+/* 
+-------------------------------------------------------
+LAYOUT
+-------------------------------------------------------
+*/
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
