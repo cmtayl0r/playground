@@ -1,3 +1,8 @@
+:root {
+    --transition-speed: 300ms;
+    --icon-size: 2rem;
+}
+
 /* 
 -------------------------------------------------------
 SCROLLBARS
@@ -23,5 +28,105 @@ LAYOUT
 
 main {
     margin-left: 5rem;
-    padding: 1rem;
+}
+
+/* 
+-------------------------------------------------------
+NAVBAR
+-------------------------------------------------------
+*/
+
+.navbar {
+    position: fixed;
+    background: var(--clr-black);
+    transition: width 300ms ease;
+}
+
+.navbar__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.navbar__item {
+    width: 100%;
+
+    &:last-child {
+        margin-top: auto;
+    }
+}
+
+.navbar__item-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--clr-yellow);
+    text-decoration: none;
+    /*  */
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+
+    &:hover {
+        filter: grayscale(0%) opacity(1);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:active {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    & > i {
+        width: var(--icon-size);
+        min-width: var(--icon-size);
+        font-size: var(--icon-size);
+        margin: 0 1.5rem;
+    }
+}
+.navbar__text {
+    display: none;
+    /*
+    FIXME: wrap issue for text
+    */
+    text-wrap: nowrap;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .navbar__nav {
+        flex-direction: row;
+    }
+
+    .navbar__item-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .navbar__text {
+        display: inline;
+    }
 }

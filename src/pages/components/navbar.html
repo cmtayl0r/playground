@@ -6,10 +6,57 @@
         <title>Component → Navbar</title>
         <link rel="stylesheet" href="../../css/main.css" />
         <link rel="stylesheet" href="../../css/components/navbar.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../js/modules/components/navbar.js"
+            defer
+        ></script>
     </head>
     <body>
-        <nav class="navbar"></nav>
-        <main class="stack">
+        <nav class="navbar">
+            <ul class="navbar__nav">
+                <!-- <li class="logo navbar__item">
+                    <a href="#" class="navbar__link">
+                        <span class="logo__text">Keef Tango</span>
+                        <i
+                            class="ri-arrow-right-double-fill"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
+                </li> -->
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">
+                        <i class="ri-stack-line" aria-hidden="true"></i>
+                        <span class="navbar__text">Navbar item 1</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">
+                        <i class="ri-id-card-line" aria-hidden="true"></i>
+                        <span class="navbar__text"
+                            >Navbar item 2 is longer and longer</span
+                        >
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">
+                        <i class="ri-chat-smile-2-line" aria-hidden="true"></i>
+                        <span class="navbar__text">Navbar item 3</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__item-link">
+                        <i class="ri-mark-pen-line" aria-hidden="true"></i>
+                        <span class="navbar__text">Navbar item 4</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main class="stack pd-24">
             <h1>Navbar</h1>
             <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
