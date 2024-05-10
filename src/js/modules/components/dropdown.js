@@ -6,25 +6,33 @@ class Dropdown {
         this.dropdownTrigger = trigger;
         this.dropdownData = dropdownData;
         this.dropdown = null; // Initialize the dropdown element holder
-        this.init();
+        this.bindEvents();
     }
 
     // Initialize the dropdown
-    init() {
-        // On trigger click, toggle the dropdown
+    bindEvents() {
+        // 01 - On trigger click, toggle the dropdown
         this.dropdownTrigger.addEventListener('click', event => {
-            // Toggle the dropdown
-            this.toggleDropdown(event);
-            // Prevent the default behavior of the trigger
+            // Prevent the event from bubbling up to the document
             event.stopPropagation();
+            // Prevent the default behavior of the trigger
+            event.preventDefault();
+            // Toggle the dropdown
+            this.toggleDropdown();
         });
         // Add a click event listener to the document to hide the dropdown when clicked outside
-        // false parameter is to use bubbling instead of capturing
+
         document.addEventListener(
             'click',
             this.handleOutsideClick.bind(this),
             false,
         );
+
+        // document.addEventListener(
+        //     'keydown',
+        //     this.trapFocus(event).bind(this),
+        //     false,
+        // );
     }
 
     // Create the dropdown element
@@ -34,11 +42,25 @@ class Dropdown {
 
         const dropdown = document.createElement('div');
         dropdown.classList.add('dropdown__content');
-        dropdown.innerHTML = `
-            <ul class="dropdown__list">
-                ${this.dropdownData.map(link => `<li><a href="${link.url}">${link.text}</a></li>`).join('')}
-            </ul>
-        `;
+        const dropdownList = document.createElement('ul');
+        dropdownList.classList.add('dropdown__list');
+        dropdown.appendChild(dropdownList);
+
+        // dropdown.innerHTML = `
+        //     <ul class="dropdown__list">
+        //         ${this.dropdownData.map(link => `<li><a href="${link.url}">${link.text}</a></li>`).join('')}
+        //     </ul>
+        // `;
+
+        this.dropdownData.forEach(item => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = item.url;
+            link.textContent = item.text; // safer than innerHTML
+            listItem.appendChild(link);
+            dropdownList.appendChild(listItem);
+        });
+
         // Insert the dropdown after the trigger element
         this.dropdownTrigger.parentNode.insertBefore(
             dropdown,
@@ -49,22 +71,16 @@ class Dropdown {
     }
 
     // Toggle dropdown visibility
-    toggleDropdown(event) {
+    toggleDropdown() {
         // If dropdown does not exist, create it
         if (!this.dropdown) {
             this.createDropdown();
         }
 
-        // if dropdown visible set trigger to active state
-        this.dropdownTrigger.classList.toggle('active');
-        // if dropdown is block, hide it, otherwise show it
-        this.dropdown.style.display =
-            this.dropdown.style.display === 'block' ? 'none' : 'block';
-        // set aria-expanded attribute to true if dropdown is visible
-        this.dropdownTrigger.setAttribute(
-            'aria-expanded',
-            this.dropdown.style.display === 'block',
-        );
+        const isOpen = this.dropdown.style.display === 'block';
+        this.dropdown.style.display = isOpen ? 'none' : 'block';
+        // set attribute to aria-expanded if dropdown is visible
+        this.dropdownTrigger.setAttribute('aria-expanded', !isOpen);
     }
 
     // Hide dropdown when clicked outside
@@ -78,6 +94,46 @@ class Dropdown {
             // then hide the dropdown and set aria-expanded to false
             this.dropdown.style.display = 'none';
             this.dropdownTrigger.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    // Handle keyboard events
+    trapFocus(event) {
+        // if the dropdown is not visible, do nothing
+        if (this.dropdown.style.display !== 'block') return;
+
+        // Get the first and last focusable elements in the dropdown
+        const focusableElements = this.dropdown.querySelectorAll(
+            'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        );
+        const firstFocusableElement = focusableElements[0];
+        const lastFocusableElement =
+            focusableElements[focusableElements.length - 1];
+
+        // Handle keyboard events
+        switch (event.key) {
+            case 'Tab':
+                if (event.shiftKey) {
+                    // if shift + tab, and the first focusable element is focused, move focus to the last focusable element
+                    if (document.activeElement === firstFocusableElement) {
+                        event.preventDefault();
+                        lastFocusableElement.focus();
+                    }
+                } else {
+                    // if tab, and the last focusable element is focused, move focus to the first focusable element
+                    if (document.activeElement === lastFocusableElement) {
+                        event.preventDefault();
+                        firstFocusableElement.focus();
+                    }
+                }
+                break;
+            case 'Escape':
+                // if escape, hide the dropdown and set aria-expanded to false
+                this.dropdown.style.display = 'none';
+                this.dropdownTrigger.setAttribute('aria-expanded', 'false');
+                break;
+            default:
+                break;
         }
     }
 }
