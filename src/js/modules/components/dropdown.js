@@ -5,15 +5,18 @@ class Dropdown {
     constructor(trigger, dropdownData) {
         // The trigger element that will open the dropdown
         this.dropdownTrigger = trigger;
+        // Set trigger accessibility attributes
+        this.dropdownTrigger.setAttribute('aria-haspopup', 'true');
+        this.dropdownTrigger.setAttribute('aria-expanded', 'false');
         // Data to populate the dropdown
         this.dropdownData = dropdownData;
         // set to null initially because the dropdown does not exist yet
         this.dropdown = null;
-        this.initDropdown();
+        this.init();
     }
 
     // Initialize the dropdown
-    initDropdown() {
+    init() {
         // 01 - On trigger click, toggle the dropdown
         this.dropdownTrigger.addEventListener('click', event => {
             // Prevent the event from bubbling up to the document
@@ -97,6 +100,8 @@ class Dropdown {
             this.dropdownTrigger.setAttribute('aria-expanded', 'false');
         }
     }
+
+    // Accessibility
 
     // Trap focus within the dropdown
     trapFocus() {
