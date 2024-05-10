@@ -55,7 +55,9 @@ class Dropdown {
             this.createDropdown();
         }
 
-        // if dropdown is hidden, show it
+        // if dropdown visible set trigger to active state
+        this.dropdownTrigger.classList.toggle('active');
+        // if dropdown is block, hide it, otherwise show it
         this.dropdown.style.display =
             this.dropdown.style.display === 'block' ? 'none' : 'block';
         // set aria-expanded attribute to true if dropdown is visible
