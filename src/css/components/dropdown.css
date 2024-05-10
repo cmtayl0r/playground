@@ -1,0 +1,13 @@
+body {
+    background-image: var(--gr-combi);
+    min-height: 100vh;
+}
+
+/* 
+----------------------------------------------------------
+DROPDOWN
+----------------------------------------------------------
+*/
+.dropdown__content {
+    background-color: var(--bg-tr-white);
+}
