@@ -14,6 +14,201 @@
     <body class="body-frame">
         <main class="wrapper fixed stack pd-24">
             <h1>Form Validation</h1>
+            <form class="myForm stack-large" action="" method="post">
+                <p>
+                    Required fields are followed by
+                    <span aria-label="required">*</span>.
+                </p>
+                <hr />
+                <!-- Section 1 -->
+                <section class="stack form__section">
+                    <h3>Form Section 1</h3>
+                    <div class="form__group">
+                        <label for="name"
+                            >Name <span aria-label="required">*</span></label
+                        >
+                        <input
+                            type="text"
+                            name="user_name"
+                            id="name"
+                            class="input__text"
+                            placeholder="Enter your name"
+                            required
+                        />
+                    </div>
+                    <div class="form__group">
+                        <label for="email"
+                            >Email <span aria-label="required">*</span></label
+                        >
+                        <input
+                            type="email"
+                            name="user_email"
+                            id="email"
+                            class="input__text"
+                            placeholder="Enter your email"
+                            required
+                        />
+                    </div>
+                    <div class="form__group">
+                        <label for="password"
+                            >Password
+                            <span aria-label="required">*</span></label
+                        >
+                        <p class="input__hint">
+                            This is some description text to give more context
+                            to this input
+                        </p>
+                        <input
+                            type="password"
+                            name="user_password"
+                            id="password"
+                            class="input__text"
+                            pattern="[a-z0-5]{8,}"
+                            placeholder="Enter your password"
+                            required
+                        />
+                    </div>
+                    <div class="form__group">
+                        <label for="birth-date">Date of Birth</label>
+                        <input
+                            id="birth-date"
+                            type="date"
+                            class="input__text input--width-fc"
+                            name="user_birth-date"
+                        />
+                    </div>
+                    <div class="form__group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="user_message"
+                            class="input__text"
+                            rows="4"
+                            placeholder="Enter your message"
+                        ></textarea>
+                    </div>
+                </section>
+                <hr />
+                <!-- Section 2 -->
+                <section class="stack form__section">
+                    <h3>Form Section 2</h3>
+                    <div class="form__group">
+                        <fieldset>
+                            <legend class="fieldset__legend">
+                                Favourite dogs
+                            </legend>
+                            <ul class="stack-small">
+                                <li>
+                                    <label class="label__checkbox">
+                                        <input
+                                            type="checkbox"
+                                            name="user_dogs"
+                                            class="input__checkbox"
+                                            value="husky"
+                                        />
+                                        Husky
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label__checkbox">
+                                        <input
+                                            type="checkbox"
+                                            name="user_dogs"
+                                            class="input__checkbox"
+                                            value="spanial"
+                                        />
+                                        Spanial
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label__checkbox">
+                                        <input
+                                            type="checkbox"
+                                            name="user_dogs"
+                                            class="input__checkbox"
+                                            value="labrador"
+                                        />
+                                        Labrador
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                    <div class="form__group error">
+                        <fieldset>
+                            <legend class="fieldset__legend">
+                                Best Movie ever made
+                            </legend>
+                            <div class="input__hint error">
+                                This is some description text to give more
+                                context to this input
+                            </div>
+                            <ul class="stack-small">
+                                <li>
+                                    <label class="label__radio">
+                                        <input
+                                            type="radio"
+                                            name="user_movies"
+                                            class="input__radio"
+                                            value="aliens"
+                                        />
+                                        Aliens
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label__radio">
+                                        <input
+                                            type="radio"
+                                            name="user_movies"
+                                            class="input__radio"
+                                            value="predator"
+                                        />
+                                        Predator
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label__radio">
+                                        <input
+                                            type="radio"
+                                            name="user_movies"
+                                            class="input__radio"
+                                            value="big trouble"
+                                        />
+                                        Big Trouble in Little China
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label__radio">
+                                        <input
+                                            type="radio"
+                                            name="user_movies"
+                                            class="input__radio"
+                                            value="anchorman"
+                                        />
+                                        Anchorman
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label__checkbox">
+                                        <input
+                                            type="radio"
+                                            name="user_movies"
+                                            class="input__radio"
+                                            value="wonder-boys"
+                                        />
+                                        Wonder Boys
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                </section>
+                <section>
+                    <button class="btn btn--lg" type="submit">
+                        Send your message
+                    </button>
+                </section>
+            </form>
         </main>
     </body>
 </html>

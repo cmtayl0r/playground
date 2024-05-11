@@ -2,3 +2,196 @@ body {
     background-image: var(--gr-combi);
     min-height: 100vh;
 }
+
+/* 
+--------------------------------------------------------
+FORM STRUCTURE
+--------------------------------------------------------
+*/
+
+hr {
+    box-shadow: none;
+    border: 0.5rem solid rgba(0, 0, 0, 0.2);
+    /* margin: 3rem 0 0 0; */
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    /* For checkboxes and radios */
+    & ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: var(--sp--2);
+}
+
+label,
+legend {
+    font-size: var(--fs-md);
+    font-weight: 700;
+}
+
+.form__section {
+}
+.form__group {
+}
+.fieldset__legend {
+}
+
+/* 
+--------------------------------------------------------
+HINTS, ERRORS, REQUIRED
+--------------------------------------------------------
+*/
+
+/* Hints */
+.input__hint {
+    margin-top: -0.25rem;
+    margin-bottom: var(--sp--2);
+    color: var(--clr-gray-dark);
+}
+.input__hint.error {
+    color: rgb(130, 2, 2);
+}
+
+/* Required styling */
+input:required {
+    /* border: 2px solid red; */
+}
+
+input:invalid {
+    /* border-color: red; */
+}
+
+.form__group.error {
+    border-left: 5px solid red;
+    padding-left: var(--sp-4);
+}
+
+/* 
+--------------------------------------------------------
+INPUTS
+--------------------------------------------------------
+*/
+.input__text,
+.input__select {
+    width: 100%;
+    border: 0.25rem solid var(--clr-black);
+    border-radius: var(--br-sm);
+    padding: var(--sp--2);
+    min-height: 3rem;
+    line-height: var(--lh-default);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--clr-black);
+    background-color: var(--clr-white);
+    font-size: var(--fs-md);
+}
+
+.input__text {
+}
+.input__select {
+}
+.input__area {
+}
+.input__email {
+}
+
+@media (min-width: 37.5em) {
+    /* Below 37.5em all inputs 100% width */
+    .input--width-full {
+        width: 100% !important;
+    }
+    .input--width-3-4 {
+        width: 75% !important;
+    }
+    .input--width-1-2 {
+        width: 50% !important;
+    }
+    .input--width-1-3 {
+        width: 33% !important;
+    }
+    .input--width-fc {
+        width: fit-content !important;
+    }
+}
+/* 
+--------------------------------------------------------
+RADIOS, CHECKBOXES
+--------------------------------------------------------
+*/
+
+input[type='radio'],
+input[type='checkbox'],
+.label__radio,
+.label__checkbox {
+    cursor: pointer;
+}
+
+.label__checkbox,
+.label__radio {
+    /* display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--sp--2); */
+    /* margin-bottom: var(--sp--2); */
+    font-size: var(--fs-base);
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: var(--clr-white);
+    /* Not removed via appearance */
+    margin: 0;
+
+    width: 3rem;
+    height: 3rem;
+    border: 0.4rem solid var(--clr-black);
+
+    /* To center before/checked inner elementss */
+    display: grid;
+    place-content: center;
+}
+
+input[type='radio']::before,
+input[type='checkbox']::before {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    box-shadow: inset 1em 1em var(--clr-black);
+    transform: scale(0);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+input[type='radio']:checked::before,
+input[type='checkbox']:checked::before {
+    transform: scale(1);
+}
+
+/* Radio */
+input[type='radio'] {
+    border-radius: var(--br-circle);
+}
+input[type='radio']::before {
+    border-radius: var(--br-circle);
+}
+
+/* Checkbox */
+input[type='checkbox'] {
+    border-radius: var(--br-sm);
+}
+input[type='checkbox']::before {
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
