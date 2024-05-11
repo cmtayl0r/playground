@@ -5,7 +5,6 @@ class Dropdown {
     constructor(trigger, dropdownData) {
         // The trigger element that will open the dropdown
         this.dropdownTrigger = trigger;
-
         // Data to populate the dropdown
         this.dropdownData = dropdownData;
         // set to null initially because the dropdown does not exist yet
@@ -17,10 +16,6 @@ class Dropdown {
     init() {
         // 01 - On trigger click, toggle the dropdown
         this.dropdownTrigger.addEventListener('click', event => {
-            // Prevent the event from bubbling up to the document
-            event.stopPropagation();
-            // Prevent the default behavior of the trigger
-            event.preventDefault();
             // Toggle the dropdown
             this.toggleDropdown();
             if (this.dropdown.style.display === 'block') {
