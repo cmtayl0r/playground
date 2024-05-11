@@ -14,14 +14,14 @@
     <body class="body-frame">
         <main class="wrapper fixed stack pd-24">
             <h1>Form Validation</h1>
-            <form class="myForm stack-large" action="" method="post">
+            <form class="myForm stack stack-large" action="" method="post">
                 <p>
                     Required fields are followed by
                     <span aria-label="required">*</span>.
                 </p>
                 <hr />
                 <!-- Section 1 -->
-                <section class="stack form__section">
+                <section class="stack stack-large form__section">
                     <h3>Form Section 1</h3>
                     <div class="form__group">
                         <label for="name"
@@ -69,12 +69,21 @@
                         />
                     </div>
                     <div class="form__group">
-                        <label for="birth-date">Date of Birth</label>
+                        <label for="date-time">Date and time available</label>
                         <input
-                            id="birth-date"
-                            type="date"
+                            id="date-time"
+                            type="datetime-local"
                             class="input__text input--width-fc"
-                            name="user_birth-date"
+                            name="user_date-time"
+                        />
+                    </div>
+                    <div class="form__group">
+                        <label for="color">Pick a color</label>
+                        <input
+                            id="color"
+                            type="color"
+                            class=""
+                            name="user_color"
                         />
                     </div>
                     <div class="form__group">
@@ -90,14 +99,14 @@
                 </section>
                 <hr />
                 <!-- Section 2 -->
-                <section class="stack form__section">
+                <section class="stack stack-large form__section">
                     <h3>Form Section 2</h3>
                     <div class="form__group">
                         <fieldset>
                             <legend class="fieldset__legend">
                                 Favourite dogs
                             </legend>
-                            <ul class="stack-small">
+                            <ul class="stack stack-small">
                                 <li>
                                     <label class="label__checkbox">
                                         <input
@@ -139,11 +148,11 @@
                             <legend class="fieldset__legend">
                                 Best Movie ever made
                             </legend>
-                            <div class="input__hint error">
+                            <p class="input__hint error">
                                 This is some description text to give more
                                 context to this input
-                            </div>
-                            <ul class="stack-small">
+                            </p>
+                            <ul class="stack stack-small">
                                 <li>
                                     <label class="label__radio">
                                         <input
@@ -205,18 +214,20 @@
                 </section>
                 <hr />
                 <!-- Section 3 -->
-                <section class="stack form__section">
+                <section class="stack stack-large form__section">
                     <h3>Form Section 3</h3>
                     <div class="form__group">
                         <label for="card">Card type</label>
-                        <select id="card" name="user_card">
-                            <option disabled="" selected="">
-                                Select an option
-                            </option>
-                            <option value="visa">Visa</option>
-                            <option value="mc">Mastercard</option>
-                            <option value="amex">American Express</option>
-                        </select>
+                        <div class="select__wrapper">
+                            <select id="card" name="user_card">
+                                <option disabled="" selected="">
+                                    Select an option
+                                </option>
+                                <option value="visa">Visa</option>
+                                <option value="mc">Mastercard</option>
+                                <option value="amex">American Express</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="form__group">
                         <label for="number">
@@ -228,6 +239,7 @@
                             id="number"
                             name="user_card-number"
                             inputmode="numeric"
+                            minlength="16"
                             maxlength="16"
                             pattern="[0-9 ]*"
                             autocomplete="cc-number"
