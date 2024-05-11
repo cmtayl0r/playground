@@ -38,6 +38,7 @@ label,
 legend {
     font-size: var(--fs-md);
     font-weight: 700;
+    margin-bottom: var(--sp--1);
 }
 
 .form__section {
@@ -83,7 +84,7 @@ INPUTS
 --------------------------------------------------------
 */
 .input__text,
-.input__select {
+select {
     width: 100%;
     border: 0.25rem solid var(--clr-black);
     border-radius: var(--br-sm);
