@@ -5,9 +5,7 @@ class Dropdown {
     constructor(trigger, dropdownData) {
         // The trigger element that will open the dropdown
         this.dropdownTrigger = trigger;
-        // Set trigger accessibility attributes
-        this.dropdownTrigger.setAttribute('aria-haspopup', 'true');
-        this.dropdownTrigger.setAttribute('aria-expanded', 'false');
+
         // Data to populate the dropdown
         this.dropdownData = dropdownData;
         // set to null initially because the dropdown does not exist yet
@@ -36,6 +34,9 @@ class Dropdown {
             this.handleOutsideClick.bind(this),
             false,
         );
+        // Set trigger accessibility attributes
+        this.dropdownTrigger.setAttribute('aria-haspopup', 'true');
+        this.dropdownTrigger.setAttribute('aria-expanded', 'false');
     }
 
     // Create the dropdown element
