@@ -20,37 +20,35 @@
                 method="post"
                 novalidate
             >
-                <p>
-                    Required fields are followed by
-                    <span aria-label="required">*</span>.
-                </p>
+                <p>Required fields are specified</p>
                 <hr />
                 <!-- Section 1 -->
                 <section class="stack stack-large form__section">
                     <h3>Using Constraint Validation API</h3>
                     <div class="form__group">
                         <label for="name"
-                            >Name <span aria-label="required"></span
-                        ></label>
-                        <!-- <span class="error error--inline" aria-live="polite"
-                            >This is an error</span
-                        > -->
+                            >Name
+                            <span aria-label="required">required</span></label
+                        >
+                        <span id="name-validation" aria-live="assertive"></span>
                         <input
                             type="text"
                             name="user_name"
                             id="name"
                             class="input__text error"
                             placeholder="Enter your name"
+                            aria-describedby="name-validation"
                             required
                         />
                     </div>
                     <div class="form__group">
                         <label for="email"
-                            >Email <span aria-label="required"></span
-                        ></label>
+                            >Email
+                            <span aria-label="required">required</span></label
+                        >
                         <span
-                            class="error error--inline"
-                            aria-live="polite"
+                            id="email-validation"
+                            aria-live="assertive"
                         ></span>
                         <input
                             type="email"
@@ -58,24 +56,32 @@
                             id="email"
                             class="input__text"
                             placeholder="Enter your email"
+                            aria-describedby="email-validation"
                             required
                         />
                     </div>
                     <div class="form__group">
                         <label for="password"
-                            >Password <span aria-label="required"></span
-                        ></label>
+                            >Password
+                            <span aria-label="required">required</span></label
+                        >
                         <p class="input__hint">
                             This is some description text to give more context
                             to this input
                         </p>
+                        <span
+                            id="password-validation"
+                            aria-live="assertive"
+                        ></span>
                         <input
                             type="password"
                             name="user_password"
                             id="password"
                             class="input__text"
                             pattern="[a-z0-5]{8,}"
+                            minlength="8"
                             placeholder="Enter your password"
+                            aria-describedby="password-validation"
                             required
                         />
                     </div>
