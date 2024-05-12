@@ -39,7 +39,10 @@ legend {
 
 .form__section {
 }
-.form__group {
+.form__group,
+fieldset {
+    display: flex;
+    flex-flow: column;
 }
 .fieldset__legend {
 }
@@ -50,6 +53,14 @@ HINTS, ERRORS, REQUIRED
 --------------------------------------------------------
 */
 
+label > span {
+    font-size: 0.75rem;
+    content: 'required';
+    color: white;
+    background-color: black;
+    padding: 0.25rem 0.5rem;
+}
+
 /* Hints */
 .input__hint {
     margin-top: -0.25rem;
@@ -58,18 +69,30 @@ HINTS, ERRORS, REQUIRED
 }
 
 /* Errors */
-.input__hint.error {
-    color: red;
-    font-weight: 700;
+
+input.error {
+    border-color: #900;
 }
-.input__error {
-    border-color: red;
+input:invalid {
+    border-color: #900;
 }
-/* input:invalid {
-    border-color: red;
-} */
+input:valid {
+    border-color: var(--clr-gray-dark);
+}
+span.error {
+    display: none;
+}
+span.error.active {
+    display: flex;
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    font-size: 90%;
+    color: white;
+    background-color: #900;
+    margin-bottom: var(--sp--2);
+}
 .form__group.error {
-    border-left: 8px solid red;
+    border-left: 8px solid #900;
     padding-left: var(--sp-2);
 }
 
