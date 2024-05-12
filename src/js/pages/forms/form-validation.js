@@ -1,6 +1,10 @@
 const form = document.querySelector('.myForm');
 // const inputs = form.querySelectorAll('input');
 
+// TODO: Event handling for real-time validation of ALL inputs
+// TODO: Validate radio/check groups on form submit
+
+// Update inputs with error states
 function updateValidationUI(element, isValid, message) {
     // Target parent div
     const formGroup = element.closest('.form__group'); // Get the closest .form__group parent
@@ -38,6 +42,13 @@ function validateGroup(group) {
     console.log(`${group} = ${message}`);
     updateValidationUI(group, isValid, message); // Assume 'group' is already the .form__group element
 }
+
+// Event handling for real-time validation
+// form.addEventListener('input', event => {
+//     if (event.target.matches('input, textarea')) {
+//         validateInput(event.target);
+//     }
+// });
 
 // Validate all on form submit
 form.addEventListener('submit', event => {
