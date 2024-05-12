@@ -30,7 +30,7 @@
                             >Name
                             <span aria-label="required">required</span></label
                         >
-                        <span id="name-validation" aria-live="assertive"></span>
+                        <span class="input__error" aria-live="assertive"></span>
                         <input
                             type="text"
                             name="user_name"
@@ -46,10 +46,7 @@
                             >Email
                             <span aria-label="required">required</span></label
                         >
-                        <span
-                            id="email-validation"
-                            aria-live="assertive"
-                        ></span>
+                        <span class="input__error" aria-live="assertive"></span>
                         <input
                             type="email"
                             name="user_email"
@@ -69,10 +66,7 @@
                             This is some description text to give more context
                             to this input
                         </p>
-                        <span
-                            id="password-validation"
-                            aria-live="assertive"
-                        ></span>
+                        <span class="input__error" aria-live="assertive"></span>
                         <input
                             type="password"
                             name="user_password"
@@ -92,6 +86,7 @@
                     <h3>Form Section 2</h3>
                     <div class="form__group">
                         <label for="date-time">Date and time available</label>
+                        <span class="input__error" aria-live="assertive"></span>
                         <input
                             id="date-time"
                             type="datetime-local"
@@ -101,6 +96,7 @@
                     </div>
                     <div class="form__group">
                         <label for="color">Pick a color</label>
+                        <span class="input__error" aria-live="assertive"></span>
                         <input
                             id="color"
                             type="color"
@@ -110,12 +106,14 @@
                     </div>
                     <div class="form__group">
                         <label for="message">Message</label>
+                        <span class="input__error" aria-live="assertive"></span>
                         <textarea
                             id="message"
                             name="user_message"
                             class="input__text"
                             rows="4"
                             placeholder="Enter your message"
+                            required
                         ></textarea>
                     </div>
                 </section>
@@ -128,6 +126,10 @@
                             <legend class="fieldset__legend">
                                 Favourite dogs
                             </legend>
+                            <span
+                                class="input__error"
+                                aria-live="assertive"
+                            ></span>
                             <ul class="stack stack-small">
                                 <li>
                                     <label class="label__checkbox">
@@ -165,18 +167,15 @@
                             </ul>
                         </fieldset>
                     </div>
-                    <div class="form__group error">
+                    <div class="form__group">
                         <fieldset>
                             <legend class="fieldset__legend">
                                 Best Movie ever made
                             </legend>
-                            <!-- <p class="input__hint">
-                                This is some description text to give more
-                                context to this input
-                            </p> -->
-                            <span class="error error--inline" aria-live="polite"
-                                >This is an error</span
-                            >
+                            <span
+                                class="input__error"
+                                aria-live="assertive"
+                            ></span>
                             <ul class="stack stack-small">
                                 <li>
                                     <label class="label__radio">
@@ -244,6 +243,7 @@
                     <h3>Form Section 4</h3>
                     <div class="form__group">
                         <label for="card">Card type</label>
+                        <span class="input__error" aria-live="assertive"></span>
                         <div class="select__wrapper">
                             <select id="card" name="user_card">
                                 <option disabled="" selected="">
@@ -260,6 +260,7 @@
                             Card number
                             <span aria-label="required">*</span>
                         </label>
+                        <span class="input__error" aria-live="assertive"></span>
                         <input
                             type="text"
                             id="number"
@@ -278,6 +279,7 @@
                             Expiration date
                             <span aria-label="required">*</span>
                         </label>
+                        <span class="input__error" aria-live="assertive"></span>
                         <input
                             type="text"
                             id="expiration"

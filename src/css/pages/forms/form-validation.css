@@ -79,10 +79,10 @@ input:invalid {
 input:valid {
     border-color: var(--clr-gray-dark);
 }
-span.error {
+.input__error {
     display: none;
 }
-span.error.active {
+.input__error.active {
     display: flex;
     width: 100%;
     padding: 0.25rem 0.5rem;

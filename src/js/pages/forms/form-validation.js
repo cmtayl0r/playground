@@ -1,55 +1,125 @@
 const form = document.querySelector('.myForm');
-const inputs = form.querySelectorAll('input');
+// const inputs = form.querySelectorAll('input');
 
-// trigger error on form submit
+function updateValidationUI(element, isValid, message) {
+    // Target parent div
+    const formGroup = element.closest('.form__group'); // Get the closest .form__group parent
+    // Target error span from parent div
+    const errorDisplay = formGroup.querySelector('.input__error');
+
+    console.log(errorDisplay);
+    if (errorDisplay) {
+        errorDisplay.textContent = message;
+        console.log(errorDisplay);
+        errorDisplay.classList.toggle('active', !isValid);
+    }
+    if (formGroup) {
+        formGroup.classList.toggle('error', !isValid); // Toggle 'error' class on .form__group
+    }
+}
+
+// Validate individual input
+function validateInput(input) {
+    const isValid = input.checkValidity();
+    const message = input.validationMessage || '';
+    console.log(`${input.name} = ${message}`);
+    updateValidationUI(input, isValid, message);
+}
+
+// Validate group of checkboxes or radios
+function validateGroup(group) {
+    const inputs = [
+        ...group.querySelectorAll(
+            'input[type="checkbox"], input[type="radio"]',
+        ),
+    ];
+    const isValid = inputs.some(input => input.checked);
+    const message = isValid ? '' : 'Please select at least one option.';
+    console.log(`${group} = ${message}`);
+    updateValidationUI(group, isValid, message); // Assume 'group' is already the .form__group element
+}
+
+// Validate all on form submit
 form.addEventListener('submit', event => {
-    let formValid = true;
-    inputs.forEach(input => {
-        const isValid = input.validity.valid;
-        const message = input.validationMessage;
-        const connectedValidationId = input.getAttribute('aria-describedby');
-        const connectedValidation = connectedValidationId
-            ? document.getElementById(connectedValidationId)
-            : false;
+    event.preventDefault();
+    let isValidForm = true;
 
-        if (connectedValidation && message && !isValid) {
-            connectedValidation.innerText = message;
-            connectedValidation.className = 'error active';
-            input.parentNode.className = 'form__group error';
-            formValid = false;
-        } else {
-            connectedValidation.innerText = '';
-            connectedValidation.className = 'error';
-            input.parentNode.className = 'form__group';
+    // Validate all inputs
+    const inputs = form.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        validateInput(input);
+        if (!input.validity.valid) {
+            isValidForm = false;
         }
     });
-    if (!formValid) event.preventDefault();
+
+    // Validate all groups
+    const groups = form.querySelectorAll('fieldset');
+    groups.forEach(group => validateGroup(group));
+    // FIXME: isValidForm = false, for radio/check groups here at this point
+
+    if (isValidForm) {
+        console.log('Form is valid and can be submitted.');
+    }
 });
 
-// trigger errors on input blur
-form.addEventListener(
-    'blur',
-    event => {
-        const input = event.target;
-        const isValid = input.validity.valid;
-        const message = input.validationMessage;
-        const connectedValidationId = input.getAttribute('aria-describedby');
-        const connectedValidation = connectedValidationId
-            ? document.getElementById(connectedValidationId)
-            : false;
+// -------------------------------------------------------------------
 
-        if (connectedValidation && message && !isValid) {
-            connectedValidation.innerText = message;
-            connectedValidation.className = 'error active';
-            input.parentNode.className = 'form__group error';
-        } else {
-            connectedValidation.innerText = '';
-            connectedValidation.className = 'error';
-            input.parentNode.className = 'form__group';
-        }
-    },
-    true,
-);
+// trigger error on form submit
+// form.addEventListener('submit', event => {
+//     let formValid = true;
+//     inputs.forEach(input => {
+//         const isValid = input.validity.valid;
+//         const message = input.validationMessage;
+//         const connectedValidationId = input.getAttribute('aria-describedby');
+//         const connectedValidation = connectedValidationId
+//             ? document.getElementById(connectedValidationId)
+//             : false;
+
+//         if (connectedValidation && message && !isValid) {
+//             connectedValidation.innerText = message;
+//             connectedValidation.className = 'error active';
+//             input.parentNode.className = 'form__group error';
+//             formValid = false;
+//         } else {
+//             connectedValidation.innerText = '';
+//             connectedValidation.className = 'error';
+//             input.parentNode.className = 'form__group';
+//         }
+//     });
+//     if (!formValid) event.preventDefault();
+// });
+
+// form.addEventListener('blur', event => {
+//     console.log(event.target.);
+// })
+
+// // trigger errors on input blur
+// form.addEventListener(
+//     'blur',
+//     event => {
+//         const input = event.target;
+//         const isValid = input.validity.valid;
+//         const message = input.validationMessage;
+//         const connectedValidationId = input.getAttribute('aria-describedby');
+//         const connectedValidation = connectedValidationId
+//             ? document.getElementById(connectedValidationId)
+//             : false;
+
+//         if (connectedValidation && message && !isValid) {
+//             connectedValidation.innerText = message;
+//             connectedValidation.className = 'error active';
+//             input.parentNode.className = 'form__group error';
+//         } else {
+//             connectedValidation.innerText = '';
+//             connectedValidation.className = 'error';
+//             input.parentNode.className = 'form__group';
+//         }
+//     },
+//     true,
+// );
+
+// --------------------------------------------------------------------
 
 // form.addEventListener('input', event => {
 //     const input = event.target;
