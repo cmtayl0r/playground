@@ -21,11 +21,14 @@
                 method=""
                 novalidate
             >
-                <p>Required fields are specified</p>
+                <p>
+                    Form validation demo using Constraint Validation API. All
+                    fields are required. Required labels used for demo purposes.
+                </p>
                 <hr />
                 <!-- Section 1 -->
                 <section class="stack stack-large form__section">
-                    <h3>Using Constraint Validation API</h3>
+                    <h3>Common inputs</h3>
                     <div class="form__group">
                         <label for="name"
                             >Name
@@ -88,7 +91,7 @@
                 <!-- Section 2 -->
                 <hr />
                 <section class="stack stack-large form__section">
-                    <h3>Form Section 2</h3>
+                    <h3>Rare HTML form inputs</h3>
                     <div class="form__group">
                         <label for="appointment">Appointment</label>
                         <span class="input__error" aria-live="assertive"></span>
@@ -129,7 +132,7 @@
                 <hr />
                 <!-- Section 3 -->
                 <section class="stack stack-large form__section">
-                    <h3>Radios and CHeckboxe</h3>
+                    <h3>Radios and Checkboxes</h3>
                     <div class="form__group">
                         <fieldset>
                             <legend class="fieldset__legend">
@@ -159,6 +162,7 @@
                                             name="dogs"
                                             class="input__checkbox"
                                             value="spanial"
+                                            required
                                         />
                                         Spanial
                                     </label>
@@ -170,6 +174,7 @@
                                             name="dogs"
                                             class="input__checkbox"
                                             value="labrador"
+                                            required
                                         />
                                         Labrador
                                     </label>
@@ -250,7 +255,7 @@
                 <hr />
                 <!-- Section 4 -->
                 <section class="stack stack-large form__section">
-                    <h3>Form Section 4</h3>
+                    <h3>Credit Card scenario</h3>
                     <div class="form__group">
                         <label for="card-type">Card type</label>
                         <span class="input__error" aria-live="assertive"></span>
@@ -306,6 +311,23 @@
                             required
                             aria-required="true"
                         />
+                    </div>
+                </section>
+                <hr />
+                <section class="stack stack-large form__section">
+                    <h3>Terms and Conditions</h3>
+                    <div class="form__group">
+                        <span class="input__error" aria-live="assertive"></span>
+                        <label for="terms">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                required
+                                aria-required="true"
+                            />
+                            I agree to the terms and conditions
+                        </label>
                     </div>
                 </section>
                 <hr />

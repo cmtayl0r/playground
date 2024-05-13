@@ -6,6 +6,7 @@ const inputs = form.querySelectorAll('input, textarea, select');
 document.addEventListener('DOMContentLoaded', () => {
     // Function: Show error message
     function showError(input, message) {
+        console.log(input, message);
         const formGroup = input.closest('.form__group');
         const errorDisplay = formGroup.querySelector('.input__error');
         console.log(errorDisplay);
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Validation of inputs on form submit
     form.addEventListener('submit', event => {
+        event.preventDefault();
         // Check if form is valid, so we can prevent the form from submitting
         let isFormValid = true;
         // Loop through each input and check if it's valid
@@ -52,13 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearError(input);
             }
         });
+
         // If form is not valid, prevent it from submitting
         if (!isFormValid) {
-            event.preventDefault();
-            alert('👍 Form is valid');
+            console.log('🚫 Form is not valid');
         } else {
             // Form is valid, submit it
-            alert('❌ Form is NOT valid');
+            console.log('👍 Form is valid and ready to submit');
+            // form.submit(); // Uncomment to enable form submission when valid
         }
     });
 });
