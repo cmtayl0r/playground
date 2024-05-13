@@ -2,6 +2,13 @@ const form = document.getElementById('myForm');
 const inputs = form.querySelectorAll('input, textarea, select');
 
 // TODO: Add validation for groups of checkboxes
+// TODO: have children/sub inputs revealed on checkbox selection
+/*
+Expected behaviour:
+- If a group of checkboxes is required, at least one checkbox must be checked
+- tab though checkboxes, if none are checked, show error message
+- if one selected, clear error message
+*/
 
 document.addEventListener('DOMContentLoaded', () => {
     // Function: Show error message
