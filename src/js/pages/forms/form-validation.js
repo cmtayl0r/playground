@@ -1,78 +1,85 @@
-const form = document.querySelector('.myForm');
-// const inputs = form.querySelectorAll('input');
+const form = document.getElementById('myForm');
+const formInputs = Array.from(form.elements);
 
 // TODO: Event handling for real-time validation of ALL inputs
 // TODO: Validate radio/check groups on form submit
+// TODO: Insert/remove error span when needed
 
-// Update inputs with error states
-function updateValidationUI(element, isValid, message) {
-    // Target parent div
-    const formGroup = element.closest('.form__group'); // Get the closest .form__group parent
-    // Target error span from parent div
-    const errorDisplay = formGroup.querySelector('.input__error');
+formInputs.forEach(input => {
+    console.log(`This is a ${input.type} input`);
+});
 
-    console.log(errorDisplay);
-    if (errorDisplay) {
-        errorDisplay.textContent = message;
-        console.log(errorDisplay);
-        errorDisplay.classList.toggle('active', !isValid);
-    }
-    if (formGroup) {
-        formGroup.classList.toggle('error', !isValid); // Toggle 'error' class on .form__group
-    }
-}
+// -------------------------------------------------------------------
 
-// Validate individual input
-function validateInput(input) {
-    const isValid = input.checkValidity();
-    const message = input.validationMessage || '';
-    console.log(`${input.name} = ${message}`);
-    updateValidationUI(input, isValid, message);
-}
+// // Update inputs with error states
+// function updateValidationUI(element, isValid, message) {
+//     // Target parent div
+//     const formGroup = element.closest('.form__group'); // Get the closest .form__group parent
+//     // Target error span from parent div
+//     const errorDisplay = formGroup.querySelector('.input__error');
 
-// Validate group of checkboxes or radios
-function validateGroup(group) {
-    const inputs = [
-        ...group.querySelectorAll(
-            'input[type="checkbox"], input[type="radio"]',
-        ),
-    ];
-    const isValid = inputs.some(input => input.checked);
-    const message = isValid ? '' : 'Please select at least one option.';
-    console.log(`${group} = ${message}`);
-    updateValidationUI(group, isValid, message); // Assume 'group' is already the .form__group element
-}
+//     console.log(errorDisplay);
+//     if (errorDisplay) {
+//         errorDisplay.textContent = message;
+//         console.log(errorDisplay);
+//         errorDisplay.classList.toggle('active', !isValid);
+//     }
+//     if (formGroup) {
+//         formGroup.classList.toggle('error', !isValid); // Toggle 'error' class on .form__group
+//     }
+// }
 
-// Event handling for real-time validation
-// form.addEventListener('input', event => {
-//     if (event.target.matches('input, textarea')) {
-//         validateInput(event.target);
+// // Validate individual input
+// function validateInput(input) {
+//     const isValid = input.checkValidity();
+//     const message = input.validationMessage || '';
+//     console.log(`${input.name} = ${message}`);
+//     updateValidationUI(input, isValid, message);
+// }
+
+// // Validate group of checkboxes or radios
+// function validateGroup(group) {
+//     const inputs = [
+//         ...group.querySelectorAll(
+//             'input[type="checkbox"], input[type="radio"]',
+//         ),
+//     ];
+//     const isValid = inputs.some(input => input.checked);
+//     const message = isValid ? '' : 'Please select at least one option.';
+//     console.log(`${group} = ${message}`);
+//     updateValidationUI(group, isValid, message); // Assume 'group' is already the .form__group element
+// }
+
+// // Event handling for real-time validation
+// // form.addEventListener('input', event => {
+// //     if (event.target.matches('input, textarea')) {
+// //         validateInput(event.target);
+// //     }
+// // });
+
+// // Validate all on form submit
+// form.addEventListener('submit', event => {
+//     event.preventDefault();
+//     let isValidForm = true;
+
+//     // Validate all inputs
+//     const inputs = form.querySelectorAll('input, textarea');
+//     inputs.forEach(input => {
+//         validateInput(input);
+//         if (!input.validity.valid) {
+//             isValidForm = false;
+//         }
+//     });
+
+//     // Validate all groups
+//     const groups = form.querySelectorAll('fieldset');
+//     groups.forEach(group => validateGroup(group));
+//     // FIXME: isValidForm = false, for radio/check groups here at this point
+
+//     if (isValidForm) {
+//         console.log('Form is valid and can be submitted.');
 //     }
 // });
-
-// Validate all on form submit
-form.addEventListener('submit', event => {
-    event.preventDefault();
-    let isValidForm = true;
-
-    // Validate all inputs
-    const inputs = form.querySelectorAll('input, textarea');
-    inputs.forEach(input => {
-        validateInput(input);
-        if (!input.validity.valid) {
-            isValidForm = false;
-        }
-    });
-
-    // Validate all groups
-    const groups = form.querySelectorAll('fieldset');
-    groups.forEach(group => validateGroup(group));
-    // FIXME: isValidForm = false, for radio/check groups here at this point
-
-    if (isValidForm) {
-        console.log('Form is valid and can be submitted.');
-    }
-});
 
 // -------------------------------------------------------------------
 
