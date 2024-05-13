@@ -70,14 +70,23 @@ label > span {
 
 /* Errors */
 
+input:invalid,
+select:invalid,
+textarea:invalid,
+input[type='radio']:invalid,
+input[type='checkbox']:invalid {
+    border-color: #900;
+}
+input:valid,
+select:valid,
+textarea:valid,
+input[type='radio']:valid,
+input[type='checkbox']:valid {
+    border-color: var(--clr-gray-dark);
+}
+
 input.error {
     border-color: #900;
-}
-input:invalid {
-    border-color: #900;
-}
-input:valid {
-    border-color: var(--clr-gray-dark);
 }
 .input__error {
     display: none;

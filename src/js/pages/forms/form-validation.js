@@ -5,8 +5,51 @@ const formInputs = Array.from(form.elements);
 // TODO: Validate radio/check groups on form submit
 // TODO: Insert/remove error span when needed
 
+// formInputs.forEach(input => {
+//     console.log(`This is a ${input.type} input`);
+// });
+
+function showError(input, message) {
+    input.classList.add('error');
+    input.setAttribute('aria-invalid', 'true');
+    console.log(`${input.name} = ${message}`);
+}
+
+function clearError(input) {
+    input.classList.remove('error');
+    input.removeAttribute('aria-invalid');
+}
+
 formInputs.forEach(input => {
-    console.log(`This is a ${input.type} input`);
+    input.addEventListener('blur', event => {
+        if (!input.checkValidity()) {
+            showError(input, input.validationMessage);
+        } else {
+            clearError(input);
+        }
+    });
+});
+
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    let isValid = true;
+
+    // Validate all inputs
+    formInputs.forEach(input => {
+        if (!input.checkValidity()) {
+            isValid = false;
+            showError(input, input.validationMessage);
+        } else {
+            clearError(input);
+        }
+    });
+
+    // Form validation and submission
+    if (isValid) {
+        console.log('Form is valid and can be submitted.');
+    } else {
+        console.log('Form is invalid and cannot be submitted.');
+    }
 });
 
 // -------------------------------------------------------------------
