@@ -3,6 +3,8 @@ const inputs = form.querySelectorAll('input, textarea, select');
 
 // TODO: Add validation for groups of checkboxes
 // TODO: have children/sub inputs revealed on checkbox selection
+// TODO: Show and hide password on click of an icon
+
 /*
 Expected behaviour:
 - If a group of checkboxes is required, at least one checkbox must be checked
